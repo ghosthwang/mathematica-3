@@ -1,0 +1,823 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.1'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     23284,        652]*)
+(*NotebookOutlinePosition[     24290,        684]*)
+(*  CellTagsIndexPosition[     24246,        680]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(Clear["\<Global`*\>"]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["martin.pos@philips.com\nAug 21-22 2006", \
+"SmallText"]], "Title",
+  TextAlignment->Right],
+
+Cell[BoxData[
+    StyleBox[\(Overflow\ fix\),
+      "Title"]], "Input",
+  Evaluatable->False],
+
+Cell["\<\
+In a VHDL program \"integer overflow\" errors occur in a certain \
+calculation. A more robust method is developed to avoid these overflow \
+errors, but the result is still not satisfying.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["The problem", "Section"],
+
+Cell["Snippet of VHDL code:", "Text"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{
+        StyleBox[\(\(--integer\)\ overflow\ here\ when\ bytes \[GreaterEqual] 
+            4\ \((2 ** 4)\)\),
+          FontWeight->"Plain",
+          FontSlant->"Italic"], 
+        StyleBox[":",
+          FontWeight->"Plain",
+          FontSlant->"Italic"], 
+        "\[IndentingNewLine]", \(RETURN\ \((2 ** \((bytes*8)\) - 1)\)/
+            ABS \((increment)\)\)}], ";"}]], "Input",
+  Evaluatable->False],
+
+Cell["\<\
+When bytes is too large, this calculation can result in a integer \
+overflow even when the result would 'fit' in the integer type.  For that \
+special case that the result can be represented by the integer type, an \
+alternative way to determine the result is to be developed.\
+\>", "Text"],
+
+Cell["The calculation to be done is:", "Text"],
+
+Cell[BoxData[
+    \(r[b_Integer, i_Integer] := 
+      IntegerPart[\(2\^\(8  b\) - 1\)\/i]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ 
+          practical\ example\ from\ simulation\ that\ flags\ an\ integer\ \
+overflow\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(r[5, 230045]\)}]], "Input"],
+
+Cell[BoxData[
+    \(4779550\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Handling the \"-1\"", "Section"],
+
+Cell[TextData[{
+  "Now to perform the calculation preventing overflow flags, first the -1 \
+part must be taken care of. That can be done in two steps:\n1) Calculate ",
+  Cell[BoxData[
+      \(TraditionalForm\`r1 = 2\^\(8  b\)\/i\)]],
+  "and ",
+  Cell[BoxData[
+      \(TraditionalForm\`rest1 = 2\^\(8  b\) - r1\ i\)]],
+  "\n2) Now perform a correction on the result r1 only if rest1 equals 0."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*1*) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      StyleBox[" ",
+        FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]", 
+      RowBox[{\(r1[b_Integer, i_Integer] := IntegerPart[2\^\(8  b\)\/i];\), 
+        "\[IndentingNewLine]", \(rest1[b_Integer, i_Integer] := 
+            2\^\(8  b\) - r1[b, i]*i;\), "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
+        StyleBox[\( (*2*) \),
+          FontColor->RGBColor[0, 0, 1]], 
+        "\[IndentingNewLine]", \(result1[b_Integer, i_Integer] := 
+            r1[b, i] - \ If[rest1[b, i] \[Equal] 0\ , 1, 0];\)}]}]], "Input"],
+
+Cell[BoxData[
+    \(Null\^3\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ let' s\ see\ it\ in\ action\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(\(a\  = \ {\ {4, 2\^\(4*8\)}, \ {5, 
+              230045}, \ {2, 2\^15}};\)\[IndentingNewLine]
+      TableForm[\[IndentingNewLine]Table[{\[IndentingNewLine]a[\([k, 
+                1]\)], \[IndentingNewLine]a[\([k, 
+                2]\)], \[IndentingNewLine]r1[a[\([k, 1]\)], 
+              a[\([k, 2]\)]], \[IndentingNewLine]rest1[a[\([k, 1]\)], 
+              a[\([k, 2]\)]], \[IndentingNewLine]result1[a[\([k, 1]\)], 
+              a[\([k, 2]\)]]\[IndentingNewLine]}, \[IndentingNewLine]{k, 
+            Length[a]}], \[IndentingNewLine]TableHeadings \[Rule] {None, \
+{"\<b\>", "\<i\>", "\<r1\>", "\<rest1\>", "\<result1\>"}}\[IndentingNewLine]]\
+\[IndentingNewLine]
+      \)}]], "Input"],
+
+Cell[BoxData[
+    TagBox[GridBox[{
+          {"\<\"b\"\>", "\<\"i\"\>", "\<\"r1\"\>", "\<\"rest1\"\>", \
+"\<\"result1\"\>"},
+          {"4", "4294967296", "1", "0", "0"},
+          {"5", "230045", "4779550", "48026", "4779550"},
+          {"2", "32768", "2", "0", "1"}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      Function[ BoxForm`e$, 
+        TableForm[ 
+        BoxForm`e$, TableHeadings -> {None, {"b", "i", "r1", "rest1", 
+          "result1"}}]]]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Rewriting the expression", "Section"],
+
+Cell[TextData[{
+  "The target is to determine ",
+  Cell[BoxData[
+      \(TraditionalForm\`Integerpart[2\^\(8  b\)\/i]\)]],
+  ". Possibly ",
+  Cell[BoxData[
+      \(TraditionalForm\`2\^\(8  b\)\)]],
+  "results in an integer overflow. Since now a 'trick' is available to deal \
+with the \"-1\" part, the focus can go to the calculation of ",
+  Cell[BoxData[
+      \(TraditionalForm\`Integerpart[2\^\(8  b\)\/i]\)]],
+  " while preventing integer overflow events as much as possible. Both b and \
+i are assumed to be integers within the range of the integer type. Now this \
+expression can be rewritten as:"
+}], "Text"],
+
+Cell[BoxData[
+    \(\(\(\ \)\(IntegerPart[2\^\(8  b\)\/i] = \ 
+      IntegerPart[\(2\^\(8  bmax\)\ *\ 2\^\(8 \((b - bmax)\)\)\)\/i]\)\)\)], \
+"Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell[TextData[{
+  "Where bmax is the largest value that doesn't flag the integer overflow \
+event when evaluating ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(\(2\^\(8  bmax\)\)\(.\)\(\ \)\)\)]],
+  "To initially ease life a number of assumptions are done:"
+}], "Text"],
+
+Cell[BoxData[{
+    \(b > bmax\), "\[IndentingNewLine]", 
+    \(\(\(|\)\(i\)\(|\)\(\ \)\(\(\[LessEqual]\)\(\ \)\(2\^\(8  
+              bmax\)\)\)\)\), "\[IndentingNewLine]", 
+    \(b - bmax\  \[LessEqual] \ bmax\)}], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell[TextData[{
+  "When b would not be greater than bmax there would not be a problem with \
+the evaluation. The constraint for i (almost) means that i fits in the \
+integer range (\"almost\" since the integer range could be slightly wider \
+than ",
+  Cell[BoxData[
+      \(TraditionalForm\`\(-2\^\(8  bamx\)\)\)]],
+  "to ",
+  Cell[BoxData[
+      \(TraditionalForm\`2\^\(8  bmax\)\)]],
+  "). The last constraint means that ",
+  Cell[BoxData[
+      \(TraditionalForm\`2\^\(8 \((b - bmax)\)\)\)]],
+  "also doesn't rise and overflow event. Further rewriting the expression:"
+}], "Text"],
+
+Cell[BoxData[
+    \(IntegerPart[
+        2\^\(8\ b\)\/i] = \[IndentingNewLine]\(IntegerPart[\(2\^\(8\ \((b - \
+bmax)\)\)\ 2\^\(8\ bmax\)\)\/i] = \[IndentingNewLine]2\^\(8\ \((b - bmax)\)\)\
+\ IntegerPart[
+              2\^\(8\ bmax\)\/i] + \[IndentingNewLine]IntegerPart[\(2\^\(8\ \
+\((b - bmax)\)\)\ Mod[2\^\(8\ bmax\), i]\)\/i]\)\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell[TextData[{
+  "Where ",
+  StyleBox["Mod[n,m]",
+    FontWeight->"Bold"],
+  " is the modulo operator, thus the remainder of division ",
+  Cell[BoxData[
+      \(TraditionalForm\`n\/m\)]],
+  ". The two terms of the sum in the last expression are of interest.Those \
+are considered individually:"
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The first term of the sum", "Section"],
+
+Cell[BoxData[
+    \(\(2\^\(8 \((b - 
+                bmax)\)\)\) \((IntegerPart[\(\(2\^\(8  bmax\)\)\(\ \
+\)\)\/i])\)\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell[TextData[{
+  "The division here is now guaranteed to be overflow-free, but \
+multiplication of the result of the division by ",
+  Cell[BoxData[
+      \(TraditionalForm\`2\^\(8 \((b - bmac)\)\)\)]],
+  "can again result in an overflow. However if this is the case, then the \
+grand result itself of the complete calculation is not within the integer \
+range (forgetting the \"-1\" story; the overflow could be exactly 1 and then \
+be corrected into the integer range by the \"-1\"). The overflow is then \
+unavoidable. A test can be written to determine if this situation would \
+occur:"
+}], "Text"],
+
+Cell[BoxData[
+    \(\(2\^\(8 \((b - 
+                      bmax)\)\)\) \((IntegerPart[\(\(2\^\(8  bmax\)\)\(\ \)\)\
+\/i])\) \[GreaterEqual] 
+          2\^\(8  bmax\) \[DoubleLeftRightArrow] \
+\[IndentingNewLine]\((IntegerPart[\(\(2\^\(8  bmax\)\)\(\ \)\)\/i])\) \
+\[GreaterEqual] \ 
+          2\^\(8  bmax\)\/2\^\(8 \((b - bmax)\)\) = \((2\^8)\)\^\(2  bmax - b\
+\)\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell["\<\
+The assumptions done before give quite some information about \
+b:\
+\>", "Text"],
+
+Cell[BoxData[
+    \(b > bmax\  && 
+      b - bmax\  \[LessEqual] \ 
+          bmax \[DoubleLeftRightArrow] \[IndentingNewLine]bmax < 
+          b \[LessEqual] 
+          2  bmax \[DoubleLeftRightArrow] \[IndentingNewLine]\(-bmax\) < 
+          b - 2  bmax \[LessEqual] 
+          0 \[DoubleLeftRightArrow] \[IndentingNewLine]\ 
+        0 \[LessEqual] 2  bmax\  - b\  < \ bmax\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell["So the test is fully evaluable under the assumptions. ", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The second term of the sum", "Section"],
+
+Cell[BoxData[
+    \(IntegerPart[\(2\^\(8\ \((b - bmax)\)\)\ Mod[2\^\(8\ bmax\), \
+i]\)\/i]\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell[TextData[{
+  "The multiplication in the numerator of the division can, what a surprise, \
+result in an integer overflow. It is clear that ",
+  Cell[BoxData[
+      \(TraditionalForm\`Mod[2\^\(8  bmax\), i]\)]],
+  " fits in the integer range and even ",
+  Cell[BoxData[
+      \(TraditionalForm\`Abs[Mod[2\^\(8  bmax\), i]] \[LessEqual] 
+        2\^\(8  bmax\)\)]],
+  "(which might be smaller than the actual integer range). Similarily as \
+before, a test can be done to see if overflow would occur:"
+}], "Text"],
+
+Cell[BoxData[
+    \(2\^\(8\ \((b - bmax)\)\)\ Mod[2\^\(8\ bmax\), i] \[GreaterEqual] 
+        2\^\(8  bmax\) \[DoubleLeftRightArrow] \[IndentingNewLine]Mod[
+          2\^\(8\ bmax\), 
+          i] \[GreaterEqual] \((2\^8)\)\^\(2  bmax - b\)\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell["\<\
+Great! Also fully evaluable, but what to do when the test is \
+positive? Then a problem quite similar to the original problem occurs. \
+Although this time there is more information:\
+\>", "Text"],
+
+Cell[BoxData[
+    \(Mod[2\^\(8\ bmax\), i] < 
+        i \[DoubleLeftRightArrow] \[IndentingNewLine]IntegerPart[
+          Mod[2\^\(8\ bmax\), i]\/i] \[Equal] 0\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell["As before, the way to go is to rewrite the expression:", "Text"],
+
+Cell[BoxData[
+    \(IntegerPart[\(2\^\(8\ \((b - bmax)\)\)\ Mod[2\^\(8\ bmax\), i]\)\/i] = \
+\[IndentingNewLine]\(IntegerPart[
+          Mod[2\^\(8\ bmax\), 
+              i] \(\(2\^\(8\ \((b - bmax)\)\)\)\(\ \)\)\/i] = \
+\[IndentingNewLine]Mod[2\^\(8\ bmax\), i] 
+            IntegerPart[\(\(2\^\(8\ \((b - bmax)\)\)\)\(\ \)\)\/i] + \
+\[IndentingNewLine]Integerpart[\(Mod[2\^\(8\ bmax\), i]*Mod[2\^\(8\ \((b - \
+bmax)\)\), i]\)\/i]\)\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell["\<\
+A sum with two terms of which the first term is fully evaluable and \
+in case of an overflow there it is anavoidable (but really is an overflow \
+possible at all?). For the second term it is true that:\
+\>", "Text"],
+
+Cell[BoxData[
+    \(Mod[2\^\(8\ bmax\), i]*
+        Mod[2\^\(8\ \((b - bmax)\)\), i] \[LessEqual] \((i - 1)\)\^2 < 
+      i\^2\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell[TextData[{
+  "And so, overflow here can occur when ",
+  Cell[BoxData[
+      \(TraditionalForm\`i\^2 > 2\^\(8  bmax\) = \((2\^\(4  bmax\))\)\^2\)]],
+  ". Trying to handle the problem, variables ha and hb are defined:"
+}], "Text"],
+
+Cell[BoxData[{
+    \(ha = Mod[2\^\(8\ bmax\), i]\), "\[IndentingNewLine]", 
+    \(hb = Mod[2\^\(8\ \((b - bmax)\)\), i]\)}], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell["\<\
+All positive variables are assumed (which resembles the original \
+VHDL problem). Now it is true that:\
+\>", "Text"],
+
+Cell[BoxData[
+    \(0 < ha < i\  && \ 0 < \ hb < i\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell["\<\
+Then, since there was an overflow problem, at least one of the two, \
+ha or hb, must be quite large. i-ha and i-hb might (euh) be much smaller and \
+not not give rise to an integer overflow:\
+\>", "Text"],
+
+Cell[BoxData[
+    \(\((i - ha)\) \((i - 
+            hb)\) = \[IndentingNewLine]\(i\^2 - \((ha + hb)\) i + 
+            ha\ hb \[DoubleLeftRightArrow] \[IndentingNewLine]ha\ hb\  = \ \(\
+\((i - ha)\) \((i - hb)\) + \((ha + hb)\) i - 
+              i\^2 \[DoubleLeftRightArrow] \[IndentingNewLine]\(ha\ hb\)\/i = \
+\(\((i - ha)\) \((i - hb)\)\)\/i + \((ha + hb)\) - i\)\)\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell["\<\
+All very nice, but not too useful when either i-ha>ha or i-hb>hb, \
+because the smaller numbers are preferred. So depending on the results of \
+those tests, the smallest values can be chosen:\
+\>", "Text"],
+
+Cell[BoxData[
+    \(\(ha\ hb\)\/i = \[IndentingNewLine]\((i - ha < ha)\) && \((i - hb < 
+              hb)\) && \[IndentingNewLine]\((\(\((i - ha)\) \((i - hb)\)\)\/i \
++ \((ha + hb)\) - i\ )\) || \[IndentingNewLine]\((i - ha < 
+              ha)\) && \((i - hb \[GreaterEqual] 
+              hb)\) && \[IndentingNewLine]\((hb - \(\((i - ha)\) hb\)\/i)\) \
+|| \[IndentingNewLine]\((i - ha \[GreaterEqual] ha)\) && \((i - hb < 
+              hb)\) && \[IndentingNewLine]\((ha - \(\((i - hb)\) \
+ha\)\/i)\)\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell[TextData[{
+  "Still now the multiplication is done with the smallest numbers out of \
+ha,hb,i-ha and i-hb, but still an overflow can occur.-> Overflow occurs with \
+large values of i. ",
+  StyleBox["This solution, the smallest-number approach, isn't really \
+satisfying....",
+    FontColor->RGBColor[1, 0, 0]]
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Putting it all together", "Section"],
+
+Cell["Simply putting the expressions together yields:", "Text"],
+
+Cell[BoxData[
+    \(IntegerPart[
+        2\^\(8\ b\)\/i] = \[IndentingNewLine]\(2\^\(8\ \((b - bmax)\)\)\ \
+IntegerPart[
+              2\^\(8\ bmax\)\/i] + \[IndentingNewLine]IntegerPart[\(2\^\(8\ \
+\((b - bmax)\)\)\ Mod[2\^\(8\ bmax\), i]\)\/i] = \[IndentingNewLine]2\^\(8\ \
+\((b - bmax)\)\)\ IntegerPart[2\^\(8\ bmax\)\/i] + \[IndentingNewLine]Mod[
+              2\^\(8\ bmax\), i] 
+            IntegerPart[\(\(2\^\(8\ \((b - bmax)\)\)\)\(\ \)\)\/i] + \
+\[IndentingNewLine]IntegerPart[\(Mod[2\^\(8\ bmax\), i]*Mod[2\^\(8\ \((b - \
+bmax)\)\), i]\)\/i]\)\)], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell["\<\
+The last term of the sum has to be evaluated with smallers \
+arguments as described above. Introducing helper-variables and implementing \
+the smallest-argument-trick:\
+\>", "Text"],
+
+Cell[BoxData[{\(h1 = 2\^\(8\ bmax\);\), "\[IndentingNewLine]", \(h2 = 
+        2\^\(8 \((b - bmax)\)\);\), "\[IndentingNewLine]", \(ha = 
+        Mod[h1, i];\), "\n", \(hb = Mod[h2, i];\), "\[IndentingNewLine]", 
+    RowBox[{\({h3, r3}\), "=", "\[IndentingNewLine]", 
+      RowBox[{\(\((i - ha < ha)\) && \((i - hb < 
+              hb)\) && \[IndentingNewLine]{\(\((i - ha)\) \((i - hb)\)\)\/i + \
+\((ha + hb)\) - i\ , Mod[\((i - ha)\) \((i - hb)\), i]}\), "||", 
+        "\[IndentingNewLine]", \(\((i - ha < 
+              ha)\) && \((i - hb \[GreaterEqual] 
+              hb)\) && \[IndentingNewLine]{hb - \(\((i - ha)\) hb\)\/i, 
+            Mod[\((i - ha)\) hb, i]}\), "||", 
+        "\[IndentingNewLine]", \(\((i - ha \[GreaterEqual] 
+              ha)\) && \((i - hb < 
+              hb)\) && \[IndentingNewLine]{ha - \(\((i - hb)\) ha\)\/i, 
+            Mod[\((i - hb)\) ha, i]}\), "||", "\[IndentingNewLine]", 
+        RowBox[{\((i - ha \[GreaterEqual] ha)\), "&&", 
+          RowBox[{"(", 
+            RowBox[{\(i - hb\), 
+              FormBox["\[GreaterEqual]",
+                "InputForm"], "hb"}], ")"}], "&&", 
+          "\[IndentingNewLine]", \({\(ha\ hb\)\/i, 
+            Mod[ha\ hb, \ i]}\)}]}]}], "\[IndentingNewLine]", \(IntegerPart[
+        2\^\(8\ b\)\/i - 
+          1] = \[IndentingNewLine]h2\ IntegerPart[
+            h1\/i] + \[IndentingNewLine]Mod[h1, i]\ IntegerPart[
+            h2\/i] + \[IndentingNewLine]IntegerPart[h3]\  - \ 
+        If[r3 \[Equal] 0, 1, 0]\)}], "Input",
+  Evaluatable->False,
+  Magnification->1.25],
+
+Cell[TextData[{
+  "For applying the \"-1\" trick there is a need to know the modulo of the \
+first division, ",
+  Cell[BoxData[
+      \(TraditionalForm\`Mod[2\^\(8  b\), i]\)]],
+  ". This must be equal to r3, the remainder of the division in h3. Last \
+expression can be put into a mathematica module:"
+}], "Text"],
+
+Cell[BoxData[
+    RowBox[{\(rfix[b_, i_, bmax_]\), ":=", 
+      RowBox[{"Module", "[", 
+        RowBox[{\({h1, h2, h3, r3, \ ha, hb}\), ",", "\[IndentingNewLine]", 
+          StyleBox[\( (*\ help\ variables\ *) \),
+            FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]", 
+          
+          RowBox[{\(h1 = 2\^\(8\ bmax\)\), ";", 
+            "\[IndentingNewLine]", \(h2 = 2\^\(8\ \((b - bmax)\)\)\), ";", 
+            "\[IndentingNewLine]", \(ha = Mod[h1, i]\), ";", 
+            "\[IndentingNewLine]", \(hb = Mod[h2, i]\), ";", 
+            "\[IndentingNewLine]", \({h3, 
+                r3} = \[IndentingNewLine]\((i - ha < ha)\) && \((i - hb < 
+                      hb)\) && {\(\((i - ha)\) \((i - hb)\)\)\/i + \((ha + 
+                          hb)\) - i\ , 
+                    Mod[\((i - ha)\) \((i - hb)\), 
+                      i]} || \[IndentingNewLine]\((i - ha < 
+                      ha)\) && \((i - hb \[GreaterEqual] 
+                      hb)\) && {hb - \(\((i - ha)\) hb\)\/i, 
+                    Mod[\((i - ha)\) hb, 
+                      i]} || \[IndentingNewLine]\((i - ha \[GreaterEqual] 
+                      ha)\) && \((i - hb < 
+                      hb)\) && {ha - \(\((i - hb)\) ha\)\/i, 
+                    Mod[\((i - hb)\) ha, 
+                      i]} || \[IndentingNewLine]\((i - ha \[GreaterEqual] 
+                      ha)\) && \((i - hb \[GreaterEqual] 
+                      hb)\) && {\(ha\ hb\)\/i, Mod[ha\ hb, i]}\), ";", 
+            "\[IndentingNewLine]", 
+            StyleBox[\( (*\ result\ *) \),
+              FontColor->RGBColor[0, 0, 1]], 
+            StyleBox["\[IndentingNewLine]",
+              FontColor->RGBColor[0, 0, 1]], \(h2\ IntegerPart[h1\/i] + 
+              Mod[h1, i] IntegerPart[\(\(h2\)\(\ \)\)\/i] + IntegerPart[h3] - 
+              If[r3 \[Equal] 0, 1, 0]\)}]}], "\[IndentingNewLine]", 
+        "]"}]}]], "Input"],
+
+Cell["Does it work?", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(rfix[5, 230045, 3]\)], "Input"],
+
+Cell[BoxData[
+    \(4779550\)], "Output"]
+}, Open  ]],
+
+Cell["Some more examples to show off rfix:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(a\  = \ {\ {4, 2\^\(4*8\), 4}, \ {5, 230045, 4}, \ {2, 2\^15, 4}, {2, 
+            2\^16 - 1, 1}};\)\), "\[IndentingNewLine]", 
+    \(TableForm[\[IndentingNewLine]Table[{\[IndentingNewLine]a[\([k, 
+              1]\)], \[IndentingNewLine]a[\([k, 
+              2]\)], \[IndentingNewLine]a[\([k, 3]\)], \[IndentingNewLine]r[
+            a[\([k, 1]\)], a[\([k, 2]\)]], \[IndentingNewLine]rfix[
+            a[\([k, 1]\)], a[\([k, 2]\)], 
+            a[\([k, 3]\)]]\[IndentingNewLine]}, \[IndentingNewLine]{k, 
+          Length[a]}], \[IndentingNewLine]TableHeadings \[Rule] {None, \
+{"\<b\>", "\<i\>", "\<bmax\>", "\<r\>", "\<rfix\>"}}\[IndentingNewLine]]\), "\
+\[IndentingNewLine]", 
+    \(\)}], "Input"],
+
+Cell[BoxData[
+    TagBox[GridBox[{
+          {"\<\"b\"\>", "\<\"i\"\>", "\<\"bmax\"\>", "\<\"r\"\>", "\<\"rfix\"\
+\>"},
+          {"4", "4294967296", "4", "0", "0"},
+          {"5", "230045", "4", "4779550", "4779550"},
+          {"2", "32768", "4", "1", "1"},
+          {"2", "65535", "1", "1", "1"}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      Function[ BoxForm`e$, 
+        TableForm[ 
+        BoxForm`e$, TableHeadings -> {None, {"b", "i", "bmax", "r", 
+          "rfix"}}]]]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Translation to VHDL", "Section"],
+
+Cell["\<\
+It is rather straightforward to implement the developed algorithm \
+in VHDL syntax:\
+\>", "Text"],
+
+Cell[TextData[{
+  StyleBox["VARIABLE h1,h2,h3:INTEGER;\nVARIABLE ha,hb,r3:INTEGER;\nVARIABLE \
+i,corr:INTEGER:=0;\nCONSTANT bmax:INTEGER:=3;\n",
+    FontFamily->"Courier_new"],
+  StyleBox["--=============================================\n--integer \
+overflow here when bytes\[GreaterEqual]4 (2**4):\n--RETURN \
+(2**(bytes*8)-1)/ABS(increment);\n\
+--=============================================",
+    FontFamily->"Courier_new",
+    FontSlant->"Italic"],
+  StyleBox["\ni:=ABS(increment);\nh1:=2**(8*bmax);\nh2:=2**(8*(bytes-bmax));\n\
+ha:=(h1 MOD i);\nhb:=(h2 MOD i);\nIF i-ha<ha AND i-hb<hb THEN\n\
+h3:=((i-ha)*(i-hb))/i+ha+hb-i;\nELSIF i-ha<ha AND i-hb\[GreaterEqual]hb THEN\n\
+h3:=hb-((i-ha)*hb)/i;\nr3:=((i-ha)*hb) MOD i;\nELSIF i-ha\[GreaterEqual]ha \
+AND i-hb<hb THEN\nh3:=ha-((i-hb)*ha)/i;\nr3:=((i-hb)*ha) MOD i;\nELSE\n\
+h3:=(ha*hb)/i;\nr3:=(ha*hb) MOD i;\nEND IF;\nIF r3=0 THEN\ncorr:=-1;\nEND IF;\
+\nRETURN h2*(h1/i)+(h1 MOD i)*(h2/i)+h3+corr;",
+    FontFamily->"Courier_new"]
+}], "Text",
+  Evaluatable->False],
+
+Cell["The end...for now.", "Text"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.1 for X",
+ScreenRectangle->{{0, 1280}, {0, 1022}},
+WindowSize->{934, 828},
+WindowMargins->{{Automatic, 90}, {Automatic, 40}},
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperSize"->{597.562, 842.375},
+"PaperOrientation"->"Portrait",
+"PostScriptOutputFile":>FrontEnd`FileName[{$RootDirectory, "user", "pos", \
+"public_html", "mathematica"}, "overflowfix.ps", CharacterEncoding -> \
+"iso8859-1"],
+"Magnification"->1},
+ShowCellLabel->False,
+CellLabelAutoDelete->True,
+Magnification->1
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 54, 1, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[1833, 56, 114, 2, 70, "Title"],
+Cell[1950, 60, 93, 3, 56, "Input",
+  Evaluatable->False],
+Cell[2046, 65, 211, 4, 50, "Text"],
+
+Cell[CellGroupData[{
+Cell[2282, 73, 30, 0, 73, "Section"],
+Cell[2315, 75, 37, 0, 32, "Text"],
+Cell[2355, 77, 448, 12, 43, "Input",
+  Evaluatable->False],
+Cell[2806, 91, 300, 5, 50, "Text"],
+Cell[3109, 98, 46, 0, 32, "Text"],
+Cell[3158, 100, 102, 2, 46, "Input"],
+
+Cell[CellGroupData[{
+Cell[3285, 106, 241, 6, 43, "Input"],
+Cell[3529, 114, 41, 1, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3619, 121, 38, 0, 73, "Section"],
+Cell[3660, 123, 404, 9, 75, "Text"],
+
+Cell[CellGroupData[{
+Cell[4089, 136, 633, 13, 132, "Input"],
+Cell[4725, 151, 41, 1, 30, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4803, 157, 847, 15, 240, "Input"],
+Cell[5653, 174, 557, 15, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6259, 195, 43, 0, 73, "Section"],
+Cell[6305, 197, 615, 14, 82, "Text"],
+Cell[6923, 213, 195, 5, 63, "Input",
+  Evaluatable->False],
+Cell[7121, 220, 269, 6, 32, "Text"],
+Cell[7393, 228, 270, 6, 80, "Input",
+  Evaluatable->False],
+Cell[7666, 236, 583, 14, 68, "Text"],
+Cell[8252, 252, 389, 8, 228, "Input",
+  Evaluatable->False],
+Cell[8644, 262, 307, 9, 52, "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8988, 276, 44, 0, 73, "Section"],
+Cell[9035, 278, 175, 5, 67, "Input",
+  Evaluatable->False],
+Cell[9213, 285, 602, 11, 68, "Text"],
+Cell[9818, 298, 422, 10, 127, "Input",
+  Evaluatable->False],
+Cell[10243, 310, 90, 3, 32, "Text"],
+Cell[10336, 315, 433, 10, 94, "Input",
+  Evaluatable->False],
+Cell[10772, 327, 70, 0, 32, "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10879, 332, 45, 0, 73, "Section"],
+Cell[10927, 334, 148, 4, 63, "Input",
+  Evaluatable->False],
+Cell[11078, 340, 514, 11, 50, "Text"],
+Cell[11595, 353, 298, 6, 66, "Input",
+  Evaluatable->False],
+Cell[11896, 361, 205, 4, 50, "Text"],
+Cell[12104, 367, 217, 5, 91, "Input",
+  Evaluatable->False],
+Cell[12324, 374, 70, 0, 32, "Text"],
+Cell[12397, 376, 492, 10, 228, "Input",
+  Evaluatable->False],
+Cell[12892, 388, 225, 4, 50, "Text"],
+Cell[13120, 394, 184, 5, 39, "Input",
+  Evaluatable->False],
+Cell[13307, 401, 233, 5, 32, "Text"],
+Cell[13543, 408, 178, 4, 64, "Input",
+  Evaluatable->False],
+Cell[13724, 414, 126, 3, 32, "Text"],
+Cell[13853, 419, 108, 3, 34, "Input",
+  Evaluatable->False],
+Cell[13964, 424, 214, 4, 50, "Text"],
+Cell[14181, 430, 428, 8, 128, "Input",
+  Evaluatable->False],
+Cell[14612, 440, 215, 4, 50, "Text"],
+Cell[14830, 446, 562, 10, 287, "Input",
+  Evaluatable->False],
+Cell[15395, 458, 326, 7, 50, "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[15758, 470, 42, 0, 73, "Section"],
+Cell[15803, 472, 63, 0, 32, "Text"],
+Cell[15869, 474, 613, 12, 338, "Input",
+  Evaluatable->False],
+Cell[16485, 488, 191, 4, 50, "Text"],
+Cell[16679, 494, 1549, 28, 587, "Input",
+  Evaluatable->False],
+Cell[18231, 524, 314, 7, 50, "Text"],
+Cell[18548, 533, 1895, 34, 349, "Input"],
+Cell[20446, 569, 29, 0, 32, "Text"],
+
+Cell[CellGroupData[{
+Cell[20500, 573, 51, 1, 27, "Input"],
+Cell[20554, 576, 41, 1, 27, "Output"]
+}, Open  ]],
+Cell[20610, 580, 52, 0, 32, "Text"],
+
+Cell[CellGroupData[{
+Cell[20687, 584, 725, 12, 224, "Input"],
+Cell[21415, 598, 584, 16, 99, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[22048, 620, 38, 0, 73, "Section"],
+Cell[22089, 622, 107, 3, 32, "Text"],
+Cell[22199, 627, 1020, 19, 569, "Text",
+  Evaluatable->False],
+Cell[23222, 648, 34, 0, 32, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

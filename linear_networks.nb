@@ -1,0 +1,815 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.1'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     21290,        649]*)
+(*NotebookOutlinePosition[     22066,        676]*)
+(*  CellTagsIndexPosition[     22022,        672]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    RowBox[{\(Remove["\<Global`*\>"]\), ";", 
+      StyleBox[\(Off[General::spell1]\),
+        "MR"]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["Linear networks", "Title"],
+
+Cell["\<\
+Feb 6-9 2006
+martin.pos@philips.com\
+\>", "ItemizedText",
+  TextAlignment->Right]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Solving a Set of Linear Equations", "Section",
+  FontVariations->{"Underline"->True}]], "Subtitle"],
+
+Cell[TextData[StyleBox["Define some variables:", "Text"]], "Text"],
+
+Cell[BoxData[{
+    RowBox[{
+      RowBox[{"A", "=", 
+        RowBox[{"(", GridBox[{
+              {"a11", "a12"},
+              {"a21", "a22"}
+              }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{
+      RowBox[{"X", " ", "=", " ", 
+        RowBox[{"(", GridBox[{
+              {"x1"},
+              {"x2"}
+              }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{
+      RowBox[{"B", "=", 
+        RowBox[{"(", GridBox[{
+              {"b1"},
+              {"b2"}
+              }], ")"}]}], ";"}]}], "Input"],
+
+Cell["Matrix multiplication is done by the dot operator:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A\  . \ X\  // \ MatrixForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(a11\ x1 + a12\ x2\)},
+            {\(a21\ x1 + a22\ x2\)}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "To transpose a matrix, use the ",
+  StyleBox["Transpose",
+    FontWeight->"Bold"],
+  " function, \[AliasIndicator]tr\[AliasIndicator]"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A\[Transpose] \  // \ MatrixForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"a11", "a21"},
+            {"a12", "a22"}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Here X is a 2 by 1 matrix, so X\[Transpose] is a 1 by 2 matrix. 
+Selecting the first row from X\[Transpose] results here in an array with the \
+individual elements:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(X\)], "Input"],
+
+Cell[BoxData[
+    \({{x1}, {x2}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(X\[Transpose] \)], "Input"],
+
+Cell[BoxData[
+    \({{x1, x2}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(X\[Transpose] \)[\([1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \({x1, x2}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "To solve the set of equations symbolically for X, the ",
+  StyleBox["Solve",
+    FontWeight->"Bold"],
+  " function is used.\nThe first arguments is the (matrix) equation, and the \
+second argument the array with elements from X."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Solve\ [\ 
+      A\  . \ X\  \[Equal] \ B, \ \(X\[Transpose] \)[\([1]\)]]\)], "Input"],
+
+Cell[BoxData[
+    \({{x1 \[Rule] \(-\(\(\(-a22\)\ b1 + a12\ b2\)\/\(\(-a12\)\ a21 + 
+                  a11\ a22\)\)\), 
+        x2 \[Rule] \(-\(\(\(-a21\)\ b1 + a11\ b2\)\/\(a12\ a21 - 
+                  a11\ a22\)\)\)}}\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[TextData[{
+  "The output of the ",
+  StyleBox["Solve",
+    FontWeight->"Bold"],
+  " function is a 1 by 1 matrix with rules. The first row is a list with \
+rules that can be applied:"
+}], "Text"],
+
+Cell[BoxData[
+    \(\ \)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(Solve[\ 
+        A\  . \ X\  \[Equal] \ B, \ \(X\[Transpose] \)[\([1]\)]\ ]\)\ [\([\ 
+        1\ ]\)]\)], "Input"],
+
+Cell[BoxData[
+    \({x1 \[Rule] \(-\(\(\(-a22\)\ b1 + a12\ b2\)\/\(\(-a12\)\ a21 + 
+                a11\ a22\)\)\), 
+      x2 \[Rule] \(-\(\(\(-a21\)\ b1 + a11\ b2\)\/\(a12\ a21 - 
+                a11\ a22\)\)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(x1\  /. \ \(Solve\ [\ 
+          A\  . \ X\  \[Equal] \ 
+            B, \ \(X\[Transpose] \)[\([1]\)]\ ]\)\ [\([1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-\(\(\(-a22\)\ b1 + a12\ b2\)\/\(\(-a12\)\ a21 + 
+            a11\ a22\)\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["\nApplying to a Linear network", "Section",
+  FontVariations->{"Underline"->True}]], "Subtitle"],
+
+Cell["\<\
+Now to apply this to a practical linear network. First is to \
+compile a small signal schematic from the network. Here a differential pair \
+with an ideal current mirror.\
+\>", "Text"],
+
+Cell["\<\
+In this case, the noise sources are of interest. These are drawn in \
+the schematic:\
+\>", "Text"],
+
+Cell["\<\
+A small signal schematic is obtained by replacing the transistors \
+by a controlled current source and a rpi resistor.\
+\>", "Text"],
+
+Cell["\<\
+The ideal mirrorcan be interpreted as a copy of the current at the \
+other side. Note the polarity:\
+\>", "Text"],
+
+Cell[TextData[{
+  "This schematic really is a graphical representation of linear equations. \
+Since all sources are current sources, description in terms of currents seems \
+logical. Then it is easier to work with admittances:\n",
+  Cell[BoxData[
+      RowBox[{
+        StyleBox[\(Yb = 1\/rb\),
+          "Text"], 
+        StyleBox[",",
+          "Text"], 
+        RowBox[{
+          StyleBox["Ypi",
+            "Text"], "=", \(1\/rpi\)}], 
+        ",", \(Ye = \(\(1\/RE\) and\ Yl = 1\/RL\)\)}]], "Text"],
+  "\nThe behaviour of the circuit can be described bythe matrix equation:\nIs \
+== Y . V\nNow determination of Is, Y and V is straightforward:"
+}], "Text"],
+
+Cell[BoxData[{
+    RowBox[{
+      RowBox[{"Is", " ", "=", " ", 
+        RowBox[{"(", GridBox[{
+              {\(irb1 - ib1\)},
+              {\(ib1 - ic1 + ire\)},
+              {\(irb2 - ib2\)},
+              {\(ib2 - ic2 - ire\)},
+              {\(\(-ic1\) + ic2\)}
+              }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{
+      RowBox[{"Y", "=", 
+        RowBox[{"(", GridBox[{
+              {\(Yb + Ypi\), \(-Ypi\), "0", "0", "0"},
+              {\(\(-Ypi\) - gm\), \(Ypi + Ye + gm\), "0", \(-Ye\), "0"},
+              {"0", "0", \(Yb + Ypi\), \(-Ypi\), "0"},
+              {"0", \(-Ye\), \(\(-Ypi\) - gm\), \(Ypi + Ye + gm\), "0"},
+              {\(-gm\), "gm", "gm", \(-gm\), "Yl"}
+              }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{
+      RowBox[{"V", "=", 
+        RowBox[{"(", GridBox[{
+              {"V1"},
+              {"V2"},
+              {"V3"},
+              {"V4"},
+              {"V5"}
+              }], ")"}]}], ";"}]}], "Input"],
+
+Cell["Matrix Y is put up for examination:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Det[Y]\)], "Input"],
+
+Cell[BoxData[
+    \(gm\^2\ Yb\^2\ Yl + 2\ gm\ Yb\^2\ Ye\ Yl + 2\ gm\ Yb\^2\ Yl\ Ypi + 
+      2\ gm\ Yb\ Ye\ Yl\ Ypi + 2\ Yb\^2\ Ye\ Yl\ Ypi + Yb\^2\ Yl\ Ypi\^2 + 
+      2\ Yb\ Ye\ Yl\ Ypi\^2\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(NullSpace[Y]\)], "Input"],
+
+Cell[BoxData[
+    \({}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(RowReduce[Y] // MatrixForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"1", "0", "0", "0", "0"},
+            {"0", "1", "0", "0", "0"},
+            {"0", "0", "1", "0", "0"},
+            {"0", "0", "0", "1", "0"},
+            {"0", "0", "0", "0", "1"}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MatrixRank[Y]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Rules are made, so the solutions to be found will be in terms of \
+our desired quantities, such as impedances and \[Beta] in this case:\
+\>", \
+"Text"],
+
+Cell[BoxData[{
+    \(\(rZ\  = \ {\ Yb\  \[Rule] \ 1\/rb, Ye \[Rule] 1\/RE, 
+          Ypi \[Rule] 1\/rpi, Yl \[Rule] 1\/Rl};\)\), "\[IndentingNewLine]", 
+    \(\(rgm\  = \ {gm \[Rule] \[Beta]\/rpi};\)\), "\[IndentingNewLine]", 
+    \(\(rules = Join[rZ, rgm];\)\)}], "Input"],
+
+Cell["\<\
+Now the solution can be determined. Also the rules are made \
+effective at this place. Variable s will contain the solutions as a list of \
+rules (that is why the first row is selected by the last [[1]]:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(s\  = \(Solve[\ 
+          Y . V \[Equal] Is /. 
+            rules, \(V\[Transpose] \)[\([1]\)]\ \ ]\)\ \ [\([1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \({V5 \[Rule] \(-\(\(1\/\(2\ rb + RE + 2\ rpi + 
+                RE\ \[Beta]\)\)\((2\ ic1\ rb\ Rl - 2\ ic2\ rb\ Rl + 
+              ic1\ RE\ Rl - ic2\ RE\ Rl + 2\ ic1\ Rl\ rpi - 2\ ic2\ Rl\ rpi + 
+              2\ ib1\ rb\ Rl\ \[Beta] - 2\ ib2\ rb\ Rl\ \[Beta] - 
+              2\ irb1\ rb\ Rl\ \[Beta] + 2\ irb2\ rb\ Rl\ \[Beta] + 
+              ib1\ RE\ Rl\ \[Beta] - ib2\ RE\ Rl\ \[Beta] + 
+              2\ ire\ RE\ Rl\ \[Beta])\)\)\), 
+      V1 \[Rule] \(-\(\((ic1\ rb\^2 + ic2\ rb\^2 - irb1\ rb\^2 - 
+                irb2\ rb\^2 + ic1\ rb\ RE - irb1\ rb\ RE - ire\ rb\ RE + 
+                ib1\ rb\ rpi - ib2\ rb\ rpi + ic1\ rb\ rpi + ic2\ rb\ rpi - 
+                2\ irb1\ rb\ rpi + ib1\ rb\^2\ \[Beta] + 
+                ib2\ rb\^2\ \[Beta] - irb1\ rb\^2\ \[Beta] - 
+                irb2\ rb\^2\ \[Beta] + ib1\ rb\ RE\ \[Beta] + 
+                ic1\ rb\ RE\ \[Beta] - 2\ irb1\ rb\ RE\ \[Beta] - 
+                ire\ rb\ RE\ \[Beta] + 2\ ib1\ rb\ rpi\ \[Beta] - 
+                2\ irb1\ rb\ rpi\ \[Beta] + ib1\ rb\ RE\ \[Beta]\^2 - 
+                irb1\ rb\ RE\ \[Beta]\^2)\)/\((\((1 + \[Beta])\)\ \((2\ rb + 
+                    RE + 2\ rpi + RE\ \[Beta])\))\)\)\), 
+      V2 \[Rule] \(-\(\((ic1\ rb\^2 + ic2\ rb\^2 - irb1\ rb\^2 - 
+                irb2\ rb\^2 + ic1\ rb\ RE - irb1\ rb\ RE - ire\ rb\ RE - 
+                ib1\ rb\ rpi - ib2\ rb\ rpi + 2\ ic1\ rb\ rpi + 
+                2\ ic2\ rb\ rpi - irb1\ rb\ rpi - irb2\ rb\ rpi - 
+                ib1\ RE\ rpi + ic1\ RE\ rpi - ire\ RE\ rpi - ib1\ rpi\^2 - 
+                ib2\ rpi\^2 + ic1\ rpi\^2 + ic2\ rpi\^2 + 
+                ib1\ rb\^2\ \[Beta] + ib2\ rb\^2\ \[Beta] - 
+                irb1\ rb\^2\ \[Beta] - irb2\ rb\^2\ \[Beta] + 
+                ib1\ rb\ RE\ \[Beta] + ic1\ rb\ RE\ \[Beta] - 
+                2\ irb1\ rb\ RE\ \[Beta] - ire\ rb\ RE\ \[Beta] + 
+                ib1\ rb\ rpi\ \[Beta] + ib2\ rb\ rpi\ \[Beta] - 
+                irb1\ rb\ rpi\ \[Beta] - irb2\ rb\ rpi\ \[Beta] - 
+                ib1\ RE\ rpi\ \[Beta] + ic1\ RE\ rpi\ \[Beta] - 
+                ire\ RE\ rpi\ \[Beta] + ib1\ rb\ RE\ \[Beta]\^2 - 
+                irb1\ rb\ RE\ \[Beta]\^2)\)/\((\((1 + \[Beta])\)\ \((2\ rb + 
+                    RE + 2\ rpi + RE\ \[Beta])\))\)\)\), 
+      V3 \[Rule] \(-\(\((ic1\ rb\^2 + ic2\ rb\^2 - irb1\ rb\^2 - 
+                irb2\ rb\^2 + ic2\ rb\ RE - irb2\ rb\ RE + ire\ rb\ RE - 
+                ib1\ rb\ rpi + ib2\ rb\ rpi + ic1\ rb\ rpi + ic2\ rb\ rpi - 
+                2\ irb2\ rb\ rpi + ib1\ rb\^2\ \[Beta] + 
+                ib2\ rb\^2\ \[Beta] - irb1\ rb\^2\ \[Beta] - 
+                irb2\ rb\^2\ \[Beta] + ib2\ rb\ RE\ \[Beta] + 
+                ic2\ rb\ RE\ \[Beta] - 2\ irb2\ rb\ RE\ \[Beta] + 
+                ire\ rb\ RE\ \[Beta] + 2\ ib2\ rb\ rpi\ \[Beta] - 
+                2\ irb2\ rb\ rpi\ \[Beta] + ib2\ rb\ RE\ \[Beta]\^2 - 
+                irb2\ rb\ RE\ \[Beta]\^2)\)/\((\((1 + \[Beta])\)\ \((2\ rb + 
+                    RE + 2\ rpi + RE\ \[Beta])\))\)\)\), 
+      V4 \[Rule] \(-\(\((ic1\ rb\^2 + ic2\ rb\^2 - irb1\ rb\^2 - 
+                irb2\ rb\^2 + ic2\ rb\ RE - irb2\ rb\ RE + ire\ rb\ RE - 
+                ib1\ rb\ rpi - ib2\ rb\ rpi + 2\ ic1\ rb\ rpi + 
+                2\ ic2\ rb\ rpi - irb1\ rb\ rpi - irb2\ rb\ rpi - 
+                ib2\ RE\ rpi + ic2\ RE\ rpi + ire\ RE\ rpi - ib1\ rpi\^2 - 
+                ib2\ rpi\^2 + ic1\ rpi\^2 + ic2\ rpi\^2 + 
+                ib1\ rb\^2\ \[Beta] + ib2\ rb\^2\ \[Beta] - 
+                irb1\ rb\^2\ \[Beta] - irb2\ rb\^2\ \[Beta] + 
+                ib2\ rb\ RE\ \[Beta] + ic2\ rb\ RE\ \[Beta] - 
+                2\ irb2\ rb\ RE\ \[Beta] + ire\ rb\ RE\ \[Beta] + 
+                ib1\ rb\ rpi\ \[Beta] + ib2\ rb\ rpi\ \[Beta] - 
+                irb1\ rb\ rpi\ \[Beta] - irb2\ rb\ rpi\ \[Beta] - 
+                ib2\ RE\ rpi\ \[Beta] + ic2\ RE\ rpi\ \[Beta] + 
+                ire\ RE\ rpi\ \[Beta] + ib2\ rb\ RE\ \[Beta]\^2 - 
+                irb2\ rb\ RE\ \[Beta]\^2)\)/\((\((1 + \[Beta])\)\ \((2\ rb + 
+                    RE + 2\ rpi + RE\ \[Beta])\))\)\)\)}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+If only V5 would be of interest, the rule with the solutions s can \
+be applied to V5. Or the first element of s can be selected:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(V5 /. s\)], "Input"],
+
+Cell[BoxData[
+    \(\(-\(\(1\/\(2\ rb + RE + 2\ rpi + RE\ \[Beta]\)\)\((2\ ic1\ rb\ Rl - 
+          2\ ic2\ rb\ Rl + ic1\ RE\ Rl - ic2\ RE\ Rl + 2\ ic1\ Rl\ rpi - 
+          2\ ic2\ Rl\ rpi + 2\ ib1\ rb\ Rl\ \[Beta] - 
+          2\ ib2\ rb\ Rl\ \[Beta] - 2\ irb1\ rb\ Rl\ \[Beta] + 
+          2\ irb2\ rb\ Rl\ \[Beta] + ib1\ RE\ Rl\ \[Beta] - 
+          ib2\ RE\ Rl\ \[Beta] + 2\ ire\ RE\ Rl\ \[Beta])\)\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(s[\([1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \(V5 \[Rule] \(-\(\(1\/\(2\ rb + RE + 2\ rpi + 
+              RE\ \[Beta]\)\)\((2\ ic1\ rb\ Rl - 2\ ic2\ rb\ Rl + 
+            ic1\ RE\ Rl - ic2\ RE\ Rl + 2\ ic1\ Rl\ rpi - 2\ ic2\ Rl\ rpi + 
+            2\ ib1\ rb\ Rl\ \[Beta] - 2\ ib2\ rb\ Rl\ \[Beta] - 
+            2\ irb1\ rb\ Rl\ \[Beta] + 2\ irb2\ rb\ Rl\ \[Beta] + 
+            ib1\ RE\ Rl\ \[Beta] - ib2\ RE\ Rl\ \[Beta] + 
+            2\ ire\ RE\ Rl\ \[Beta])\)\)\)\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+It might be interesting to improve the format of the solution. To \
+do so, a list of sources and components is defined for ease:\
+\>", "Text"],
+
+Cell[BoxData[{
+    \(\(sources\  = \ {irb1, irb2, ib1, ib2, ic1, ic2, 
+          ire};\)\), "\[IndentingNewLine]", 
+    \(\(components\  = \ {rb, rpi, RE, \ Rl};\)\)}], "Input"],
+
+Cell[TextData[{
+  "The solution can be expressed in terms of the sources by using the ",
+  StyleBox["Collect",
+    FontWeight->"Bold"],
+  " function. To each resulting term ",
+  StyleBox["FullSimplify",
+    FontWeight->"Bold"],
+  " is applied:"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(sV5\  = \ Collect[V5\  /. \ s, sources, \ FullSimplify]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-\(\(ic1\ Rl\ \((2\ rb + RE + 2\ rpi)\)\)\/\(2\ rb + RE + 2\ rpi + 
+              RE\ \[Beta]\)\)\) + \(ic2\ Rl\ \((2\ rb + RE + 2\ rpi)\)\)\/\(2\
+\ rb + RE + 2\ rpi + RE\ \[Beta]\) + \(2\ irb1\ rb\ Rl\ \[Beta]\)\/\(2\ rb + \
+RE + 2\ rpi + RE\ \[Beta]\) - \(2\ irb2\ rb\ Rl\ \[Beta]\)\/\(2\ rb + RE + 2\ \
+rpi + RE\ \[Beta]\) - \(2\ ire\ RE\ Rl\ \[Beta]\)\/\(2\ rb + RE + 2\ rpi + RE\
+\ \[Beta]\) - \(ib1\ \((2\ rb + RE)\)\ Rl\ \[Beta]\)\/\(2\ rb + RE + 2\ rpi + \
+RE\ \[Beta]\) + \(ib2\ \((2\ rb + RE)\)\ Rl\ \[Beta]\)\/\(2\ rb + RE + 2\ rpi \
++ RE\ \[Beta]\)\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+In the following case, a function is made, that prints the result \
+first in terms of sources (as above) and then in terms of components:\
+\>", \
+"Text"],
+
+Cell[BoxData[
+    \(formatresult[result_, sources_, 
+        components_]\  := \[IndentingNewLine]For[i = 1, \ 
+        i\  \[LessEqual] \ 
+          Length[sources], \
+\[IndentingNewLine]Print[\[IndentingNewLine]MapAll[\[IndentingNewLine]Collect[\
+#, components, \ 
+                  Simplify] &, \[IndentingNewLine]Collect[\ \
+\(CoefficientList[\ result, sources[\([\)\(i\)\(]\)]\ ]\)[\([\)\(2\)\(]\)], 
+                sources[\([\)\(i\)\(]\)]\ , Simplify]\[IndentingNewLine]], 
+            sources[\([i]\)]\[IndentingNewLine]]\[IndentingNewLine]\(i++\)\
+\[IndentingNewLine]]\)], "Input"],
+
+Cell["\<\
+When the function is used, it can be seen that terms for RE are put \
+together:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(formatresult[V5 /. s, sources, \ components]\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\(\(2\ rb\ Rl\ \[Beta]\)\/\(2\ rb + 2\ rpi + RE\ \((1 + \
+\[Beta])\)\)\[InvisibleSpace]irb1\),
+      SequenceForm[ 
+        Times[ 2, rb, Rl, \[Beta], 
+          Power[ 
+            Plus[ 
+              Times[ 2, rb], 
+              Times[ 2, rpi], 
+              Times[ RE, 
+                Plus[ 1, \[Beta]]]], -1]], irb1],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\(\(-\(\(2\ rb\ Rl\ \[Beta]\)\/\(2\ rb + 2\ rpi + 
+                RE\ \((1 + \[Beta])\)\)\)\)\[InvisibleSpace]irb2\),
+      SequenceForm[ 
+        Times[ -2, rb, Rl, \[Beta], 
+          Power[ 
+            Plus[ 
+              Times[ 2, rb], 
+              Times[ 2, rpi], 
+              Times[ RE, 
+                Plus[ 1, \[Beta]]]], -1]], irb2],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\(\(-\(\(\((2\ rb + RE)\)\ Rl\ \[Beta]\)\/\(2\ rb + 
+                2\ rpi + RE\ \((1 + \[Beta])\)\)\)\)\[InvisibleSpace]ib1\),
+      SequenceForm[ 
+        Times[ -1, 
+          Plus[ 
+            Times[ 2, rb], RE], Rl, \[Beta], 
+          Power[ 
+            Plus[ 
+              Times[ 2, rb], 
+              Times[ 2, rpi], 
+              Times[ RE, 
+                Plus[ 1, \[Beta]]]], -1]], ib1],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\(\(\((2\ rb + RE)\)\ Rl\ \[Beta]\)\/\(2\ rb + 2\ rpi + \
+RE\ \((1 + \[Beta])\)\)\[InvisibleSpace]ib2\),
+      SequenceForm[ 
+        Times[ 
+          Plus[ 
+            Times[ 2, rb], RE], Rl, \[Beta], 
+          Power[ 
+            Plus[ 
+              Times[ 2, rb], 
+              Times[ 2, rpi], 
+              Times[ RE, 
+                Plus[ 1, \[Beta]]]], -1]], ib2],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\(\(-\(\(Rl\ \((2\ rb + RE + 2\ rpi)\)\)\/\(2\ rb + 
+                2\ rpi + RE\ \((1 + \[Beta])\)\)\)\)\[InvisibleSpace]ic1\),
+      SequenceForm[ 
+        Times[ -1, Rl, 
+          Plus[ 
+            Times[ 2, rb], RE, 
+            Times[ 2, rpi]], 
+          Power[ 
+            Plus[ 
+              Times[ 2, rb], 
+              Times[ 2, rpi], 
+              Times[ RE, 
+                Plus[ 1, \[Beta]]]], -1]], ic1],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\(\(Rl\ \((2\ rb + RE + 2\ rpi)\)\)\/\(2\ rb + 2\ rpi + \
+RE\ \((1 + \[Beta])\)\)\[InvisibleSpace]ic2\),
+      SequenceForm[ 
+        Times[ Rl, 
+          Plus[ 
+            Times[ 2, rb], RE, 
+            Times[ 2, rpi]], 
+          Power[ 
+            Plus[ 
+              Times[ 2, rb], 
+              Times[ 2, rpi], 
+              Times[ RE, 
+                Plus[ 1, \[Beta]]]], -1]], ic2],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\(\(-\(\(2\ RE\ Rl\ \[Beta]\)\/\(2\ rb + 2\ rpi + 
+                RE\ \((1 + \[Beta])\)\)\)\)\[InvisibleSpace]ire\),
+      SequenceForm[ 
+        Times[ -2, RE, Rl, \[Beta], 
+          Power[ 
+            Plus[ 
+              Times[ 2, rb], 
+              Times[ 2, rpi], 
+              Times[ RE, 
+                Plus[ 1, \[Beta]]]], -1]], ire],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell["\<\
+Note however, that the result of the function are not mathematica \
+expressions. Something to improve.\
+\>", "Text"]
+},
+FrontEndVersion->"5.1 for X",
+ScreenRectangle->{{0, 1600}, {0, 1200}},
+ScreenStyleEnvironment->"Working",
+CellGrouping->Manual,
+WindowSize->{836, 978},
+WindowMargins->{{80, Automatic}, {Automatic, 53}},
+ShowCellLabel->False,
+CellLabelAutoDelete->True,
+StyleDefinitions -> "ArticleModern.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 127, 3, 42, "Input"],
+
+Cell[CellGroupData[{
+Cell[1906, 58, 32, 0, 85, "Title"],
+Cell[1941, 60, 91, 4, 40, "ItemizedText"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2069, 69, 123, 1, 31, "Subtitle"],
+Cell[2195, 72, 66, 0, 26, "Text"],
+Cell[2264, 74, 537, 18, 136, "Input"],
+Cell[2804, 94, 66, 0, 26, "Text"],
+
+Cell[CellGroupData[{
+Cell[2895, 98, 60, 1, 42, "Input"],
+Cell[2958, 101, 344, 10, 60, "Output"]
+}, Open  ]],
+Cell[3317, 114, 165, 5, 26, "Text"],
+
+Cell[CellGroupData[{
+Cell[3507, 123, 65, 1, 42, "Input"],
+Cell[3575, 126, 326, 10, 60, "Output"]
+}, Open  ]],
+Cell[3916, 139, 188, 4, 44, "Text"],
+
+Cell[CellGroupData[{
+Cell[4129, 147, 34, 1, 42, "Input"],
+Cell[4166, 150, 46, 1, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4249, 156, 47, 1, 42, "Input"],
+Cell[4299, 159, 44, 1, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4380, 165, 60, 1, 42, "Input"],
+Cell[4443, 168, 42, 1, 42, "Output"]
+}, Open  ]],
+Cell[4500, 172, 260, 6, 44, "Text"],
+
+Cell[CellGroupData[{
+Cell[4785, 182, 106, 2, 42, "Input"],
+Cell[4894, 186, 234, 4, 59, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[5155, 194, 199, 6, 26, "Text"],
+Cell[5357, 202, 35, 1, 42, "Input"],
+
+Cell[CellGroupData[{
+Cell[5417, 207, 136, 3, 42, "Input"],
+Cell[5556, 212, 226, 4, 59, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5819, 221, 150, 3, 42, "Input"],
+Cell[5972, 226, 112, 2, 59, "Output"]
+}, Open  ]],
+Cell[6099, 231, 120, 1, 52, "Subtitle"],
+Cell[6222, 234, 194, 4, 44, "Text"],
+Cell[6419, 240, 108, 3, 26, "Text"],
+Cell[6530, 245, 142, 3, 26, "Text"],
+Cell[6675, 250, 123, 3, 26, "Text"],
+Cell[6801, 255, 661, 16, 120, "Text"],
+Cell[7465, 273, 982, 27, 324, "Input"],
+Cell[8450, 302, 51, 0, 26, "Text"],
+
+Cell[CellGroupData[{
+Cell[8526, 306, 39, 1, 42, "Input"],
+Cell[8568, 309, 204, 3, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8809, 317, 45, 1, 42, "Input"],
+Cell[8857, 320, 36, 1, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8930, 326, 59, 1, 42, "Input"],
+Cell[8992, 329, 465, 13, 114, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9494, 347, 46, 1, 42, "Input"],
+Cell[9543, 350, 35, 1, 42, "Output"]
+}, Open  ]],
+Cell[9593, 354, 161, 4, 26, "Text"],
+Cell[9757, 360, 274, 4, 119, "Input"],
+Cell[10034, 366, 227, 4, 44, "Text"],
+
+Cell[CellGroupData[{
+Cell[10286, 374, 148, 3, 42, "Input"],
+Cell[10437, 379, 4075, 61, 409, "Output"]
+}, Open  ]],
+Cell[14527, 443, 153, 3, 26, "Text"],
+
+Cell[CellGroupData[{
+Cell[14705, 450, 40, 1, 42, "Input"],
+Cell[14748, 453, 421, 6, 80, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[15206, 464, 43, 1, 42, "Input"],
+Cell[15252, 467, 457, 7, 98, "Output"]
+}, Open  ]],
+Cell[15724, 477, 152, 3, 26, "Text"],
+Cell[15879, 482, 177, 3, 58, "Input"],
+Cell[16059, 487, 256, 8, 26, "Text"],
+
+Cell[CellGroupData[{
+Cell[16340, 499, 88, 1, 42, "Input"],
+Cell[16431, 502, 596, 8, 102, "Output"]
+}, Open  ]],
+Cell[17042, 513, 163, 4, 26, "Text"],
+Cell[17208, 519, 591, 11, 186, "Input"],
+Cell[17802, 532, 103, 3, 26, "Text"],
+
+Cell[CellGroupData[{
+Cell[17930, 539, 77, 1, 42, "Input"],
+Cell[18010, 542, 395, 11, 58, "Print"],
+Cell[18408, 555, 420, 11, 58, "Print"],
+Cell[18831, 568, 475, 13, 58, "Print"],
+Cell[19309, 583, 447, 13, 58, "Print"],
+Cell[19759, 598, 495, 14, 58, "Print"],
+Cell[20257, 614, 467, 14, 58, "Print"],
+Cell[20727, 630, 418, 11, 58, "Print"]
+}, Open  ]],
+Cell[21160, 644, 126, 3, 26, "Text"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

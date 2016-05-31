@@ -1,0 +1,232 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      5493,        169]*)
+(*NotebookOutlinePosition[      6145,        192]*)
+(*  CellTagsIndexPosition[      6101,        188]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(Remove["\<Global`*\>"]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+
+Dec 13 2004
+martin.pos@philips.com\
+\>", "Text",
+  TextAlignment->Right],
+
+Cell[BoxData[
+    StyleBox[\(DSP\ homework\),
+      "Title"]], "Input",
+  TextAlignment->Center]
+}, Open  ]],
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ 
+          pic\  : \ 
+            simple\ function\ to\ capture\ a\ formula\ into\ a\ JPG\ picture\ \
+*) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(pic[name_, form_] := 
+        Module[\ {thecell, img}, \[IndentingNewLine]thecell = 
+            Cell[StyleForm[form], FontSize \[Rule] 14, 
+              PageWidth \[Rule] Infinity]; \[IndentingNewLine]Export[
+            name <> "\<.jpg\>", thecell]; \[IndentingNewLine]im = 
+            Import[name <> "\<.jpg\>"]; \[IndentingNewLine]Show[
+            im]\[IndentingNewLine]]\)}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ 
+          tablepic\  : \ 
+            simple\ function\ to\ make\ a\ table\ and\ generate\ a\ picture\ \
+of\ it\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(tablepic[name_, matrix_] := 
+        Module[\ {thecell, img}, \[IndentingNewLine]thecell = 
+            Cell[\[IndentingNewLine]DisplayForm[
+                FrameBox[
+                  GridBox[
+                    Map[List, 
+                      Map[ToString, 
+                        matrix]], \[IndentingNewLine]RowLines \[Rule] True, 
+                    ColumnLines \[Rule] 
+                      True]]\[IndentingNewLine]], \[IndentingNewLine]FontSize \
+\[Rule] 14, PageWidth \[Rule] 
+                Infinity\[IndentingNewLine]]; \[IndentingNewLine]Export[
+            name <> "\<.jpg\>", thecell]; \[IndentingNewLine]im = 
+            Import[name <> "\<.jpg\>"]; \[IndentingNewLine]Show[
+            im]\[IndentingNewLine]]\)}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(pic["\<FIR\>", \*"\"\<y[n]=\!\(\[Sum]\+\(i = 0\)\%\(N - 1\)\)c[i] \
+x[n-i]\>\""]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[\(\[SkeletonIndicator]  Graphics  \[SkeletonIndicator]\),
+      False,
+      Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(str = \*"\"\<\n\!\(\(x\^*\)\)[2n] = x[n]\\n\n\!\(\(x\^*\)\)[2n+1] = 0\
+\\n\ny[n] = \!\(\[Sum]\+\(i = 0\)\%\(N - 1\)\)c[i] \!\(\(x\^*\)\)[n-i]\\n\nM \
+= \!\(N\/2\), N even\\n\ny[2n] =\!\(\[Sum]\+\(i = 0\)\%\(M - 1\)\)c[2i] \
+\!\(\(x\^*\)\)[2n-2i]\\n\n        \\t=\!\(\[Sum]\+\(i = 0\)\%\(M - 1\)\)c[2i] \
+\!\(\(x\^*\)\)[2(n-i)]\\n\n        \\t=\!\(\[Sum]\+\(i = 0\)\%\(M - \
+1\)\)c[2i] x[n-i]\\n\ny[2n+1] =\!\(\[Sum]\+\(i = 0\)\%\(M - 1\)\)c[2i+1] \!\(\
+\(x\^*\)\)[2n+1-(2i+1)]\\n\n        \\t =\!\(\[Sum]\+\(i = 0\)\%\(M - \
+1\)\)c[2i+1] \!\(\(x\^*\)\)[2(n-i)]\\n\n        \\t =\!\(\[Sum]\+\(i = \
+0\)\%\(M - 1\)\)c[2i+1] x[n-i]\n\n\>\"";\)\)], "Input",
+  AutoIndent->False,
+  TextAlignment->Left,
+  TextJustification->0,
+  Hyphenation->False,
+  TabFilling->"Underline"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(pic["\<FIR2\>", str]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[\(\[SkeletonIndicator]  Graphics  \[SkeletonIndicator]\),
+      False,
+      Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(coeff = 
+      Join[Table[c[2  i], {i, 0, 8 - 1}], 
+        Table[c[2  i + 1], {i, 0, 8 - 1}]]\)], "Input"],
+
+Cell[BoxData[
+    \({c[0], c[2], c[4], c[6], c[8], c[10], c[12], c[14], c[1], c[3], c[5], 
+      c[7], c[9], c[11], c[13], c[15]}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(tablepic["\<FIR2coeff\>", coeff]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[\(\[SkeletonIndicator]  Graphics  \[SkeletonIndicator]\),
+      False,
+      Editable->False]], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for X",
+ScreenRectangle->{{0, 1280}, {0, 1022}},
+CellGrouping->Manual,
+WindowSize->{986, 809},
+WindowMargins->{{Automatic, 58}, {55, Automatic}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 55, 1, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[1834, 56, 83, 5, 68, "Text"],
+Cell[1920, 63, 96, 3, 56, "Input"]
+}, Open  ]],
+Cell[2031, 69, 622, 13, 123, "Input"],
+Cell[2656, 84, 987, 21, 203, "Input"],
+
+Cell[CellGroupData[{
+Cell[3668, 109, 113, 2, 56, "Input"],
+Cell[3784, 113, 130, 3, 27, "Output"]
+}, Open  ]],
+Cell[3929, 119, 792, 14, 484, "Input"],
+
+Cell[CellGroupData[{
+Cell[4746, 137, 53, 1, 27, "Input"],
+Cell[4802, 140, 130, 3, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4969, 148, 127, 3, 27, "Input"],
+Cell[5099, 153, 143, 2, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5279, 160, 65, 1, 27, "Input"],
+Cell[5347, 163, 130, 3, 27, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

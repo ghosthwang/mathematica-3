@@ -1,0 +1,270 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.1'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      5244,        174]*)
+(*NotebookOutlinePosition[      6250,        206]*)
+(*  CellTagsIndexPosition[      6206,        202]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(Clear["\<Global`*\>"]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+    \(TraditionalForm\`Limit\)],
+  FontVariations->{"Underline"->True}]], "Title"],
+
+Cell["Dec 15 2005 - martin.pos@philips.com", "SmallText"],
+
+Cell[BoxData[
+    \(f[c_] := \((\(\((z - c)\) - \@\(\((x - b)\)\^2 + y\^2 + \((z - \
+c)\)\^2\)\)\/\(\((z + c)\) - \@\(\((x - b)\)\^2 + y\^2 + \((z + \
+c)\)\^2\)\))\) \((\(\((z + c)\) - \@\(\((x + b)\)\^2 + y\^2 + \((z + \
+c)\)\^2\)\)\/\(\((z - c)\) - \@\(\((x + b)\)\^2 + y\^2 + \((z - \
+c)\)\^2\)\))\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Limit[f[c], c \[Rule] \[Infinity]]\)], "Input"],
+
+Cell[BoxData[
+    \(\(b\^2 + 2\ b\ x + x\^2 + y\^2\)\/\(b\^2 - 2\ b\ x + x\^2 + y\^2\)\)], \
+"Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Map[FullSimplify, Limit[f[c], c \[Rule] \[Infinity]], 1]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\((b + x)\)\^2 + y\^2\)\/\(\((b - x)\)\^2 + y\^2\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Limit[\(u - \@\(u\^2 + \[Alpha]\)\)\/\(u - \@\(u\^2 + \[Beta]\)\), \ 
+      u \[Rule] \[Infinity]]\)], "Input"],
+
+Cell[BoxData[
+    \(\[Alpha]\/\[Beta]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(u - \@\(u\^2 + \[Alpha]\)\)\/\(u - \@\(u\^2 + \[Beta]\)\) == \(\((u - \
+\@\(u\^2 + \[Alpha]\))\)\/\((u - \@\(u\^2 + \[Beta]\))\)\) \(\((u + \@\(u\^2 \
++ \[Alpha]\))\)\/\((u + \@\(u\^2 + \[Beta]\))\)\) \((u + \@\(u\^2 + \
+\[Beta]\))\)\/\((u + \@\(u\^2 + \[Alpha]\))\)\)], "Input"],
+
+Cell[BoxData[
+    \(True\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Simplify[\(u - \@\(u\^2 + \[Alpha]\)\)\/\(u - \@\(u\^2 + \[Beta]\)\) \
+\[Equal] \(\(u\^2 - \((u\^2 + \[Alpha])\)\)\/\(u\^2 - \((u\^2 + \
+\[Beta])\)\)\) \(u + \@\(u\^2 + \[Beta]\)\)\/\(u + \@\(u\^2 + \[Alpha]\)\) \
+\[Equal] \(\[Alpha]\/\[Beta]\) \(u + \@\(u\^2 + \[Beta]\)\)\/\(u + \@\(u\^2 + \
+\[Alpha]\)\)]\)], "Input",
+  Evaluatable->True,
+  Background->RGBColor[0.854902, 0.92549, 1]],
+
+Cell[BoxData[
+    \(True\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Simplify[\((\(\((u - \@\(u\^2 + \[Alpha]\))\)\/\((u - \@\(u\^2 + \
+\[Beta]\))\)\) \((u + \@\(u\^2 + \[Alpha]\))\)\/\((u + \@\(u\^2 + \
+\[Beta]\))\))\)]\)], "Input"],
+
+Cell[BoxData[
+    \(\[Alpha]\/\[Beta]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Simplify[\(u - \@\(u\^2 + \[Alpha]\)\)\/\(u - \@\(u\^2 + \[Beta]\)\) == \
+\(\[Alpha]\/\[Beta]\) \((u + \@\(u\^2 + \[Beta]\))\)\/\((u + \@\(u\^2 + \
+\[Alpha]\))\)]\)], "Input"],
+
+Cell[BoxData[
+    \(True\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Simplify[\(u - \@\(u\^2 + \[Alpha]\)\)\/\(u - \@\(u\^2 + \[Beta]\)\) \
+\[Equal] \(\(u\^2 - \((u\^2 + \[Alpha])\)\)\/\(u\^2 - \((u\^2 + \
+\[Beta])\)\)\) \((u + \@\(u\^2 + \[Beta]\))\)\/\((u + \@\(u\^2 + \
+\[Alpha]\))\)]\)], "Input"],
+
+Cell[BoxData[
+    \(True\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Simplify[\(u - \@\(u\^2 + \[Alpha]\)\)\/\(u - \@\(u\^2 + \[Beta]\)\) \
+\[Equal] \(\(u\^2 - \((u\^2 + \[Alpha])\)\)\/\(u\^2 - \((u\^2 + \
+\[Beta])\)\)\) \(u + \@\(u\^2 + \[Beta]\)\)\/\(u + \@\(u\^2 + \[Alpha]\)\) \
+\[Equal] \(\[Alpha]\/\[Beta]\) \(u + \@\(u\^2 + \[Beta]\)\)\/\(u + \@\(u\^2 + \
+\[Alpha]\)\) == \(\[Alpha]\/\[Beta]\) \(1 + \@\(1 + \[Beta]\/u\^2\)\)\/\(1 + \
+\@\(1 + \[Alpha]\/u\^2\)\), {u > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(True\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.1 for X",
+ScreenRectangle->{{0, 1280}, {0, 1022}},
+CellGrouping->Manual,
+WindowSize->{1169, 714},
+WindowMargins->{{Automatic, 29}, {97, Automatic}},
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperSize"->{597.562, 842.375},
+"PaperOrientation"->"Portrait",
+"PostScriptOutputFile":>FrontEnd`FileName[{$RootDirectory, "home", "pos", \
+"Documents", "mathematica"}, "Untitled-1.ps", CharacterEncoding -> \
+"iso8859-1"],
+"Magnification"->1},
+CellLabelAutoDelete->True,
+Magnification->1.5
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 54, 1, 39, "Input"],
+
+Cell[CellGroupData[{
+Cell[1833, 56, 110, 2, 119, "Title"],
+Cell[1946, 60, 57, 0, 40, "SmallText"],
+Cell[2006, 62, 315, 5, 100, "Input"],
+
+Cell[CellGroupData[{
+Cell[2346, 71, 67, 1, 39, "Input"],
+Cell[2416, 74, 102, 2, 69, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2555, 81, 89, 1, 39, "Input"],
+Cell[2647, 84, 86, 1, 69, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2770, 90, 131, 2, 100, "Input"],
+Cell[2904, 94, 51, 1, 60, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2992, 100, 301, 4, 121, "Input"],
+Cell[3296, 106, 38, 1, 38, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3371, 112, 407, 7, 124, "Input",
+  Evaluatable->True],
+Cell[3781, 121, 38, 1, 38, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3868, 128, 184, 3, 121, "Input"],
+Cell[4055, 133, 51, 1, 60, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4143, 139, 195, 3, 121, "Input"],
+Cell[4341, 144, 38, 1, 38, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4416, 150, 251, 4, 121, "Input"],
+Cell[4670, 156, 38, 1, 38, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4745, 162, 442, 6, 181, "Input"],
+Cell[5190, 170, 38, 1, 38, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

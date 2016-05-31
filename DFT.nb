@@ -1,0 +1,1083 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     38759,       1014]*)
+(*NotebookOutlinePosition[     39417,       1037]*)
+(*  CellTagsIndexPosition[     39373,       1033]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[{
+    StyleBox["DFT",
+      "Title"], "\[IndentingNewLine]", 
+    StyleBox[\(Apr\ 19\ 2004\ martin . pos@philips . com\),
+      "SmallText"]}], "Input",
+  Evaluatable->False,
+  TextAlignment->Center],
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ 
+          load\ Graphics\ package\ for\ plotting\ functions\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      StyleBox["\[IndentingNewLine]",
+        FontColor->RGBColor[0, 0.501961, 0.501961]], 
+      RowBox[{\(<< Graphics`\), "\[IndentingNewLine]", 
+        StyleBox[\( (*\ don' t\ warn\ for\ possible\ spelling\ errors\ *) \),
+          FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]", 
+        StyleBox[\(Off[General::spell1]\),
+          "MR"]}]}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(dft[y_]\), ":=", 
+      RowBox[{
+        StyleBox["Module",
+          FontColor->GrayLevel[0.333333]], 
+        StyleBox["[",
+          FontColor->GrayLevel[0.333333]], "\[IndentingNewLine]", 
+        StyleBox[\( (*\ local\ \(variables : \ N\ and\ x\)\ *) \),
+          FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]", 
+        RowBox[{
+          StyleBox[\({N, x}\),
+            FontColor->GrayLevel[0.333333]], 
+          StyleBox[",",
+            FontColor->GrayLevel[0.333333]], 
+          StyleBox["\[IndentingNewLine]",
+            FontColor->GrayLevel[0.333333]], 
+          
+          StyleBox[\( (*\ \(\(--\(--\(--\(--\(--\(-\ 
+                              function\)\)\)\)\)\)\ \(\(\(\(\(body\ --\)--\)\
+--\)--\)--\)\)\(-\)\ *) \),
+            FontColor->RGBColor[0, 0, 1]], 
+          StyleBox["\[IndentingNewLine]",
+            FontColor->GrayLevel[0.333333]], 
+          RowBox[{
+            StyleBox[\(N = Length[y]\),
+              FontColor->GrayLevel[0.333333]], 
+            StyleBox[";",
+              FontColor->GrayLevel[0.333333]], "\[IndentingNewLine]", 
+            
+            StyleBox[\( (*\ 
+                x[n]\ because\ lists\ in\ mathematica\ are\ 1 - based\ *) \),
+              FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]", 
+            StyleBox[\(x[n_] := y[\([n + 1]\)]\),
+              FontColor->GrayLevel[0.333333]], 
+            StyleBox[";",
+              FontColor->GrayLevel[0.333333]], "\[IndentingNewLine]", 
+            StyleBox[\( (*\ Table\ returns\ a\ \((1 - based)\)\ list\ *) \),
+              FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]", 
+            RowBox[{
+              StyleBox["Table",
+                FontColor->GrayLevel[0.333333]], 
+              StyleBox["[",
+                FontColor->GrayLevel[0.333333]], "\[IndentingNewLine]", 
+              RowBox[{
+                
+                StyleBox[\(\[Sum]\+\(n = 0\)\%\(N - 1\)x[
+                        
+                        n]\ \[ExponentialE]\^\(\(-\[ImaginaryJ]\) \(\(2  \
+\[Pi]\)\/N\) n\ k\)\),
+                  FontSize->18], ",", "\[IndentingNewLine]", 
+                StyleBox[\({k, 0, N - 1}\),
+                  FontColor->GrayLevel[0.333333]]}], 
+              StyleBox["\[IndentingNewLine]",
+                FontColor->GrayLevel[0.333333]], 
+              StyleBox["]",
+                FontColor->GrayLevel[0.333333]]}]}]}], 
+        StyleBox["\[IndentingNewLine]",
+          FontColor->GrayLevel[0.333333]], 
+        StyleBox[\( (*\ \
+\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(-\(-\(--\(--\(---\)\
+\)\)\)\)\)\)\)\)\)\)\)\)\)\)\)\)\)\)\ *) \),
+          FontColor->RGBColor[0, 0, 1]], 
+        StyleBox["\[IndentingNewLine]",
+          FontColor->GrayLevel[0.333333]], 
+        StyleBox["]",
+          FontColor->GrayLevel[0.333333]]}]}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(idft[Y_]\), ":=", 
+      RowBox[{
+        StyleBox["Module",
+          FontColor->GrayLevel[0.333333]], 
+        StyleBox["[",
+          FontColor->GrayLevel[0.333333]], "\[IndentingNewLine]", 
+        StyleBox[\( (*\ local\ \(variables : \ N\ and\ X\)\ *) \),
+          FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]", 
+        RowBox[{
+          StyleBox[\({N, X}\),
+            FontColor->GrayLevel[0.333333]], 
+          StyleBox[",",
+            FontColor->GrayLevel[0.333333]], 
+          StyleBox["\[IndentingNewLine]",
+            FontColor->GrayLevel[0.333333]], 
+          
+          StyleBox[\( (*\ \(\(--\(--\(--\(--\(--\(-\ 
+                              function\)\)\)\)\)\)\ \(\(\(\(\(body\ --\)--\)\
+--\)--\)--\)\)\(-\)\ *) \),
+            FontColor->RGBColor[0, 0, 1]], 
+          StyleBox["\[IndentingNewLine]",
+            FontColor->GrayLevel[0.333333]], 
+          RowBox[{
+            StyleBox[\(N = Length[Y]\),
+              FontColor->GrayLevel[0.333333]], 
+            StyleBox[";",
+              FontColor->GrayLevel[0.333333]], "\[IndentingNewLine]", 
+            
+            StyleBox[\( (*\ 
+                X[k]\ because\ lists\ in\ mathematica\ are\ 1 - based\ *) \),
+              FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]", 
+            StyleBox[\(X[k_] := Y[\([k + 1]\)]\),
+              FontColor->GrayLevel[0.333333]], 
+            StyleBox[";",
+              FontColor->GrayLevel[0.333333]], "\[IndentingNewLine]", 
+            StyleBox[\( (*\ Table\ returns\ a\ \((1 - based)\)\ list\ *) \),
+              FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]", 
+            RowBox[{
+              StyleBox["Table",
+                FontColor->GrayLevel[0.333333]], 
+              StyleBox["[",
+                FontColor->GrayLevel[0.333333]], "\[IndentingNewLine]", 
+              RowBox[{
+                
+                StyleBox[\(\(1\/N\) \(\[Sum]\+\(k = 0\)\%\(N - 1\)X[
+                          
+                          k]\ \[ExponentialE]\^\(\[ImaginaryJ] \(\( 2  \
+\[Pi]\)\/N\) n\ k\)\)\),
+                  FontSize->18], ",", "\[IndentingNewLine]", 
+                StyleBox[\({n, 0, N - 1}\),
+                  FontColor->GrayLevel[0.333333]]}], 
+              StyleBox["\[IndentingNewLine]",
+                FontColor->GrayLevel[0.333333]], 
+              StyleBox["]",
+                FontColor->GrayLevel[0.333333]]}]}]}], 
+        StyleBox["\[IndentingNewLine]",
+          FontColor->GrayLevel[0.333333]], 
+        StyleBox[\( (*\ \
+\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(-\(-\(--\(--\(---\)\
+\)\)\)\)\)\)\)\)\)\)\)\)\)\)\)\)\)\)\ *) \),
+          FontColor->RGBColor[0, 0, 1]], 
+        StyleBox["\[IndentingNewLine]",
+          FontColor->GrayLevel[0.333333]], 
+        StyleBox["]",
+          FontColor->GrayLevel[0.333333]]}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(x = {1, 2, 2, 1}\)], "Input"],
+
+Cell[BoxData[
+    \({1, 2, 2, 1}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    RowBox[{\(nplot[x_]\), ":=", 
+      RowBox[{"Module", "[", "\[IndentingNewLine]", 
+        StyleBox[\( (*\ local\ variables\ *) \),
+          FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]", 
+        RowBox[{\({N, ticks, \ g}\), ",", "\[IndentingNewLine]", 
+          
+          StyleBox[\( (*\ \(\(--\(--\(--\(--\(--\(-\ 
+                              function\)\)\)\)\)\)\ \(\(\(\(\(body\ --\)--\)\
+--\)--\)--\)\)\(-\)\ *) \),
+            FontColor->RGBColor[0, 0, 1]], 
+          "\[IndentingNewLine]", \(N := 
+            Length[x]; \[IndentingNewLine]ticks = {Table[{i, i - 1}, {i, 1, 
+                  N}], Union[Join[{0}, x]]}; \[IndentingNewLine]g = 
+            ListPlot[\[IndentingNewLine]x, \[IndentingNewLine]Ticks\  \[Rule] 
+                ticks, \[IndentingNewLine]AxesLabel \[Rule] {"\<n\>", "\<x[n]\
+\>"}, \[IndentingNewLine]PlotStyle \[Rule] 
+                PointSize[
+                  0.037], \[IndentingNewLine]PlotRange \[Rule] {Min[{Min[x], 
+                        0}] - 1\/2, 
+                  Max[x] + 1}, \[IndentingNewLine]ImageSize \[Rule] 
+                300\[IndentingNewLine]]\)}], 
+        StyleBox["\[IndentingNewLine]",
+          FontColor->RGBColor[0, 0, 1]], 
+        StyleBox[\( (*\ \
+\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(--\(-\(-\(--\(--\(---\)\
+\)\)\)\)\)\)\)\)\)\)\)\)\)\)\)\)\)\)\ *) \),
+          FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]", 
+        StyleBox["]",
+          FontColor->GrayLevel[0]]}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(nplot[x]\)], "Input"],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .61803 
+%%ImageSize: 300 185.41 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+-0.293651 0.31746 0.0882906 0.176581 [
+[.34127 .07579 -3 -9 ]
+[.34127 .07579 3 0 ]
+[.65873 .07579 -3 -9 ]
+[.65873 .07579 3 0 ]
+[.97619 .07579 -3 -9 ]
+[.97619 .07579 3 0 ]
+[1.025 .08829 0 -4.90625 ]
+[1.025 .08829 10 4.90625 ]
+[.01131 .26487 -6 -4.5 ]
+[.01131 .26487 0 4.5 ]
+[.01131 .44145 -6 -4.5 ]
+[.01131 .44145 0 4.5 ]
+[.02381 .64303 -14 0 ]
+[.02381 .64303 14 10.125 ]
+[ 0 0 0 0 ]
+[ 1 .61803 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 g
+.25 Mabswid
+[ ] 0 setdash
+.34127 .08829 m
+.34127 .09454 L
+s
+[(1)] .34127 .07579 0 1 Mshowa
+.65873 .08829 m
+.65873 .09454 L
+s
+[(2)] .65873 .07579 0 1 Mshowa
+.97619 .08829 m
+.97619 .09454 L
+s
+[(3)] .97619 .07579 0 1 Mshowa
+0 .08829 m
+1 .08829 L
+s
+gsave
+1.025 .08829 -61 -8.90625 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 17.8125 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 11.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 11.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(n) show
+69.000 11.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+.02381 .26487 m
+.03006 .26487 L
+s
+[(1)] .01131 .26487 1 0 Mshowa
+.02381 .44145 m
+.03006 .44145 L
+s
+[(2)] .01131 .44145 1 0 Mshowa
+.02381 0 m
+.02381 .61803 L
+s
+gsave
+.02381 .64303 -75 -4 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 18.125 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 11.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 11.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(x) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+69.000 11.250 moveto
+(@) show
+75.000 11.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(n) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+81.000 11.250 moveto
+(D) show
+87.000 11.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+0 0 m
+1 0 L
+1 .61803 L
+0 .61803 L
+closepath
+clip
+newpath
+.037 w
+.02381 .26487 Mdot
+.34127 .44145 Mdot
+.65873 .44145 Mdot
+.97619 .26487 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{300, 185.375},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004/0000^@P10`40000100000800002008200000
+P800P020P<30`<3L`:K:l24Q8GQgN?7alLc<c<30`92@T0000>CTi<71`OCdm861P@000?ooomSHf<c<
+c9VIV@00008K:bPmBX2=UDiOJ_ooogQgN6IUI/71`CXj>_ooonCTi<71`OCdm861P@00080009<V9[mo
+OjI<C?oook^k^ijNW^;RhVATI0000<c<c9VIVC<c<fIVIVJIVIW<c02IV@0cIP1VV@1VIP0c<jf][G=c
+LmkNg[fm_F=SHiBDU?HR5eok5aDeoool5eOnoo@nod92@^7QhC8b</S8b6ATI4];BgemOIJFUTLc<VIV
+c7QYGIVIoomV<l6j]Lfj^CTb;3<cIR8R8T:JYeQHh7=_K]GEe2E15oIPZiP55n3Ph000`;g<c;no_`00
+0?oo0?oooooo0?oo0?oo0=WVoooo0?ooc?oo0?nol_oo0?l0oooo003o0?oo0?oV_ooo003ooooo03Vo
+oooo0?n00?oo0?l00?oo09T0i_oo003<I_oo0;m09_oo0000oooo08b<Y_oo0=W<0?oo0>HO3Ooo05h0
+i_oo02J<Jooo080V9_oo03<cVOoo00000?oo0<c<fOoo0:JVY_oo07=cLooo0;g<c?oo0<c<c?oo0<O7
+aooo0?l00?oo07l0Oo;bl_oo0?oo0?oooooo00000?oo00000?oo00000?oo08b<S?oo0?oooooo05mO
+Ggl00;>c/gmoOn3Ph?oo08000?oo03<c<ooo03>V3Ooo03>I6_oo0<b0FOoo0<aV@?oo0;>c/ooo0;Vi
+0?oo04a<C>?YjFQ`L=OGej2OWJ>SX`1E001Eo`2Z002ZoeD005D0oeEE05EEoeFZ05FZoeGo05GoojX0
+0:X0ojYE0:YEojZZ0:ZZoj[o0:[ooomE0?mEoonZ0?nZogAaL;jn_:gOof1OG^3Nfg9bL;^k^oQj5oZ_
+_Xhekookl:2PY820P?l0003o0?oo0000ool0o`3oooooo`oo00<0ool0oolKo`003ol00`3oo`3ooa_o
+000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo
+00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3o
+o`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo057o
+101Bo`@0Dol201[o000?o`030?oo05?o00<0ool0DOl00`3oo`1Co`040?oo01Wo000?o`030?oo05?o
+00<0ool0D_l00`3oo`1Eo`030?oo01Oo000?o`030?oo05?o00<0ool0Dol00`3oo`1Bo`806_l000oo
+00<0ool0Dol00`3oo`1Do`030?oo05?o00<0ool05ol000oo00<0ool0DOl305?o00@0ool0D_l0103o
+o`0Io`003ol00`3oo`1Co`030?oo05;o0P1Do`806_l000oo00<0ool0oolKo`003ol00`3oo`3ooa_o
+000?o`030?oo0?oo4?l30003o`0000Go0009ool0400:o`040?oo00Ko000?o`030?oo05?o00<0ool0
+Dol00`3oo`1Co`030?oo00ko00@0ool01_l000oo00<0ool0oolAo`040?oo00Ko000?o`030?oo0?oo
+4?l0103o0007o`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3o
+o`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo
+6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`00
+3ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`03
+0?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0
+oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o
+000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo
+00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3o
+o`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo
+6ol000oo00<0ool0oolKo`003Ol60?co1P0Go`003?l80?[o200Fo`003?l90?Wo2@0Eo`001ol40003
+o`0000L0nOl901Go0009o`030?l000T0n?l:01Go0009o`030?oo00T0nOl901Go0009o`030?oo00T0
+nOl901Go0009o`030?oo00P0n_l801Ko0007o`<00ol60?co1P0Go`002Ol00`3oo`03o`80ool2o`03
+0?oo01Oo000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo
+6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`00
+3ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`03
+0?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0
+oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o
+000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo
+00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3o
+o`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo
+6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`00
+3ol00`3oo`1Ao`H0D?l606go000?o`030?oo053o201>o`P0K?l000oo00<0ool0D?l904go2@1[o`00
+1ol400Co00<0ool0D?l904go2@1[o`001ol00`3oo`05o`030?oo04oo2P1<o`X0Jol000So00<0ool0
+1?l2057o2@1=o`T0Jol000Wo00<0ool00ol00`3oo`1@o`T0COl906_o000:o`030?oo00;o00<0ool0
+D?l804ko201/o`001ol0103oo`04o`030?oo057o1P1@o`H0KOl000So0P05o`030?oo05Co00<0ool0
+Dol00`3oo`1]o`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3o
+o`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo
+6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`00
+3ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`03
+0?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0
+oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o
+000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo
+00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3o
+o`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo
+6ol000oo00<0ool0oolKo`003ol00`3oo`3ooa_o000?o`030?oo0?oo6ol000oo00<0ool0oolKo`00
+3ol00`3oo`3ooa_o003oobgo003oobgo003oobgo003oobgo003oobgo003oobgo003oobgo003oobgo
+000<o`802?l20?oo5Ol000co00<0ool02?l00`3oo`3ooa?o0003o`8000?o00001?l00`3oo`030003
+o`0000;o00<0ool0oolCo`001?l00`3o0005o`050?ooo`000_l01@3oool00?oo5Ol000Go00<0ool0
+1?l01@3oool000;o00D0oooo003ooaGo0004o`030?l000Go00D0oooo0002o`050?ooo`00oolEo`00
+0ol20003o`0000Co00D0ool0o`0200Co00<0ool0oolCo`003?l200So0P3ooaGo003oobgo0000\
+\>"],
+  ImageRangeCache->{{{0, 299}, {184.375, 0}} -> {0.815769, -0.500019, \
+0.0116245, 0.0208987}}],
+
+Cell[BoxData[
+    TagBox[\(\[SkeletonIndicator]  Graphics  \[SkeletonIndicator]\),
+      False,
+      Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(dft[x]\)], "Input"],
+
+Cell[BoxData[
+    \({6, \(-1\) - \[ImaginaryI], 0, \(-1\) + \[ImaginaryI]}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(BarChart[\[IndentingNewLine]Join[Abs[dft[x]], 
+        Abs[dft[x]]], \[IndentingNewLine]Ticks\  \[Rule] {{0, 1}, 
+          Automatic}\[IndentingNewLine]]\)], "Input"],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .61803 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+-0.0487805 0.121951 0.0147151 0.0981006 [
+[.07317 .00222 -3 -9 ]
+[.07317 .00222 3 0 ]
+[-0.0125 .11282 -6 -4.5 ]
+[-0.0125 .11282 0 4.5 ]
+[-0.0125 .21092 -6 -4.5 ]
+[-0.0125 .21092 0 4.5 ]
+[-0.0125 .30902 -6 -4.5 ]
+[-0.0125 .30902 0 4.5 ]
+[-0.0125 .40712 -6 -4.5 ]
+[-0.0125 .40712 0 4.5 ]
+[-0.0125 .50522 -6 -4.5 ]
+[-0.0125 .50522 0 4.5 ]
+[-0.0125 .60332 -6 -4.5 ]
+[-0.0125 .60332 0 4.5 ]
+[ 0 0 0 0 ]
+[ 1 .61803 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 g
+.25 Mabswid
+[ ] 0 setdash
+.07317 .01472 m
+.07317 .02097 L
+s
+[(1)] .07317 .00222 0 1 Mshowa
+0 .01472 m
+1 .01472 L
+s
+0 .11282 m
+.00625 .11282 L
+s
+[(1)] -0.0125 .11282 1 0 Mshowa
+0 .21092 m
+.00625 .21092 L
+s
+[(2)] -0.0125 .21092 1 0 Mshowa
+0 .30902 m
+.00625 .30902 L
+s
+[(3)] -0.0125 .30902 1 0 Mshowa
+0 .40712 m
+.00625 .40712 L
+s
+[(4)] -0.0125 .40712 1 0 Mshowa
+0 .50522 m
+.00625 .50522 L
+s
+[(5)] -0.0125 .50522 1 0 Mshowa
+0 .60332 m
+.00625 .60332 L
+s
+[(6)] -0.0125 .60332 1 0 Mshowa
+.125 Mabswid
+0 .03434 m
+.00375 .03434 L
+s
+0 .05396 m
+.00375 .05396 L
+s
+0 .07358 m
+.00375 .07358 L
+s
+0 .0932 m
+.00375 .0932 L
+s
+0 .13244 m
+.00375 .13244 L
+s
+0 .15206 m
+.00375 .15206 L
+s
+0 .17168 m
+.00375 .17168 L
+s
+0 .1913 m
+.00375 .1913 L
+s
+0 .23054 m
+.00375 .23054 L
+s
+0 .25016 m
+.00375 .25016 L
+s
+0 .26978 m
+.00375 .26978 L
+s
+0 .2894 m
+.00375 .2894 L
+s
+0 .32864 m
+.00375 .32864 L
+s
+0 .34826 m
+.00375 .34826 L
+s
+0 .36788 m
+.00375 .36788 L
+s
+0 .3875 m
+.00375 .3875 L
+s
+0 .42674 m
+.00375 .42674 L
+s
+0 .44636 m
+.00375 .44636 L
+s
+0 .46598 m
+.00375 .46598 L
+s
+0 .4856 m
+.00375 .4856 L
+s
+0 .52484 m
+.00375 .52484 L
+s
+0 .54446 m
+.00375 .54446 L
+s
+0 .56408 m
+.00375 .56408 L
+s
+0 .5837 m
+.00375 .5837 L
+s
+.25 Mabswid
+0 0 m
+0 .61803 L
+s
+0 0 m
+1 0 L
+1 .61803 L
+0 .61803 L
+closepath
+clip
+newpath
+1 0 0 r
+.02439 .01472 m
+.02439 .60332 L
+.12195 .60332 L
+.12195 .01472 L
+F
+0 g
+.5 Mabswid
+.02439 .01472 m
+.02439 .60332 L
+.12195 .60332 L
+.12195 .01472 L
+.02439 .01472 L
+s
+1 0 0 r
+.14634 .01472 m
+.14634 .15345 L
+.2439 .15345 L
+.2439 .01472 L
+F
+0 g
+.14634 .01472 m
+.14634 .15345 L
+.2439 .15345 L
+.2439 .01472 L
+.14634 .01472 L
+s
+1 0 0 r
+.26829 .01472 m
+.26829 .01472 L
+.36585 .01472 L
+.36585 .01472 L
+F
+0 g
+.26829 .01472 m
+.26829 .01472 L
+.36585 .01472 L
+.36585 .01472 L
+.26829 .01472 L
+s
+1 0 0 r
+.39024 .01472 m
+.39024 .15345 L
+.4878 .15345 L
+.4878 .01472 L
+F
+0 g
+.39024 .01472 m
+.39024 .15345 L
+.4878 .15345 L
+.4878 .01472 L
+.39024 .01472 L
+s
+1 0 0 r
+.5122 .01472 m
+.5122 .60332 L
+.60976 .60332 L
+.60976 .01472 L
+F
+0 g
+.5122 .01472 m
+.5122 .60332 L
+.60976 .60332 L
+.60976 .01472 L
+.5122 .01472 L
+s
+1 0 0 r
+.63415 .01472 m
+.63415 .15345 L
+.73171 .15345 L
+.73171 .01472 L
+F
+0 g
+.63415 .01472 m
+.63415 .15345 L
+.73171 .15345 L
+.73171 .01472 L
+.63415 .01472 L
+s
+1 0 0 r
+.7561 .01472 m
+.7561 .01472 L
+.85366 .01472 L
+.85366 .01472 L
+F
+0 g
+.7561 .01472 m
+.7561 .01472 L
+.85366 .01472 L
+.85366 .01472 L
+.7561 .01472 L
+s
+1 0 0 r
+.87805 .01472 m
+.87805 .15345 L
+.97561 .15345 L
+.97561 .01472 L
+F
+0 g
+.87805 .01472 m
+.87805 .15345 L
+.97561 .15345 L
+.97561 .01472 L
+.87805 .01472 L
+s
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 177.938},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000/@P10`40000100000800002008200000
+P800P020P<30`<3L`:K:l24Q8GQgN?7alLc<c<30`92@T0000>CTi<71`OCdm861P@000?ooomSHf<c<
+c9VIV@00008K:bPmBX2=UDiOJ_ooogQgN6IUI/71`CXj>_ooonCTi<71`OCdm861P@00080009<V9[mo
+OjI<C?oook^k^ijNW^;RhVATI0000<c<c9VIVC<c<fIVIVJIVIW<c02IV@0cIP1VV@1VIP0c<jf][G=c
+LmkNg[fm_F=SHiBDU?HR5eok5aDeoool5eOnoo@nod92@^7QhC8b</S8b6ATI4];BgemOIJFUTLc<VIV
+c7QYGIVIoomV<l6j]Lfj^CTb;3<cIR8R8T:JYeQHh7=_K]GEe2E15oIPZiP55n3Ph000`;g<c;no_`00
+0?oo0?oooooo0?oo0?oo0=WVoooo0?ooc?oo0?nol_oo0?l0oooo003o0?oo0?oV_ooo003ooooo03Vo
+oooo0?n00?oo0?l00?oo09T0i_oo003<I_oo0;m09_oo0000oooo08b<Y_oo0=W<0?oo0>HO3Ooo05h0
+i_oo02J<Jooo080V9_oo03<cVOoo00000?oo0<c<fOoo0:JVY_oo07=cLooo0;g<c?oo0<c<c?oo0<O7
+aooo0?l00?oo07l0Oo;bl_oo0?oo0?oooooo00000?oo00000?oo00000?oo08b<S?oo0?oooooo05mO
+Ggl00;>c/gmoOn3Ph?oo08000?oo03<c<ooo03>V3Ooo03>I6_oo0<b0FOoo0<aV@?oo0;>c/ooo0;Vi
+0?oo04a<C>?YjFQ`L=OGej2OWJ>SX`1E001Eo`2Z002ZoeD005D0oeEE05EEoeFZ05FZoeGo05GoojX0
+0:X0ojYE0:YEojZZ0:ZZoj[o0:[ooomE0?mEoonZ0?nZogAaL;jn_:gOof1OG^3Nfg9bL;^k^oQj5oZ_
+_Xhekookl:2PY820P?l0003o0?oo0000ool0o`3ooooooooo8Ol00?oo8Ol001ko103no`008?l00`3o
+o`3mo`008?l00`3oo`3mo`008?l00`3oo`3mo`008?l00`3oo`3mo`007_l30?oo000<o`030?oo017o
+00<0ool0oOl000co00<0ool0oolBo`003?l00`3oo`3ooa;o000<o`030?oo0?oo4_l000coo`0A00Co
+000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co
+00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o
+00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3o
+o`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3o
+o`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si
+00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi
+00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3i
+n@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3i
+n@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So
+000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co
+00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o
+00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3o
+o`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3o
+o`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si
+00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi
+00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3i
+n@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3i
+n@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So
+000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co
+00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o
+00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3o
+o`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3o
+o`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si
+00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi
+00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3i
+n@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3i
+n@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So
+000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co
+00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o
+00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3o
+o`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3o
+o`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si
+00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi
+00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3i
+n@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3i
+n@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So
+000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co
+00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o
+00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3o
+o`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3o
+o`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si
+00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi
+00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3i
+n@0Hn@030?oo00So0003o`@01Ol00`3oo`03o`030?Wi01Si00<0ool01?l00`3in@0Gn@030?oo02Go
+00<0nOT05oT00`3oo`04o`030?Wi01Si00<0ool00ol00`3in@0Hn@030?oo02Co00<0nOT06?T00`3o
+o`08o`001Ol00`3oo`04o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3i
+n@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So
+0005o`030?oo00Co00<0ool00ol00`3in@0Hn@030?oo00Co00<0nOT05oT00`3oo`0Uo`030?Wi01Oi
+00<0ool01?l00`3in@0Hn@030?oo00?o00<0nOT06?T00`3oo`0To`030?Wi01Si00<0ool02?l000Go
+00<0ool01?l00`3oo`03o`030?Wi01Si00<0ool01?l00`3in@0Gn@030?oo02Go00<0nOT05oT00`3o
+o`04o`030?Wi01Si00<0ool00ol00`3in@0Hn@030?oo02Co00<0nOT06?T00`3oo`08o`001Ol00`3o
+o`04o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co
+00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So0003o`<01_l00`3o
+o`03o`030?Wi01Si00<0ool01?l00`3in@0Gn@030?oo02Go00<0nOT05oT00`3oo`04o`030?Wi01Si
+00<0ool00ol00`3in@0Hn@030?oo02Co00<0nOT06?T00`3oo`08o`001Ol00`3oo`04o`030?oo00?o
+00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3o
+o`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3o
+o`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si
+00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi
+00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3i
+n@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3i
+n@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So
+000<o`030?oo00?o00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co
+00<0nOT06?T00`3oo`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o
+00<0nOT06?T00`3oo`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3o
+o`03o`030?Wi01Si00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3o
+o`04o`030?Wi01Oi00<0ool09Ol00`3in@0Gn@030?oo00Co00<0nOT06?T00`3oo`03o`030?Wi01Si
+00<0ool09?l00`3in@0Hn@030?oo00So000<o`030?oo00?o00<0nOT06?T00`3oo`04oa/09olK00Ko
+00<0nOT06?T00`3oo`03oa`09_lL00[o000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si
+00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3o
+o`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3o
+o`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3o
+o`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o
+00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo
+00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o
+000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3i
+n@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3i
+n@0Hn@030?oo06_o0003o`@01Ol00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o
+0003o`030?oo00Ko00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`001?l00`3o
+o`05o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000Go00<0ool01?l00`3o
+o`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o0006o`030?oo00?o00<0ool00ol00`3i
+n@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`000ol0103oo`05o`030?oo00?o00<0nOT06?T00`3o
+o`1Wo`030?Wi01Si00<0ool0Jol000Co0P06o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si
+00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3o
+o`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3o
+o`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3o
+o`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o
+00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo
+00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o
+000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3i
+n@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3i
+n@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co
+00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si
+00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si
+00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3o
+o`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3o
+o`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3o
+o`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o0004o`801_l00`3o
+o`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o0003o`040?oo00Go00<0ool00ol00`3i
+n@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`001_l00`3oo`03o`030?oo00?o00<0nOT06?T00`3o
+o`1Wo`030?Wi01Si00<0ool0Jol000Co0P06o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si
+00<0ool0Jol000Ko00<0ool00ol00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o
+0003o`040?oo00Go00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`001?l200Ko
+00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si
+00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si
+00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3o
+o`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3o
+o`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3o
+o`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o
+00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo
+00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o
+000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3i
+n@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3i
+n@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co
+00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si
+00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si
+00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3o
+o`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3o
+o`1Wo`030?Wi01Si00<0ool0Jol000Go00<0ool01?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3i
+n@0Hn@030?oo06_o0005o`030?oo00Co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3o
+o`1[o`000_l500Go00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`000_l0103o
+o`06o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000?o00<0o`001_l00`3o
+o`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o0004o`801_l00`3oo`03o`030?Wi01Si
+00<0ool0Iol00`3in@0Hn@030?oo06_o0005o`030?oo00Co00<0ool00ol00`3in@0Hn@030?oo06Oo
+00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o
+000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3i
+n@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3i
+n@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co
+00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si
+00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si
+00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3o
+o`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3o
+o`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3o
+o`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o
+00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo
+00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o
+000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3i
+n@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3i
+n@0Hn@030?oo06_o0003o`<01_l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o
+0006o`030?oo00?o00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`001_l00`3o
+o`03o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000?o0`06o`030?oo00?o
+00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000?o00<0ool01_l00`3oo`03o`030?Wi01Si
+00<0ool0Iol00`3in@0Hn@030?oo06_o0003o`030?oo00Ko00<0ool00ol00`3in@0Hn@030?oo06Oo
+00<0nOT06?T00`3oo`1[o`000ol400Go00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3o
+o`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o
+00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo
+00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o
+000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3i
+n@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3i
+n@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co
+00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si
+00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si
+00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3oo`1[o`003?l00`3o
+o`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o00<0nOT06?T00`3o
+o`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo00<0nOT06?T00`3o
+o`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o000<o`030?oo00?o
+00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000co00<0ool00ol00`3in@0Hn@030?oo06Oo
+00<0nOT06?T00`3oo`1[o`003?l00`3oo`03o`030?Wi01Si00<0ool0Iol00`3in@0Hn@030?oo06_o
+000<o`030?oo00?o00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000Co0P06o`030?oo00?o
+00<0nOT06?T00`3oo`1Wo`030?Wi01Si00<0ool0Jol000?o00@0ool01Ol00`3oo`03o`030?Wi01Si
+00<0ool0Iol00`3in@0Hn@030?oo06_o0003o`040?oo00Go00<0ool00olL06Wo701]o`000ol300Ko
+00<0ool0oolBo`000ol00`3oo`06o`030?oo0?oo4_l000?o00<0ool01_l00`3oo`3ooa;o0004o`<0
+oolJo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {176.938, 0}} -> {0.0304945, -0.46482, \
+0.0301588, 0.0374911}}],
+
+Cell[BoxData[
+    TagBox[\(\[SkeletonIndicator]  Graphics  \[SkeletonIndicator]\),
+      False,
+      Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(idft[dft[x]] // FullSimplify\)], "Input"],
+
+Cell[BoxData[
+    \({1, 2, 2, 1}\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for X",
+ScreenRectangle->{{0, 1280}, {0, 1022}},
+WindowSize->{630, 773},
+WindowMargins->{{100, Automatic}, {Automatic, 61}},
+CellLabelAutoDelete->True
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 212, 6, 64, "Input",
+  Evaluatable->False],
+Cell[1969, 59, 522, 11, 75, "Input"],
+Cell[2494, 72, 2845, 65, 306, "Input"],
+Cell[5342, 139, 2859, 65, 306, "Input"],
+
+Cell[CellGroupData[{
+Cell[8226, 208, 49, 1, 27, "Input"],
+Cell[8278, 211, 46, 1, 27, "Output"]
+}, Open  ]],
+Cell[8339, 215, 1510, 29, 302, "Input"],
+
+Cell[CellGroupData[{
+Cell[9874, 248, 41, 1, 27, "Input"],
+Cell[9918, 251, 9919, 270, 194, 4646, 202, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[19840, 523, 130, 3, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20007, 531, 39, 1, 27, "Input"],
+Cell[20049, 534, 88, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20174, 540, 187, 3, 75, "Input"],
+Cell[20364, 545, 18099, 452, 186, 3430, 266, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[38466, 999, 130, 3, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[38633, 1007, 61, 1, 27, "Input"],
+Cell[38697, 1010, 46, 1, 27, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

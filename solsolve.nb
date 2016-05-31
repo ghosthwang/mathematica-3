@@ -1,0 +1,219 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      4518,        147]*)
+(*NotebookOutlinePosition[      5508,        178]*)
+(*  CellTagsIndexPosition[      5464,        174]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    StyleBox["SolSolve",
+      "Title",
+      FontVariations->{"Underline"->True}]], "Input",
+  Evaluatable->False,
+  TextAlignment->Left],
+
+Cell[BoxData[{
+    \(Jan\ 27\ 2004\), "\[IndentingNewLine]", 
+    \(martin . pos@philips . com\)}], "Input",
+  Evaluatable->False,
+  TextAlignment->Right],
+
+Cell[TextData[{
+  "A function, ",
+  StyleBox["SolSolve",
+    FontWeight->"Bold"],
+  ", is presented that directly returns the solution of Solve:"
+}], "Text",
+  PageWidth->WindowWidth,
+  CellMargins->{{Inherited, 0}, {Inherited, Inherited}},
+  Evaluatable->False,
+  CellSize->{314, Inherited},
+  FontSize->14],
+
+Cell[BoxData[{
+    RowBox[{\(SolSolve[eq__, \ var__, \ 
+          solvar__] := \((solvar /. \(Solve[eq, var]\)[\([1]\)])\)\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{
+      StyleBox[\( (*\ 
+          eq\ \ \ \ \  : \ 
+            list\ holding\ equations, \[IndentingNewLine]\ \ var\ \ \ \  : \ 
+            list\ holding\ unknown\ variables, \[IndentingNewLine]\ \ solvar\ \
+ : \ the\ unknown\ variable\ to\ return\ \ \ *) \),
+        FontColor->RGBColor[0, 0.588235, 0.576471]]}]}], "Input"],
+
+Cell[" Examples of its use:", "Text",
+  PageWidth->WindowWidth,
+  CellMargins->{{Inherited, 0}, {Inherited, Inherited}},
+  Evaluatable->False,
+  CellSize->{314, Inherited},
+  FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(SolSolve[{\[IndentingNewLine]x + y + 2  z \[Equal] 
+          0, \[IndentingNewLine]x - y - 4  z \[Equal] 
+          1, \[IndentingNewLine]x + 2  y \[Equal] \ 
+          0\[IndentingNewLine]}, \ {x, y, z}, \ x]\)], "Input",
+  CellFrame->False,
+  Evaluatable->True],
+
+Cell[BoxData[
+    \(2\/5\)], "Output",
+  CellFrame->False]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(SolSolve[{\[IndentingNewLine]x + y + 2  z \[Equal] 
+          0, \[IndentingNewLine]x - y - 4  z \[Equal] 
+          1, \[IndentingNewLine]x + 2  y \[Equal] \ 
+          0\[IndentingNewLine]}, \ {x, y, z}, \ {x, y}]\)], "Input",
+  CellFrame->False],
+
+Cell[BoxData[
+    \({2\/5, \(-\(1\/5\)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(SolSolve[{\[IndentingNewLine]x + y + 2  z \[Equal] 
+          0, \[IndentingNewLine]x - y - 4  z \[Equal] 
+          1, \[IndentingNewLine]x + 2  y \[Equal] \ 
+          0\[IndentingNewLine]}, \ {x, y, z}, \ {x, y, z}]\)], "Input"],
+
+Cell[BoxData[
+    \({2\/5, \(-\(1\/5\)\), \(-\(1\/10\)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(SolSolve[{\[IndentingNewLine]x + y + 2  z \[Equal] 
+          0, \[IndentingNewLine]x - y - 4  z \[Equal] 
+          1, \[IndentingNewLine]x + 2  y \[Equal] \ 
+          0\[IndentingNewLine]}, \ {x, y, z}, \ p]\)], "Input"],
+
+Cell[BoxData[
+    \(p\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for X",
+ScreenRectangle->{{0, 1280}, {0, 1022}},
+WindowSize->{667, 699},
+WindowMargins->{{Automatic, 8}, {4, Automatic}},
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperSize"->{597.562, 842.375},
+"PaperOrientation"->"Portrait",
+"PostScriptOutputFile":>FrontEnd`FileName[{$RootDirectory, "user", "pos", \
+"Documents", "mathematica"}, "solsolve.nb.ps", CharacterEncoding -> \
+"iso8859-1"],
+"Magnification"->1},
+ShowSelection->True,
+StyleDefinitions -> "Default.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 152, 5, 56, "Input",
+  Evaluatable->False],
+Cell[1909, 58, 154, 4, 43, "Input",
+  Evaluatable->False],
+Cell[2066, 64, 308, 10, 33, "Text",
+  Evaluatable->False],
+Cell[2377, 76, 521, 10, 91, "Input"],
+Cell[2901, 88, 188, 5, 33, "Text",
+  Evaluatable->False],
+
+Cell[CellGroupData[{
+Cell[3114, 97, 284, 6, 91, "Input",
+  Evaluatable->True],
+Cell[3401, 105, 58, 2, 45, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3496, 112, 268, 5, 91, "Input"],
+Cell[3767, 119, 55, 1, 45, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3859, 125, 251, 4, 91, "Input"],
+Cell[4113, 131, 71, 1, 45, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4221, 137, 243, 4, 91, "Input"],
+Cell[4467, 143, 35, 1, 27, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

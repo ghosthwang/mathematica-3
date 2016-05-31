@@ -1,0 +1,406 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 4.0,
+MathReader 4.0, or any compatible application. The data for the notebook 
+starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      8971,        294]*)
+(*NotebookOutlinePosition[      9657,        319]*)
+(*  CellTagsIndexPosition[      9613,        315]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(a = {1, 2, koe}\)], "Input"],
+
+Cell[BoxData[
+    \({1, 2, koe}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(b = {a, stier}\)], "Input"],
+
+Cell[BoxData[
+    \({{1, 2, koe}, stier}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Options[Plot] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {\(AspectRatio \[Rule] 1\/GoldenRatio\)},
+          {\(Axes \[Rule] Automatic\)},
+          {\(AxesLabel \[Rule] None\)},
+          {\(AxesOrigin \[Rule] Automatic\)},
+          {\(AxesStyle \[Rule] Automatic\)},
+          {\(Background \[Rule] Automatic\)},
+          {\(ColorOutput \[Rule] Automatic\)},
+          {\(Compiled \[Rule] True\)},
+          {\(DefaultColor \[Rule] Automatic\)},
+          {\(Epilog \[Rule] {}\)},
+          {\(Frame \[Rule] False\)},
+          {\(FrameLabel \[Rule] None\)},
+          {\(FrameStyle \[Rule] Automatic\)},
+          {\(FrameTicks \[Rule] Automatic\)},
+          {\(GridLines \[Rule] None\)},
+          {\(ImageSize \[Rule] Automatic\)},
+          {\(MaxBend \[Rule] 10.`\)},
+          {\(PlotDivision \[Rule] 30.`\)},
+          {\(PlotLabel \[Rule] None\)},
+          {\(PlotPoints \[Rule] 25\)},
+          {\(PlotRange \[Rule] Automatic\)},
+          {\(PlotRegion \[Rule] Automatic\)},
+          {\(PlotStyle \[Rule] Automatic\)},
+          {\(Prolog \[Rule] {}\)},
+          {\(RotateLabel \[Rule] True\)},
+          {\(Ticks \[Rule] Automatic\)},
+          {\(DefaultFont \[RuleDelayed] $DefaultFont\)},
+          {\(DisplayFunction \[RuleDelayed] $DisplayFunction\)},
+          {\(FormatType \[RuleDelayed] $FormatType\)},
+          {\(TextStyle \[RuleDelayed] $TextStyle\)}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      TableForm[ {AspectRatio -> Power[ GoldenRatio, -1], Axes -> Automatic, 
+        AxesLabel -> None, AxesOrigin -> Automatic, AxesStyle -> Automatic, 
+        Background -> Automatic, ColorOutput -> Automatic, Compiled -> True, 
+        DefaultColor -> Automatic, Epilog -> {}, Frame -> False, FrameLabel -> 
+        None, FrameStyle -> Automatic, FrameTicks -> Automatic, GridLines -> 
+        None, ImageSize -> Automatic, MaxBend -> 10.0, PlotDivision -> 30.0, 
+        PlotLabel -> None, PlotPoints -> 25, PlotRange -> Automatic, 
+        PlotRegion -> Automatic, PlotStyle -> Automatic, Prolog -> {}, 
+        RotateLabel -> True, Ticks -> Automatic, DefaultFont :> $DefaultFont, 
+        DisplayFunction :> $DisplayFunction, FormatType :> $FormatType, 
+        TextStyle :> $TextStyle}]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Plus[1, 2, ]\)], "Input"],
+
+Cell[BoxData[
+    \(3 + Null\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(<< CleanSlate.m\)], "Input"],
+
+Cell[BoxData[
+    \(Get::"noopen" \(\(:\)\(\ \)\) 
+      "Cannot open \!\(\"CleanSlate.m\"\)."\)], "Message"],
+
+Cell[BoxData[
+    \($Failed\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \($Path\)], "Input"],
+
+Cell[BoxData[
+    \({"/user/nybasten/.Mathematica/4.0/Kernel", 
+      "/user/nybasten/.Mathematica/4.0/AddOns/Autoload", 
+      "/user/nybasten/.Mathematica/4.0/AddOns/Applications", ".", 
+      "/user/nybasten", "/cadappl/mathematica/4.0.2/AddOns/StandardPackages", 
+      "/cadappl/mathematica/4.0.2/AddOns/StandardPackages/StartUp", 
+      "/cadappl/mathematica/4.0.2/AddOns/Autoload", 
+      "/cadappl/mathematica/4.0.2/AddOns/Applications", 
+      "/cadappl/mathematica/4.0.2/AddOns/ExtraPackages", 
+      "/cadappl/mathematica/4.0.2/SystemFiles/Graphics/Packages", 
+      "/cadappl/mathematica/4.0.2/Configuration/Kernel"}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CleanSlate[]\)], "Input"],
+
+Cell[BoxData[
+    \(CleanSlate[]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(a /. a \[Rule] boe\)], "Input"],
+
+Cell[BoxData[
+    \(boe\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(a\)], "Input"],
+
+Cell[BoxData[
+    \({1, 2, koe}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \( := \)], "Input"],
+
+Cell[BoxData[
+    \(Syntax::"sntxi" \(\(:\)\(\ \)\) 
+      "Incomplete expression; more input is needed.\!\(\"\"\)"\)], "Message"],
+
+Cell[BoxData[
+    StyleBox[
+      ErrorBox[":="],
+      ShowStringCharacters->True]], "Message"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(f[x_] := x^2\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f1 = f /. p1\)], "Input"],
+
+Cell[BoxData[
+    \(ReplaceAll::"reps" \(\(:\)\(\ \)\) 
+      "\!\({\({0}\)}\) is neither a list of replacement rules nor a valid \
+dispatch table, and so cannot be used for replacing."\)], "Message"],
+
+Cell[BoxData[
+    \(f /. \[InvisibleSpace]{0}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f1\)], "Input"],
+
+Cell[BoxData[
+    \(f /. \[InvisibleSpace]{0}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Options[ScientificForm] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {
+            RowBox[{"DigitBlock", "\[Rule]", 
+              InterpretationBox["\[Infinity]",
+                DirectedInfinity[ 1]]}]},
+          {\(ExponentFunction \[Rule] Automatic\)},
+          {\(ExponentStep \[Rule] 3\)},
+          {\(NumberFormat \[Rule] Automatic\)},
+          {\(NumberMultiplier \[Rule] "\[Times]"\)},
+          {\(NumberPadding \[Rule] {\*"\<\"\"\>", \*"\<\"\"\>"}\)},
+          {\(NumberPoint \[Rule] "."\)},
+          {\(NumberSeparator \[Rule] ","\)},
+          {\(NumberSigns \[Rule] {"-", \*"\<\"\"\>"}\)},
+          {\(SignPadding \[Rule] False\)}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      TableForm[ {DigitBlock -> DirectedInfinity[ 1], ExponentFunction -> 
+        Automatic, ExponentStep -> 3, NumberFormat -> Automatic, 
+        NumberMultiplier -> "\[Times]", NumberPadding -> {"", ""}, 
+        NumberPoint -> ".", NumberSeparator -> ",", NumberSigns -> {"-", ""}, 
+        SignPadding -> False}]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(SetOptions[ScientificForm, 
+      ExponentStep \[Rule] 3]\), "\[IndentingNewLine]", 
+    \(a := 909098283498\), "\[IndentingNewLine]", 
+    \(ScientificForm[a]\)}], "Input"],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{
+        RowBox[{"DigitBlock", "\[Rule]", 
+          InterpretationBox["\[Infinity]",
+            DirectedInfinity[ 1]]}], 
+        ",", \(ExponentFunction \[Rule] Automatic\), 
+        ",", \(ExponentStep \[Rule] 3\), 
+        ",", \(NumberFormat \[Rule] Automatic\), 
+        ",", \(NumberMultiplier \[Rule] "\[Times]"\), 
+        ",", \(NumberPadding \[Rule] {\*"\<\"\"\>", \*"\<\"\"\>"}\), 
+        ",", \(NumberPoint \[Rule] "."\), 
+        ",", \(NumberSeparator \[Rule] ","\), 
+        ",", \(NumberSigns \[Rule] {"-", \*"\<\"\"\>"}\), 
+        ",", \(SignPadding \[Rule] False\)}], "}"}]], "Output"],
+
+Cell[BoxData[
+    TagBox[
+      InterpretationBox["\<\"909098283498\"\>",
+        909098283498,
+        Editable->False],
+      ScientificForm]], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"4.0 for X",
+ScreenRectangle->{{0, 1280}, {0, 1024}},
+WindowToolbars->"EditBar",
+WindowSize->{720, 913},
+WindowMargins->{{154, Automatic}, {Automatic, 17}},
+Magnification->1
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1739, 51, 48, 1, 27, "Input"],
+Cell[1790, 54, 45, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[1872, 60, 47, 1, 27, "Input"],
+Cell[1922, 63, 54, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2013, 69, 59, 1, 27, "Input"],
+Cell[2075, 72, 2323, 47, 572, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4435, 124, 45, 1, 27, "Input"],
+Cell[4483, 127, 42, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4562, 133, 48, 1, 27, "Input"],
+Cell[4613, 136, 109, 2, 22, "Message"],
+Cell[4725, 140, 41, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4803, 146, 38, 1, 27, "Input"],
+Cell[4844, 149, 642, 10, 171, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5523, 164, 45, 1, 27, "Input"],
+Cell[5571, 167, 46, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5654, 173, 51, 1, 27, "Input"],
+Cell[5708, 176, 37, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5782, 182, 34, 1, 27, "Input"],
+Cell[5819, 185, 45, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5901, 191, 37, 1, 27, "Input"],
+Cell[5941, 194, 130, 2, 22, "Message"],
+Cell[6074, 198, 96, 3, 23, "Message"]
+}, Open  ]],
+Cell[6185, 204, 45, 1, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[6255, 209, 45, 1, 27, "Input"],
+Cell[6303, 212, 200, 3, 37, "Message"],
+Cell[6506, 217, 59, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6602, 223, 35, 1, 27, "Input"],
+Cell[6640, 226, 59, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6736, 232, 69, 1, 27, "Input"],
+Cell[6808, 235, 1102, 24, 202, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7947, 264, 194, 4, 59, "Input"],
+Cell[8144, 270, 653, 14, 59, "Output"],
+Cell[8800, 286, 155, 5, 40, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

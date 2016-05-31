@@ -1,0 +1,695 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     24819,        686]
+NotebookOptionsPosition[     23136,        623]
+NotebookOutlinePosition[     23496,        639]
+CellTagsIndexPosition[     23453,        636]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+May 25 2016
+martin.pos@nxp.com\
+\>", "Text",
+ CellChangeTimes->{{3.6731535836877747`*^9, 3.6731536061971273`*^9}},
+ TextAlignment->Right],
+
+Cell[CellGroupData[{
+
+Cell["Exercises", "Title",
+ CellChangeTimes->{{3.673153613407543*^9, 3.673153618396555*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.673153843232769*^9, 3.673153882350292*^9}}],
+
+Cell["\<\
+Some experiments with creating exercises for my children to practise the \
+tables of multiplication.\
+\>", "Text",
+ CellChangeTimes->{{3.673157786499732*^9, 3.673157829733787*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"exercise", "[", 
+   RowBox[{"n_:", "10"}], "]"}], " ", ":=", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"first", " ", "attempt"}], ",", " ", 
+    RowBox[{
+    "the", " ", "functions", " ", "prints", " ", "exercises", " ", "but", " ", 
+     RowBox[{"doesn", "'"}], "t", " ", "actually", " ", "understand", " ", 
+     "them"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"m", " ", "=", "10"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"amin", " ", "=", " ", "0"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"amax", " ", "=", " ", "12"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"bmin", " ", "=", "  ", "1"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"bmax", " ", "=", "10"}]}], "\[IndentingNewLine]", "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"i", "=", "1"}], ",", " ", 
+      RowBox[{"i", "  ", "\[LessEqual]", " ", "n"}], ",", " ", 
+      RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"a", "=", 
+        RowBox[{"RandomInteger", "[", 
+         RowBox[{"{", 
+          RowBox[{"amin", ",", " ", "amax"}], "}"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"b", "=", 
+        RowBox[{"RandomInteger", "[", 
+         RowBox[{"{", 
+          RowBox[{"bmin", ",", " ", "bmax"}], "}"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{
+        "i", ",", " ", "\"\<. \>\"", ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"NumberForm", "[", 
+          RowBox[{"a", ",", " ", "NumberPadding"}], "]"}], ",", " ", 
+         "\[IndentingNewLine]", "\"\<\[Times]\>\"", ",", " ", 
+         "\[IndentingNewLine]", "b", ",", " ", "\[IndentingNewLine]", 
+         "\"\<=\>\""}], "\[IndentingNewLine]", "]"}]}]}], 
+     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6731536445042458`*^9, 3.673153825006122*^9}, {
+  3.6731539591549683`*^9, 3.673153966272184*^9}, {3.673154040268098*^9, 
+  3.673154062178733*^9}, {3.673154357145258*^9, 3.6731544674787903`*^9}, {
+  3.673154537808338*^9, 3.673154544025775*^9}, {3.673154756557304*^9, 
+  3.6731548052289133`*^9}, {3.6731548367766943`*^9, 3.673154842887151*^9}, {
+  3.673154937955535*^9, 3.673154974664708*^9}, {3.673155050447577*^9, 
+  3.673155059061447*^9}, {3.673157848019393*^9, 3.6731579003687267`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"exercise", "[", "3", "]"}]], "Input",
+ CellChangeTimes->{{3.673153972596921*^9, 3.6731539818204107`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+  "1", "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"\[Times]\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"=\"\>"}],
+  SequenceForm[1, ". ", 6, "\[Times]", 6, "="],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.673153975829756*^9, 3.673153982255642*^9}, 
+   3.673154813420974*^9, 3.673154844523883*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+  "2", "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"\[Times]\"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"=\"\>"}],
+  SequenceForm[2, ". ", 10, "\[Times]", 9, "="],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.673153975829756*^9, 3.673153982255642*^9}, 
+   3.673154813420974*^9, 3.6731548445429573`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+  "3", "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"\[Times]\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"=\"\>"}],
+  SequenceForm[3, ". ", 4, "\[Times]", 5, "="],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.673153975829756*^9, 3.673153982255642*^9}, 
+   3.673154813420974*^9, 3.673154844545973*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "experiment", " ", "inspired", " ", "by", " ", "example", " ", "found", 
+     " ", "on", " ", "Wolfram", " ", "site"}], ",", " ", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"http", ":"}], "//", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"www", ".", "wolfram", ".", "com"}], "/", "broadcast"}], "/", 
+       
+       RowBox[{"video", ".", 
+        RowBox[{"php", "?", "c"}]}]}]}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"107", "&"}], "v"}], "=", "437"}]}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Style", "[", 
+    RowBox[{
+     RowBox[{"TableForm", "[", 
+      RowBox[{"Table", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"prob", "[", "i_", "]"}], ":=", " ", 
+          RowBox[{
+           RowBox[{"Hold", "[", 
+            RowBox[{"a", " ", "\[Times]", " ", "b"}], " ", "]"}], "/.", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"a", "\[Rule]", 
+              RowBox[{"RandomInteger", "[", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "10"}], "}"}], "]"}]}], ",", " ", 
+             RowBox[{"b", "\[Rule]", 
+              RowBox[{"RandomInteger", "[", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "10"}], "}"}], "]"}]}]}], "}"}]}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{"n", ",", "\"\<. \>\"", ",", " ", 
+              RowBox[{"TraditionalForm", "[", 
+               RowBox[{"temp", "=", 
+                RowBox[{"prob", "[", "n", "]"}]}], "]"}]}], "}"}], "]"}], ",",
+            " ", "\"\<   \>\"", ",", "\[IndentingNewLine]", 
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{"n", ",", "\"\<. \>\"", ",", " ", 
+              RowBox[{"TraditionalForm", "[", "temp", "]"}]}], "}"}], "]"}]}],
+           "\[IndentingNewLine]", "}"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "1", " ", ",", " ", "10"}], "}"}]}], "]"}], "]"}], 
+     ",", "\[IndentingNewLine]", "14", ",", " ", 
+     RowBox[{"FontFamily", " ", "\[Rule]", " ", "\"\<Times\>\""}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.673155356598196*^9, 3.673155358039131*^9}, {
+   3.673155466996615*^9, 3.6731557566334457`*^9}, 3.673155802895372*^9, {
+   3.673155848233531*^9, 3.673155918329571*^9}, {3.673156060455778*^9, 
+   3.6731560972405024`*^9}, {3.673156503775983*^9, 3.67315658870065*^9}, {
+   3.673157931507455*^9, 3.673157951018248*^9}, {3.6731580132497063`*^9, 
+   3.673158092516344*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  TagBox[GridBox[{
+     {
+      TemplateBox[{"1","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"6", " ", "6"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )], "\<\"   \"\>", 
+      TemplateBox[{"1","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"6", " ", "6"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )]},
+     {
+      TemplateBox[{"2","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"5", " ", "8"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )], "\<\"   \"\>", 
+      TemplateBox[{"2","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"5", " ", "8"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )]},
+     {
+      TemplateBox[{"3","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"10", " ", "9"}], "]"}], TraditionalForm], 
+         TraditionalForm, Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )], "\<\"   \"\>", 
+      TemplateBox[{"3","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"10", " ", "9"}], "]"}], TraditionalForm], 
+         TraditionalForm, Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )]},
+     {
+      TemplateBox[{"4","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"2", " ", "5"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )], "\<\"   \"\>", 
+      TemplateBox[{"4","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"2", " ", "5"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )]},
+     {
+      TemplateBox[{"5","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"6", " ", "1"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )], "\<\"   \"\>", 
+      TemplateBox[{"5","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"6", " ", "1"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )]},
+     {
+      TemplateBox[{"6","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"8", " ", "0"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )], "\<\"   \"\>", 
+      TemplateBox[{"6","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"8", " ", "0"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )]},
+     {
+      TemplateBox[{"7","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"1", " ", "3"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )], "\<\"   \"\>", 
+      TemplateBox[{"7","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"1", " ", "3"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )]},
+     {
+      TemplateBox[{"8","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"3", " ", "4"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )], "\<\"   \"\>", 
+      TemplateBox[{"8","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"3", " ", "4"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )]},
+     {
+      TemplateBox[{"9","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"7", " ", "8"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )], "\<\"   \"\>", 
+      TemplateBox[{"9","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"7", " ", "8"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )]},
+     {
+      TemplateBox[{"10","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"6", " ", "9"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )], "\<\"   \"\>", 
+      TemplateBox[{"10","\". \"",TagBox[
+         FormBox[
+          RowBox[{"Hold", "[", 
+            RowBox[{"6", " ", "9"}], "]"}], TraditionalForm], TraditionalForm,
+          Editable -> True]},
+       "Row",
+       DisplayFunction->(
+        RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3}]& ),
+       InterpretationFunction->(RowBox[{"Row", "[", 
+          RowBox[{"{", 
+            RowBox[{#, ",", #2, ",", #3}], "}"}], "]"}]& )]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[2.0999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Function[BoxForm`e$, 
+    TableForm[BoxForm`e$]]],
+  StripOnInput->False,
+  FontFamily->"Times",
+  FontSize->14]], "Output",
+ CellChangeTimes->{
+  3.673155758156502*^9, 3.6731558037312183`*^9, {3.6731558822708273`*^9, 
+   3.673155919037375*^9}, {3.6731560805969467`*^9, 3.673156098023643*^9}, 
+   3.673156627829413*^9, {3.673158007413179*^9, 3.673158014230393*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"prob", "[", "i_", "]"}], ":=", " ", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Defer", "[", "\[IndentingNewLine]", 
+     RowBox[{"a", " ", "\[Times]", " ", "b"}], "\[IndentingNewLine]", " ", 
+     "]"}], "/.", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"a", "\[Rule]", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "10"}], "}"}], "]"}]}], ",", " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{"b", "\[Rule]", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "12"}], "}"}], "]"}]}]}], "\[IndentingNewLine]", 
+     "}"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.673156655834436*^9, 3.673156671561488*^9}, {
+  3.673156906476651*^9, 3.673156955770783*^9}, {3.6731571163906307`*^9, 
+  3.673157117328166*^9}, {3.6731572231824837`*^9, 3.673157223911172*^9}, {
+  3.673157259188696*^9, 3.673157261901897*^9}, {3.673157330022091*^9, 
+  3.673157330916479*^9}, {3.6731574097777853`*^9, 3.673157410569516*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"temp", "=", 
+  RowBox[{"prob", "[", "3", "]"}]}]], "Input",
+ CellChangeTimes->{{3.673156673617423*^9, 3.673156675177264*^9}, {
+  3.6731571638908033`*^9, 3.673157165746194*^9}}],
+
+Cell[BoxData[
+ RowBox[{"8", " ", "10"}]], "Output",
+ CellChangeTimes->{
+  3.6731566756277113`*^9, {3.673156946568811*^9, 3.673156957549429*^9}, {
+   3.673157118922781*^9, 3.673157166081581*^9}, 3.673157225453004*^9, 
+   3.673157263948238*^9, 3.673157332887567*^9, 3.673157412206333*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"temp", "/.", 
+  RowBox[{"{", 
+   RowBox[{"Defer", "\[Rule]", " ", "Evaluate"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.6731571687903023`*^9, 3.673157170518545*^9}, {
+  3.673157231981969*^9, 3.673157250170476*^9}, {3.673157416371717*^9, 
+  3.67315742584781*^9}}],
+
+Cell[BoxData["80"], "Output",
+ CellChangeTimes->{
+  3.6731571709161253`*^9, {3.673157232462171*^9, 3.673157266287014*^9}, 
+   3.6731573345095387`*^9, 3.673157426489119*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Release", "[", "temp", "]"}]], "Input",
+ CellChangeTimes->{{3.673157175856329*^9, 3.673157188084929*^9}, {
+  3.673157340343145*^9, 3.673157342743822*^9}}],
+
+Cell[BoxData["8"], "Output",
+ CellChangeTimes->{{3.6731571813652277`*^9, 3.673157188549659*^9}, 
+   3.6731572686225843`*^9, {3.673157335975993*^9, 3.673157343150362*^9}}]
+}, Open  ]],
+
+Cell["\<\
+After some thoughts, it seems nicest to define problems with Defer to prevent \
+evaluation. This way the problem is shown without any extras (e.g. Hold) and \
+to Evaluate the problem the rule {Defer \[Rule] Evaluate} can be applied:\
+\>", "Text",
+ CellChangeTimes->{{3.67315752223149*^9, 3.6731576303849173`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"prob", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"ar_:", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "10"}], "}"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"br_:", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "12"}], "}"}]}]}], "\[IndentingNewLine]", "]"}], ":=",
+    " ", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Defer", "[", "\[IndentingNewLine]", 
+     RowBox[{"a", " ", "\[Times]", " ", "b"}], "\[IndentingNewLine]", " ", 
+     "]"}], "/.", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"a", "\[Rule]", 
+       RowBox[{"RandomInteger", "[", "ar", "]"}]}], ",", " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{"b", "\[Rule]", 
+       RowBox[{"RandomInteger", "[", "br", "]"}]}]}], "\[IndentingNewLine]", 
+     "}"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.67315764205357*^9, 3.6731577227980623`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"temp", " ", "=", " ", 
+   RowBox[{"prob", "[", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.673157727032136*^9, 3.6731577565857973`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"3", " ", "5"}]], "Output",
+ CellChangeTimes->{{3.6731577305721207`*^9, 3.673157757562669*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"temp", " ", "/.", " ", 
+  RowBox[{"{", 
+   RowBox[{"Defer", "\[Rule]", " ", "Evaluate"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.6731577608450613`*^9, 3.673157773881157*^9}}],
+
+Cell[BoxData["15"], "Output",
+ CellChangeTimes->{3.673157774529729*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"prob", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "100"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6731596527380333`*^9, 3.6731596686361017`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"20", " ", "36"}]], "Output",
+ CellChangeTimes->{3.6731596693389063`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"%", "/.", 
+  RowBox[{"{", 
+   RowBox[{"Defer", "\[Rule]", " ", "Evaluate"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.673159674166123*^9, 3.673159681934947*^9}}],
+
+Cell[BoxData["720"], "Output",
+ CellChangeTimes->{3.6731596825859537`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{862, 931},
+WindowMargins->{{Automatic, -1514}, {42, Automatic}},
+ShowSelection->True,
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 147, 5, 47, "Text"],
+Cell[CellGroupData[{
+Cell[717, 29, 92, 1, 87, "Title"],
+Cell[812, 32, 140, 2, 29, "Input"],
+Cell[955, 36, 190, 4, 29, "Text"],
+Cell[1148, 42, 2532, 52, 390, "Input"],
+Cell[CellGroupData[{
+Cell[3705, 98, 129, 2, 29, "Input"],
+Cell[CellGroupData[{
+Cell[3859, 104, 415, 9, 22, "Print"],
+Cell[4277, 115, 419, 9, 22, "Print"],
+Cell[4699, 126, 415, 9, 22, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5163, 141, 2783, 68, 228, "Input"],
+Cell[7949, 211, 10095, 252, 221, "Output"]
+}, Open  ]],
+Cell[18059, 466, 1062, 24, 138, "Input"],
+Cell[CellGroupData[{
+Cell[19146, 494, 200, 4, 29, "Input"],
+Cell[19349, 500, 286, 5, 29, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19672, 510, 287, 6, 29, "Input"],
+Cell[19962, 518, 172, 3, 29, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20171, 526, 178, 3, 29, "Input"],
+Cell[20352, 531, 170, 2, 29, "Output"]
+}, Open  ]],
+Cell[20537, 536, 323, 5, 47, "Text"],
+Cell[20863, 543, 908, 24, 192, "Input"],
+Cell[CellGroupData[{
+Cell[21796, 571, 193, 4, 48, "Input"],
+Cell[21992, 577, 118, 2, 29, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22147, 584, 200, 4, 29, "Input"],
+Cell[22350, 590, 71, 1, 29, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22458, 596, 252, 7, 29, "Input"],
+Cell[22713, 605, 96, 2, 29, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22846, 612, 185, 4, 29, "Input"],
+Cell[23034, 618, 74, 1, 29, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

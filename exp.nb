@@ -1,0 +1,1422 @@
+(************** Content-type: application/mathematica **************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     61222,       1253]*)
+(*NotebookOutlinePosition[     62550,       1295]*)
+(*  CellTagsIndexPosition[     62375,       1287]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(E // N\)], "Input"],
+
+Cell[BoxData[
+    \(E\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[ExponentialE] // N\)], "Input"],
+
+Cell[BoxData[
+    \(2.718281828459045`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(InputForm[%]\)], "Input"],
+
+Cell["2.718281828459045", "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(N[\[ExponentialE], 100]\)], "Input"],
+
+Cell[BoxData[
+    \(2.7182818284590452353602874713526624977572470936999595749669676277240766\
+3035354759457138217852516642742746639193`100\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(InputForm[%]\)], "Input"],
+
+Cell["\<\
+2.71828182845904523536028747135266249775724709369995957496\\
+696762772407663035354759457138217852516642742746639193`100\
+\>", "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \($Precision\)], "Input"],
+
+Cell[BoxData[
+    \($Precision\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(?Global`*\)\)], "Input"],
+
+Cell[BoxData[GridBox[{
+        {
+          StyleBox["Global`",
+            FontFamily->"Helvetica",
+            FontSize->12,
+            FontWeight->"Bold"]},
+        {GridBox[{
+              {
+                ButtonBox[
+                  StyleBox["E",
+                    FontColor->RGBColor[0, 0, 1],
+                    FontVariations->{"Underline"->True}],
+                  
+                  ButtonFunction:>(
+                    Internal`PutInformation[ #, LongForm -> False]&),
+                  ButtonEvaluator->Automatic,
+                  ButtonData:>{"Info3258710581-4317681", "Global`E"},
+                  ButtonFrame->"None",
+                  ButtonNote->"Global`"], 
+                ButtonBox[
+                  StyleBox["E\[Phi]",
+                    FontColor->RGBColor[0, 0, 1],
+                    FontVariations->{"Underline"->True}],
+                  
+                  ButtonFunction:>(
+                    Internal`PutInformation[ #, LongForm -> False]&),
+                  ButtonEvaluator->Automatic,
+                  ButtonData:>{"Info3258710581-4317681", "Global`E\[Phi]"},
+                  ButtonFrame->"None",
+                  ButtonNote->"Global`"], 
+                ButtonBox[
+                  StyleBox["\[Phi]",
+                    FontColor->RGBColor[0, 0, 1],
+                    FontVariations->{"Underline"->True}],
+                  
+                  ButtonFunction:>(
+                    Internal`PutInformation[ #, LongForm -> False]&),
+                  ButtonEvaluator->Automatic,
+                  ButtonData:>{"Info3258710581-4317681", "Global`\[Phi]"},
+                  ButtonFrame->"None",
+                  ButtonNote->"Global`"], 
+                ButtonBox[
+                  StyleBox["$Precision",
+                    FontColor->RGBColor[0, 0, 1],
+                    FontVariations->{"Underline"->True}],
+                  
+                  ButtonFunction:>(
+                    Internal`PutInformation[ #, LongForm -> False]&),
+                  ButtonEvaluator->Automatic,
+                  ButtonData:>{"Info3258710581-4317681", "Global`$Precision"},
+                  
+                  ButtonFrame->"None",
+                  ButtonNote->"Global`"], "", ""}
+              },
+            RowMinHeight->1.05]}
+        },
+      RowSpacings->{2, 3},
+      ColumnAlignments->{Left},
+      ColumnsEqual->True]], "Print",
+  CellMargins->{{20, Inherited}, {Inherited, Inherited}},
+  ShowCellLabel->False,
+  CellFrameMargins->{{Inherited, Inherited}, {14, 14}},
+  Background->GrayLevel[0.930022],
+  ButtonBoxOptions->{Active->True}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Remove[$Precision]\)], "Input"],
+
+Cell[BoxData[
+    \(General::"spell1" \(\(:\)\(\ \)\) 
+      "Possible spelling error: new symbol name \"\!\($Precision\)\" is \
+similar to existing symbol \"\!\(Precision\)\"."\)], "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(In[23]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[\(Removed["$Precision"]\),
+      False,
+      Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Precision\)], "Input"],
+
+Cell[BoxData[
+    \(Precision\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(?Global`*\)\)], "Input"],
+
+Cell[BoxData[GridBox[{
+        {
+          StyleBox["Global`",
+            FontFamily->"Helvetica",
+            FontSize->12,
+            FontWeight->"Bold"]},
+        {GridBox[{
+              {
+                ButtonBox[
+                  StyleBox["E",
+                    FontColor->RGBColor[0, 0, 1],
+                    FontVariations->{"Underline"->True}],
+                  
+                  ButtonFunction:>(
+                    Internal`PutInformation[ #, LongForm -> False]&),
+                  ButtonEvaluator->Automatic,
+                  ButtonData:>{"Info3258710654-4208365", "Global`E"},
+                  ButtonFrame->"None",
+                  ButtonNote->"Global`"], 
+                ButtonBox[
+                  StyleBox["E\[Phi]",
+                    FontColor->RGBColor[0, 0, 1],
+                    FontVariations->{"Underline"->True}],
+                  
+                  ButtonFunction:>(
+                    Internal`PutInformation[ #, LongForm -> False]&),
+                  ButtonEvaluator->Automatic,
+                  ButtonData:>{"Info3258710654-4208365", "Global`E\[Phi]"},
+                  ButtonFrame->"None",
+                  ButtonNote->"Global`"], 
+                ButtonBox[
+                  StyleBox["\[Phi]",
+                    FontColor->RGBColor[0, 0, 1],
+                    FontVariations->{"Underline"->True}],
+                  
+                  ButtonFunction:>(
+                    Internal`PutInformation[ #, LongForm -> False]&),
+                  ButtonEvaluator->Automatic,
+                  ButtonData:>{"Info3258710654-4208365", "Global`\[Phi]"},
+                  ButtonFrame->"None",
+                  ButtonNote->"Global`"], "", "", "", "", "", "", "", "", "", 
+                "", "", "", "", "", "", "", ""}
+              },
+            RowMinHeight->1.05]}
+        },
+      RowSpacings->{2, 3},
+      ColumnAlignments->{Left},
+      ColumnsEqual->True]], "Print",
+  CellMargins->{{20, Inherited}, {Inherited, Inherited}},
+  ShowCellLabel->False,
+  CellFrameMargins->{{Inherited, Inherited}, {14, 14}},
+  Background->GrayLevel[0.930022],
+  ButtonBoxOptions->{Active->True}]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Remove[E]\)], "Input"],
+
+Cell[BoxData[
+    \(Remove[\[Phi]]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(?Global`*\)\)], "Input"],
+
+Cell["Global`E\[Phi]", "Print",
+  CellTags->"Info3258710718-5064202"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(nb = SelectedNotebook[]\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\(NotebookObject[\[LeftSkeleton]"Untitled-2"\
+\[RightSkeleton]]\),
+      NotebookObject[ 
+        FrontEndObject[ 
+          LinkObject[ "ParentLink", 1, 1]], 15]]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(SetOptions[nb, \ Magnification\  \[Rule] \ 1.2]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(SetOptions[nb, \ BackGround\  \[Rule] \ GrayLevel[0.6]]\)], "Input"],
+
+Cell[BoxData[
+    \(General::"spell1" \(\(:\)\(\ \)\) 
+      "Possible spelling error: new symbol name \"\!\(BackGround\)\" is \
+similar to existing symbol \"\!\(Background\)\"."\)], "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Options[nb]\)], "Input"],
+
+Cell[BoxData[
+    \({FrontEndVersion \[Rule] "4.1 for X", 
+      ScreenRectangle \[Rule] {{0.`, 1280.`}, {0.`, 1024.`}}, 
+      WindowSize \[Rule] {568.`, 649.`}, 
+      WindowMargins \[Rule] {{70.`, Automatic}, {18.`, Automatic}}, 
+      Magnification \[Rule] 1.2000000476837158`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(?nb\)\)], "Input"],
+
+Cell["Global`nb", "Print",
+  CellTags->"Info3258711023-6090534"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {GridBox[{
+                {
+                  RowBox[{"nb", "=", 
+                    
+                    InterpretationBox[\(NotebookObject[\[LeftSkeleton]\
+"Untitled-2"\[RightSkeleton]]\),
+                      NotebookObject[ 
+                        FrontEndObject[ 
+                          LinkObject[ "ParentLink", 1, 1]], 15]]}]}
+                },
+              GridBaseline->{Baseline, {1, 1}},
+              ColumnWidths->0.999,
+              ColumnAlignments->{Left}]}
+          },
+        GridBaseline->{Baseline, {1, 1}},
+        ColumnAlignments->{Left}],
+      Definition[ "nb"],
+      Editable->False]], "Print",
+  CellTags->"Info3258711023-6090534"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(?? nb\)], "Input"],
+
+Cell["Global`nb", "Print",
+  CellTags->"Info3258711035-7970262"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {GridBox[{
+                {
+                  RowBox[{"nb", "=", 
+                    
+                    InterpretationBox[\(NotebookObject[\[LeftSkeleton]\
+"Untitled-2"\[RightSkeleton]]\),
+                      NotebookObject[ 
+                        FrontEndObject[ 
+                          LinkObject[ "ParentLink", 1, 1]], 15]]}]}
+                },
+              GridBaseline->{Baseline, {1, 1}},
+              ColumnWidths->0.999,
+              ColumnAlignments->{Left}]}
+          },
+        GridBaseline->{Baseline, {1, 1}},
+        ColumnAlignments->{Left}],
+      Definition[ "nb"],
+      Editable->False]], "Print",
+  CellTags->"Info3258711035-7970262"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Options[nb]\)], "Input"],
+
+Cell[BoxData[
+    \({FrontEndVersion \[Rule] "4.1 for X", 
+      ScreenRectangle \[Rule] {{0.`, 1280.`}, {0.`, 1024.`}}, 
+      WindowSize \[Rule] {568.`, 649.`}, 
+      WindowMargins \[Rule] {{70.`, Automatic}, {18.`, Automatic}}, 
+      Magnification \[Rule] 1.2000000476837158`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(AbsoluteOptions[nb]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{\(FrontEndVersion \[Rule] "4.1 for X"\), 
+        ",", \(NotebookDirectory \[RuleDelayed] $TopDirectory\), 
+        ",", \(NotebookPath \[RuleDelayed] \
+{FrontEnd`FileName[{$PreferencesDirectory, "AddOns", "Autoload", _, 
+                "FrontEnd", "Palettes"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, "AddOns", 
+                "Applications", _, "FrontEnd", "Palettes"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Autoload", _, 
+                "FrontEnd", "Palettes"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Applications", _, 
+                "FrontEnd", "Palettes"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, "FrontEnd", 
+                "Palettes"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "Configuration", "FrontEnd", 
+                "Palettes"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "SystemFiles", "FrontEnd", 
+                "Palettes"}, 
+              CharacterEncoding \[Rule] 
+                "ASCII"], $HomeDirectory, $TopDirectory}\), 
+        ",", \(PalettePath \[RuleDelayed] \
+{FrontEnd`FileName[{$PreferencesDirectory, "AddOns", "Autoload", _, 
+                "FrontEnd", "Palettes"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, "AddOns", 
+                "Applications", _, "FrontEnd", "Palettes"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Autoload", _, 
+                "FrontEnd", "Palettes"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Applications", _, 
+                "FrontEnd", "Palettes"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, "FrontEnd", 
+                "Palettes"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "Configuration", "FrontEnd", 
+                "Palettes"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "SystemFiles", "FrontEnd", 
+                "Palettes"}, CharacterEncoding \[Rule] "ASCII"]}\), 
+        ",", \(AutoOpenPalettes \[Rule] {}\), 
+        ",", \(AutoOpenNotebooks \[Rule] {}\), 
+        ",", \(StyleSheetPath \[RuleDelayed] \
+{FrontEnd`FileName[{$PreferencesDirectory, "AddOns", "Autoload", _, 
+                "FrontEnd", "StyleSheets"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, "AddOns", 
+                "Applications", _, "FrontEnd", "StyleSheets"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Autoload", _, 
+                "FrontEnd", "StyleSheets"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Applications", _, 
+                "FrontEnd", "StyleSheets"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, "FrontEnd", 
+                "StyleSheets"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "Configuration", "FrontEnd", 
+                "StyleSheets"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "SystemFiles", "FrontEnd", 
+                "StyleSheets"}, CharacterEncoding \[Rule] "ASCII"]}\), 
+        ",", \(DefaultNotebook \[RuleDelayed] "DefaultTemplate.nb"\), 
+        ",", \(DefaultStyleDefinitions \[RuleDelayed] "Default.nb"\), 
+        ",", \(MenuConfigurationFile \[RuleDelayed] "MenuSetup.tr"\), 
+        ",", \(PreferencesPath \[RuleDelayed] \
+{FrontEnd`FileName[{$PreferencesDirectory, "FrontEnd"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "Configuration", "FrontEnd"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "SystemFiles", "FrontEnd"}, 
+              CharacterEncoding \[Rule] "ASCII"]}\), 
+        ",", \(ConfigurationPath \[RuleDelayed] \
+{FrontEnd`FileName[{$TopDirectory, "Configuration", "FrontEnd"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, "AddOns", 
+                "Autoload", _, "Configuration", "FrontEnd"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Autoload", _, 
+                "Configuration", "FrontEnd"}, 
+              CharacterEncoding \[Rule] "ASCII"]}\), 
+        ",", \(SystemHelpPath \[RuleDelayed] {$PreferencesDirectory, \
+$TopDirectory}\), 
+        ",", \(AddOnHelpPath \[RuleDelayed] \
+{FrontEnd`FileName[{$PreferencesDirectory, "AddOns", "Autoload"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, "AddOns", 
+                "Applications"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, "AddOns", "Standard"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Autoload"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Applications"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Standard"}, 
+              CharacterEncoding \[Rule] "ASCII"]}\), 
+        ",", \(AutoloadPath \[RuleDelayed] \
+{FrontEnd`FileName[{$PreferencesDirectory, "AddOns", "Autoload"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Autoload"}, 
+              CharacterEncoding \[Rule] "ASCII"]}\), 
+        ",", \(SpellingDictionariesPath \[RuleDelayed] \
+{FrontEnd`FileName[{$PreferencesDirectory, "AddOns", "Autoload", _, 
+                "SpellingDictionaries"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, "AddOns", 
+                "Applications", _, "SpellingDictionaries"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Autoload", _, 
+                "SpellingDictionaries"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Applications", _, 
+                "SpellingDictionaries"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, 
+                "SpellingDictionaries"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "Configuration", 
+                "SpellingDictionaries"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "SystemFiles", 
+                "SpellingDictionaries"}, 
+              CharacterEncoding \[Rule] "ASCII"]}\), 
+        ",", \(CharacterEncodingsPath \[RuleDelayed] \
+{FrontEnd`FileName[{$PreferencesDirectory, "AddOns", "Autoload", _, 
+                "CharacterEncodings"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, "AddOns", 
+                "Applications", _, "CharacterEncodings"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Autoload", _, 
+                "CharacterEncodings"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "AddOns", "Applications", _, 
+                "CharacterEncodings"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$PreferencesDirectory, "CharacterEncodings"}, 
+              CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "Configuration", 
+                "CharacterEncodings"}, CharacterEncoding \[Rule] "ASCII"], 
+            FrontEnd`FileName[{$TopDirectory, "SystemFiles", 
+                "CharacterEncodings"}, CharacterEncoding \[Rule] "ASCII"]}\), 
+        ",", \(PrivatePaths \[Rule] {"TextResources" \[RuleDelayed] \
+{FrontEnd`FileName[{$PreferencesDirectory, "AddOns", "Autoload", _, 
+                    "FrontEnd", "TextResources"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$PreferencesDirectory, "AddOns", 
+                    "Applications", _, "FrontEnd", "TextResources"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "AddOns", "Autoload", _, 
+                    "FrontEnd", "TextResources"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "AddOns", 
+                    "Applications", _, "FrontEnd", "TextResources"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$PreferencesDirectory, "SystemFiles", 
+                    "FrontEnd", "TextResources"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "Configuration", 
+                    "FrontEnd", "TextResources"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "SystemFiles", "FrontEnd", 
+                    "TextResources"}, CharacterEncoding \[Rule] "ASCII"]}, 
+            "SystemResources" \[RuleDelayed] \
+{FrontEnd`FileName[{$PreferencesDirectory, "AddOns", "Autoload", _, 
+                    "FrontEnd", "SystemResources"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$PreferencesDirectory, "AddOns", 
+                    "Applications", _, "FrontEnd", "SystemResources"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "AddOns", "Autoload", _, 
+                    "FrontEnd", "SystemResources"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "AddOns", 
+                    "Applications", _, "FrontEnd", "SystemResources"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$PreferencesDirectory, "SystemFiles", 
+                    "FrontEnd", "SystemResources"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "Configuration", 
+                    "FrontEnd", "SystemResources"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "SystemFiles", "FrontEnd", 
+                    "SystemResources"}, CharacterEncoding \[Rule] "ASCII"]}, 
+            "AFM" \[RuleDelayed] {FrontEnd`FileName[{$PreferencesDirectory, 
+                    "AddOns", "Autoload", _, "Fonts", "AFM"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$PreferencesDirectory, "AddOns", 
+                    "Applications", _, "Fonts", "AFM"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "AddOns", "Autoload", _, 
+                    "Fonts", "AFM"}, CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "AddOns", 
+                    "Applications", _, "Fonts", "AFM"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$PreferencesDirectory, "Fonts", "AFM"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "Configuration", "Fonts", 
+                    "AFM"}, CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "SystemFiles", "Fonts", 
+                    "AFM"}, CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$RootDirectory, "usr", "lib", "afm"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$RootDirectory, "usr", "lib", "AFM"}, 
+                  CharacterEncoding \[Rule] "ASCII"]}, 
+            "Fonts" \[RuleDelayed] {FrontEnd`FileName[{$PreferencesDirectory, 
+                    "AddOns", "Autoload", _, "Fonts"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$PreferencesDirectory, "AddOns", 
+                    "Applications", _, "Fonts"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "AddOns", "Autoload", _, 
+                    "Fonts"}, CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "AddOns", 
+                    "Applications", _, "Fonts"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$PreferencesDirectory, "Fonts"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "Configuration", "Fonts"}, 
+                  CharacterEncoding \[Rule] "ASCII"], 
+                FrontEnd`FileName[{$TopDirectory, "SystemFiles", "Fonts"}, 
+                  CharacterEncoding \[Rule] "ASCII"]}}\), 
+        ",", \(OpenSpecialOptions \[Rule] {"ReadingType" \[Rule] 
+              "IgnoreFileOutlineCache", 
+            "CharacterEncoding" \[Rule] "ISO8859-1", 
+            "ListAllFileTypes" \[Rule] False}\), 
+        ",", \(ToPostScriptOptions \[Rule] {"RemoveColorFromBitmaps" \[Rule] 
+              False, "IgnoreEmbeddedPostScript" \[Rule] True, 
+            "BitsPerPixel" \[Rule] 8}\), 
+        ",", \(ImportAutoReplacements \[Rule] {"->" \[RuleDelayed] "\[Rule]", 
+            ":>" \[RuleDelayed] "\[RuleDelayed]", 
+            "<=" \[RuleDelayed] "\[LessEqual]", 
+            ">=" \[RuleDelayed] "\[GreaterEqual]", 
+            "!=" \[RuleDelayed] "\[NotEqual]", 
+            "==" \[RuleDelayed] "\[Equal]"}\), 
+        ",", \(ExportAutoReplacements \[Rule] {"\[Rule]" \[RuleDelayed] "->", 
+            "\[RuleDelayed]" \[RuleDelayed] ":>", 
+            "\[LessEqual]" \[RuleDelayed] "<=", 
+            "\[GreaterEqual]" \[RuleDelayed] ">=", 
+            "\[NotEqual]" \[RuleDelayed] "!=", 
+            "\[Equal]" \[RuleDelayed] "=="}\), 
+        ",", \(ImportTypesetOptions \[Rule] {"FormatType" \[Rule] 
+              "InputText"}\), ",", 
+        RowBox[{"ExportMultipleCellsOptions", "\[Rule]", 
+          RowBox[{"{", 
+            RowBox[{\("FormatType" \[Rule] "Text"\), ",", 
+              RowBox[{"\<\"PageWidth\"\>", "\[Rule]", 
+                InterpretationBox["\[Infinity]",
+                  DirectedInfinity[ 1]]}], 
+              ",", \("IncludeCellLabels" \[Rule] True\), 
+              ",", \("IncludeCellTags" \[Rule] False\), 
+              ",", \("CellBreaks" \[Rule] "\n\n"\), 
+              ",", \("CMYKColorGeneration" \[Rule] "DirectComplement"\)}], 
+            "}"}]}], ",", 
+        RowBox[{"ExportPostScriptOptions", "\[Rule]", 
+          RowBox[{"{", 
+            RowBox[{\("FormatType" \[Rule] "EPS"\), ",", 
+              RowBox[{"\<\"PageWidth\"\>", "\[Rule]", 
+                InterpretationBox["\[Infinity]",
+                  DirectedInfinity[ 1]]}], 
+              ",", \("IncludeCellLabels" \[Rule] False\), 
+              ",", \("IncludeCellTags" \[Rule] False\), 
+              ",", \("CellBreaks" \[Rule] "\n"\), 
+              ",", \("CMYKColorGeneration" \[Rule] "DirectComplement"\)}], 
+            "}"}]}], ",", 
+        RowBox[{"ExportNativeGraphicsOptions", "\[Rule]", 
+          RowBox[{"{", 
+            RowBox[{\("FormatType" \[Rule] "PICT"\), ",", 
+              RowBox[{"\<\"PageWidth\"\>", "\[Rule]", 
+                InterpretationBox["\[Infinity]",
+                  DirectedInfinity[ 1]]}], 
+              ",", \("IncludeCellLabels" \[Rule] False\), 
+              ",", \("IncludeCellTags" \[Rule] False\), 
+              ",", \("CellBreaks" \[Rule] "\n"\), 
+              ",", \("CMYKColorGeneration" \[Rule] "DirectComplement"\)}], 
+            "}"}]}], 
+        ",", \(ExportTypesetOptions \[Rule] {"FormatType" \[Rule] 
+              "InputText", "PageWidth" \[Rule] 78.`, 
+            "IncludeCellLabels" \[Rule] False, 
+            "IncludeCellTags" \[Rule] False, "CellBreaks" \[Rule] "\n", 
+            "CMYKColorGeneration" \[Rule] "DirectComplement"}\), ",", 
+        RowBox[{"ExportQuickTimeOptions", "\[Rule]", 
+          RowBox[{"{", 
+            RowBox[{\("FormatType" \[Rule] "QuickTime"\), ",", 
+              RowBox[{"\<\"PageWidth\"\>", "\[Rule]", 
+                InterpretationBox["\[Infinity]",
+                  DirectedInfinity[ 1]]}], 
+              ",", \("IncludeCellLabels" \[Rule] False\), 
+              ",", \("IncludeCellTags" \[Rule] False\), 
+              ",", \("CellBreaks" \[Rule] "\n"\), 
+              ",", \("CMYKColorGeneration" \[Rule] "DirectComplement"\)}], 
+            "}"}]}], ",", 
+        RowBox[{"SaveAsSpecialOptions", "\[Rule]", 
+          RowBox[{"{", 
+            RowBox[{\("FormatType" \[Rule] "NotebookExpression"\), ",", 
+              RowBox[{"\<\"PageWidth\"\>", "\[Rule]", 
+                InterpretationBox["\[Infinity]",
+                  DirectedInfinity[ 1]]}], 
+              ",", \("IncludeCellLabels" \[Rule] False\), 
+              ",", \("IncludeCellTags" \[Rule] False\), 
+              ",", \("CellBreaks" \[Rule] "\n\n"\), 
+              ",", \("CMYKColorGeneration" \[Rule] "DirectComplement"\)}], 
+            "}"}]}], ",", \(Language \[Rule] "English"\), 
+        ",", \(ExternalDataCharacterEncoding \[Rule] "ISO8859-1"\), 
+        ",", \(StartupSound \[Rule] True\), 
+        ",", \(MultilaunchWarning \[Rule] True\), 
+        ",", \(ScreenRectangle \[Rule] {{0.`, 1280.`}, {0.`, 1024.`}}\), 
+        ",", \(FrontEndStackSize \[Rule] 65536\), 
+        ",", \("NeXTAppOpeningOptions" \[Rule] "AutohideOnAutolaunch"\), 
+        ",", \("XGlobalSelection" \[Rule] Automatic\), 
+        ",", \("XPasteFrom" \[Rule] "Clipboard"\), 
+        ",", \(EvaluatorNames \[Rule] {"Local" \[Rule] {}}\), 
+        ",", \(NotebooksMenu \[Rule] {}\), 
+        ",", \(FontSubstitutions \[Rule] {"Helv" \[Rule] "Helvetica", 
+            "Arial" \[Rule] "Helvetica", "Times" \[Rule] "Utopia", 
+            "Times New Roman" \[Rule] "Times", 
+            "Courier New" \[Rule] "Courier", "Lucidabright" \[Rule] "Times", 
+            "Charter" \[Rule] "Helvetica", 
+            "Lucidatypewriter" \[Rule] "Courier", "Fixed" \[Rule] "Monaco", 
+            "DefaultKanjiFont" \[Rule] "Automatic", 
+            "DefaultMonoKanjiFont" \[Rule] "Automatic", 
+            "JFontSans" \[Rule] "Automatic", 
+            "JFontSansBold" \[Rule] "Automatic", 
+            "JFontText" \[Rule] "Automatic", "AGaramond" \[Rule] "Times", 
+            "Avant Garde" \[Rule] "Helvetica", "Bodoni" \[Rule] "Times", 
+            "Bookman" \[Rule] "Times", "Caslon 3 Roman" \[Rule] "Times", 
+            "Caslon 540 Roman" \[Rule] "Times", 
+            "Century Old Style" \[Rule] "Times", 
+            "Chicago" \[Rule] "Helvetica", "Dom Casual" \[Rule] "Helvetica", 
+            "Futura" \[Rule] "Helvetica", "Futura Book" \[Rule] "Helvetica", 
+            "Futura Condensed" \[Rule] "Helvetica", 
+            "C Futura Condensed" \[Rule] "Helvetica", 
+            "Futura Light" \[Rule] "Helvetica", 
+            "L Futura Light" \[Rule] "Helvetica", "Galliard" \[Rule] "Times", 
+            "Garamond" \[Rule] "Times", "Geneva" \[Rule] "Helvetica", 
+            "GillSans" \[Rule] "Helvetica", "Goudy" \[Rule] "Times", 
+            "Helvetica Condensed" \[Rule] "Helvetica", 
+            "C Helvetica Condensed" \[Rule] "Helvetica", 
+            "Helvetica Light" \[Rule] "Helvetica", 
+            "L Helvetica Light" \[Rule] "Helvetica", 
+            "Helvetica Narrow" \[Rule] "Helvetica", 
+            "N Helvetica Narrow" \[Rule] "Helvetica", 
+            "Melior" \[Rule] "Times", "Meridien" \[Rule] "Times", 
+            "Mishawaka" \[Rule] "Helvetica", "Monaco" \[Rule] "Helvetica", 
+            "New Baskerville" \[Rule] "Times", 
+            "New Century Schlbk" \[Rule] "Times", "New York" \[Rule] "Times", 
+            "Optima" \[Rule] "Helvetica", "Palatino" \[Rule] "Times", 
+            "Prestige Elite" \[Rule] "Times", "Sabon" \[Rule] "Times", 
+            "Tekton" \[Rule] "Helvetica", "Trump Mediaeval" \[Rule] "Times", 
+            "Univers 45 Light" \[Rule] "Helvetica", 
+            "L Univers 45 Light" \[Rule] "Helvetica", 
+            "Univers 47 CondensedLight" \[Rule] "Helvetica", 
+            "CL Univers 47 CondensedLight" \[Rule] "Helvetica", 
+            "Univers 55" \[Rule] "Helvetica", 
+            "Univers 57 Condensed" \[Rule] "Helvetica", 
+            "C Univers 57 Condensed" \[Rule] "Helvetica", 
+            "Zapf Chancery" \[Rule] "Times", 
+            "Abadi MT Condensed Light" \[Rule] "Helvetica", 
+            "Algerian" \[Rule] "Times", "Arial Black" \[Rule] "Helvetica", 
+            "Arial Narrow" \[Rule] "Helvetica", 
+            "Arial Rounded MT Bold" \[Rule] "Helvetica", 
+            "Billboard" \[Rule] "Helvetica", "Book Antiqua" \[Rule] "Times", 
+            "Bookman Old Style" \[Rule] "Times", 
+            "Braggadocio" \[Rule] "Helvetica", 
+            "Britannic Bold" \[Rule] "Helvetica", 
+            "Brush Script MT" \[Rule] "Helvetica", 
+            "Calisto MT" \[Rule] "Helvetica", 
+            "Century Gothic" \[Rule] "Helvetica", 
+            "Century Schoolbook" \[Rule] "Times", 
+            "Colonna MT" \[Rule] "Times", 
+            "Comic Sans MS" \[Rule] "Helvetica", 
+            "Desdemona" \[Rule] "Helvetica", 
+            "Excalibur Logotype" \[Rule] "Helvetica", 
+            "Excalibur Monospace" \[Rule] "Courier", 
+            "Excalibur Script" \[Rule] "Times", 
+            "Fixedsys" \[Rule] "Helvetica", 
+            "Footlight MT Light" \[Rule] "Times", 
+            "Haettenschweiler" \[Rule] "Helvetica", 
+            "Impact" \[Rule] "Helvetica", "Kino MT" \[Rule] "Helvetica", 
+            "Kool" \[Rule] "Helvetica", 
+            "Matura MT Script Capitals" \[Rule] "Times", 
+            "Modern" \[Rule] "Helvetica", "MS LineDraw" \[Rule] "Courier", 
+            "MS Sans Serif" \[Rule] "Helvetica", "MS Serif" \[Rule] "Times", 
+            "News Gothic MT" \[Rule] "Helvetica", 
+            "Playbill" \[Rule] "Helvetica", 
+            "Small Fonts" \[Rule] "Helvetica", "System" \[Rule] "Helvetica", 
+            "Wide Latin" \[Rule] "Times", "Wingdings" \[Rule] "Times", 
+            "Gothic" \[Rule] "Helvetica", 
+            "New Century Schoolbook" \[Rule] "NewCenturySchlbk", 
+            "Swiss721bt" \[Rule] "Helvetica", 
+            "NewCenSchlbk" \[Rule] "New Century Schoolbook", 
+            "Terminal" \[Rule] "Courier"}\), 
+        ",", \(DefaultFontProperties \[Rule] {"Times" \[Rule] {"FontEncoding" \
+\[Rule] Automatic, "FontSerifed" \[Rule] "True", 
+                "FontMonospaced" \[Rule] "False"}, 
+            "Helvetica" \[Rule] {"FontEncoding" \[Rule] Automatic, 
+                "FontSerifed" \[Rule] "False", 
+                "FontMonospaced" \[Rule] "False"}, 
+            "Courier" \[Rule] {"FontEncoding" \[Rule] Automatic, 
+                "FontSerifed" \[Rule] "True", 
+                "FontMonospaced" \[Rule] "True"}, 
+            "Symbol" \[Rule] {"FontEncoding" \[Rule] "Symbol", 
+                "FontSerifed" \[Rule] "True", 
+                "FontMonospaced" \[Rule] "False"}, 
+            "ZapfDingbats" \[Rule] {"FontEncoding" \[Rule] "ZapfDingbats", 
+                "FontSerifed" \[Rule] "True", 
+                "FontMonospaced" \[Rule] "False"}}\), 
+        ",", \(BoxFormFormatTypes \[Rule] {"StandardForm", 
+            "TraditionalForm"}\), 
+        ",", \(FindSettings \[Rule] {"FindString" \[Rule] \*"\<\"\"\>", 
+            "ReplaceString" \[Rule] \*"\<\"\"\>", "IgnoreCase" \[Rule] True, 
+            "Wraparound" \[Rule] True, 
+            "DisplayedSearchList" \[Rule] "Styles", "LongForm" \[Rule] False, 
+            "SearchType" \[Rule] LiteralSearch, 
+            "WindowMargins" \[Rule] {{Automatic, Automatic}, {Automatic, 
+                  Automatic}}}\), 
+        ",", \(EditCellTagsSettings \[Rule] {"CellTags" \[Rule] {}, 
+            "WindowMargins" \[Rule] {{Automatic, Automatic}, {Automatic, 
+                  Automatic}}}\), 
+        ",", \(ViewPointSelectorSettings \[Rule] {"CoordinateSystem" \[Rule] 
+              Cartesian, "TemplateText" \[Rule] "ViewPoint->{\\x, \\y, \\z}", 
+            "ViewPoint" \[Rule] {1.2999999523162842`, \
+\(-2.4000000953674316`\), 2.`}, 
+            "WindowMargins" \[Rule] {{Automatic, Automatic}, {Automatic, 
+                  Automatic}}}\), 
+        ",", \(ColorSelectorSettings \[Rule] {"Color" \[Rule] 
+              GrayLevel[1.`]}\), 
+        ",", \(GridCreationSettings \[Rule] {"Rows" \[Rule] 3, 
+            "Columns" \[Rule] 3, "DrawRowLines" \[Rule] False, 
+            "DrawColumnLines" \[Rule] False, "DrawFrame" \[Rule] False, 
+            "Type" \[Rule] "PlainGridBox", "Fill" \[Rule] False, 
+            "DiagonalFill" \[Rule] False, "FillText" \[Rule] "0", 
+            "DiagonalFillText" \[Rule] "1"}\), 
+        ",", \(HyperlinkCreationSettings \[Rule] {"IncludeFilename" \[Rule] 
+              False}\), 
+        ",", \(NotebookStatisticsSettings \[Rule] {"Domain" \[Rule] 
+              Selection, "IncludeSharedData" \[Rule] True, 
+            "WindowMargins" \[Rule] {{Automatic, Automatic}, {Automatic, 
+                  Automatic}}}\), 
+        ",", \(OptionInspectorSettings \[Rule] {"Scope" \[Rule] "Global", 
+            "ViewAs" \[Rule] "Browser", 
+            "WindowSize" \[Rule] {Automatic, Automatic}, 
+            "WindowMargins" \[Rule] {{Automatic, Automatic}, {Automatic, 
+                  Automatic}}}\), 
+        ",", \(EditButtonSettings \[Rule] {"WindowMargins" \[Rule] \
+{{Automatic, Automatic}, {Automatic, Automatic}}}\), 
+        ",", \(BackgroundTasksSettings \[Rule] {"WindowMargins" \[Rule] \
+{{Automatic, Automatic}, {Automatic, Automatic}}}\), 
+        ",", \(InterruptSettings \[Rule] {"WindowMargins" \[Rule] \
+{{Automatic, Automatic}, {Automatic, Automatic}}}\), 
+        ",", \(InputSettings \[Rule] {"WindowMargins" \[Rule] {{Automatic, 
+                  Automatic}, {Automatic, Automatic}}}\), 
+        ",", \(HelpBrowserSettings \[Rule] {"ShowCategories" \[Rule] True, 
+            "WindowSize" \[Rule] {Automatic, Automatic}, 
+            "WindowMargins" \[Rule] {{Automatic, Automatic}, {Automatic, 
+                  Automatic}}}\), 
+        ",", \(ErrorsDialogSettings \[Rule] {"WindowMargins" \[Rule] \
+{{Automatic, Automatic}, {Automatic, Automatic}}}\), 
+        ",", \(StyleNameDialogSettings \[Rule] {"Style" \[Rule] "Input"}\), 
+        ",", \(FileNameDialogSettings \[Rule] {"StringFormat" \[Rule] True}\),
+         ",", \(NotebookConvertSettings \[Rule] {"InputToStandardForm" \
+\[Rule] False, "OutputToStandardForm" \[Rule] False, 
+            "PreserveStyleSheet" \[Rule] False, 
+            "GenerateBitmapCaches" \[Rule] False, 
+            "InputToInputForm" \[Rule] True, 
+            "OutputToOutputForm" \[Rule] True}\), 
+        ",", \(MessageOptions \[Rule] {"WarningAction" \[Rule] "Beep", 
+            "ErrorAction" \[Rule] {"Beep", "DialogBox"}, 
+            "ConsoleMessageAction" \[Rule] {"Beep", "PrintToConsole"}, 
+            "KernelMessageAction" \[Rule] {"Beep", "PrintToNotebook"}, 
+            "StartupHelp" \[Rule] False, "ExplainBeepHelp" \[Rule] True, 
+            "IgnoreTagBoxDeletionWarning" \[Rule] True, 
+            "TraditionalFormEvaluationWarning" \[Rule] True, 
+            "AllowDisablingWarnings" \[Rule] True}\), 
+        ",", \(NotebookAutoSave \[Rule] False\), 
+        ",", \(ClosingAutoSave \[Rule] False\), 
+        ",", \(IncludeFileExtension \[Rule] True\), 
+        ",", \(AutoGeneratedPackage \[Rule] Manual\), 
+        ",", \(Editable \[Rule] True\), 
+        ",", \(ScreenStyleEnvironment \[Rule] "Working"\), 
+        ",", \(PrintingStyleEnvironment \[Rule] "Printout"\), 
+        ",", \(ShowPageBreaks \[Rule] False\), 
+        ",", \(WindowToolbars \[Rule] {}\), 
+        ",", \(RulerUnits \[Rule] "Inches"\), 
+        ",", \(Evaluator \[Rule] "Local"\), 
+        ",", \(EventEvaluator \[Rule] "Automatic"\), 
+        ",", \(AutoEvaluateEvents \[Rule] {}\), 
+        ",", \(EvaluationCompletionAction \[Rule] {}\), 
+        ",", \(PrintAction \[Rule] "PrintToNotebook"\), 
+        ",", \(OutputAutoOverwrite \[Rule] True\), 
+        ",", \(InitializationCellEvaluation \[Rule] Automatic\), 
+        ",", \(InitializationCellWarning \[Rule] True\), 
+        ",", \(Selectable \[Rule] True\), ",", \(Deletable \[Rule] True\), 
+        ",", \(CellGrouping \[Rule] Automatic\), 
+        ",", \(PageWidth \[Rule] WindowWidth\), 
+        ",", \(WindowSize \[Rule] {568.`, 649.`}\), 
+        ",", \(WindowMargins \[Rule] {{70.`, 630.`}, {18.`, 325.`}}\), 
+        ",", \(WindowFrame \[Rule] "Normal"\), 
+        ",", \(WindowElements \[Rule] {"StatusArea", "MemoryMonitor", 
+            "MagnificationPopUp", "HorizontalScrollBar", "VerticalScrollBar", 
+            "MenuBar"}\), 
+        ",", \(WindowFrameElements \[Rule] {"CloseBox", "ZoomBox", 
+            "ResizeArea"}\), ",", \(WindowClickSelect \[Rule] True\), 
+        ",", \(WindowAutoSelect \[Rule] False\), 
+        ",", \(WindowFloating \[Rule] False\), 
+        ",", \(WindowMovable \[Rule] True\), 
+        ",", \(WindowTitle \[Rule] "Untitled-2"\), 
+        ",", \(Visible \[Rule] True\), 
+        ",", \(ScrollingOptions \[Rule] {"PagewiseScrolling" \[Rule] False, 
+            "PagewiseDisplay" \[Rule] False, 
+            "RealTimeScrolling" \[Rule] True, "JumpScrolling" \[Rule] False, 
+            "HorizontalScrollRange" \[Rule] 3024.`, 
+            "SpeedParameters" \[Rule] {2.`, 0.10000000149011612`, 1.`, 
+                0.4000000059604645`}}\), ",", \(ScrollPosition \[Rule] 0.`\), 
+        ",", \(HorizontalScrollPosition \[Rule] 0.`\), 
+        ",", \(PrintingCopies \[Rule] 1\), 
+        ",", \(PrintingStartingPageNumber \[Rule] 1\), 
+        ",", \(PrintingPageRange \[Rule] {Automatic, Automatic}\), 
+        ",", \(PageHeaders \[Rule] {{Cell[TextData[{CounterBox["Page"]}], 
+                "PageNumber"], None, 
+              Cell[TextData[{ValueBox["FileName"]}], "Header"]}, {Cell[
+                TextData[{ValueBox["FileName"]}], "Header"], None, 
+              Cell[TextData[{CounterBox["Page"]}], "PageNumber"]}}\), 
+        ",", \(PageFooters \[Rule] {{None, None, None}, {None, None, None}}\),
+         ",", \(PageHeaderLines \[Rule] {True, True}\), 
+        ",", \(PageFooterLines \[Rule] {False, False}\), 
+        ",", \(PrintingOptions \[Rule] {"PrintingMargins" \[Rule] {{54.`, 
+                  54.`}, {72.`, 72.`}}, 
+            "PaperSize" \[Rule] {Automatic, Automatic}, 
+            "PageSize" \[Rule] {Automatic, Automatic}, 
+            "PageHeaderMargins" \[Rule] {Automatic, Automatic}, 
+            "PageFooterMargins" \[Rule] {Automatic, Automatic}, 
+            "PaperOrientation" \[Rule] "Portrait", 
+            "PrintCellBrackets" \[Rule] False, 
+            "PrintSelectionHighlighting" \[Rule] False, 
+            "PrintRegistrationMarks" \[Rule] True, 
+            "PrintMultipleHorizontalPages" \[Rule] False, 
+            "FirstPageHeader" \[Rule] True, "FirstPageFooter" \[Rule] True, 
+            "RestPagesHeader" \[Rule] True, "RestPagesFooter" \[Rule] True, 
+            "FacingPages" \[Rule] False, "FirstPageFace" \[Rule] Right, 
+            "GraphicsPrintingFormat" \[Rule] "Automatic", 
+            "IncludeSpecialFonts" \[Rule] False, 
+            "IncludePostScriptResourceDirectives" \[Rule] True, 
+            "PostScriptOutputFile" \[RuleDelayed] "Automatic", 
+            "UsePostScriptOutputFile" \[Rule] True, 
+            "UnixShellPrintingCommand" \[Rule] Automatic, 
+            "UseUnixShellPrintingCommand" \[Rule] False, 
+            "Magnification" \[Rule] 1.`, 
+            "CellBackgroundHalftoneDensity" \[Rule] Automatic, 
+            "CellBackgroundHalftoneAngle" \[Rule] Automatic}\), 
+        ",", \(PrivateNotebookOptions \[Rule] {"SafeFileSave" \[Rule] 
+              Prescan, "SafeFileOpen" \[Rule] None, 
+            "DoubleBuffer" \[Rule] False, 
+            "ColorPalette" \[Rule] {RGBColor, 128}, 
+            "BackgroundPostScriptRendering" \[Rule] False, 
+            "RealTimeMarginAdjustment" \[Rule] True, 
+            "RealTimeWindowMove" \[Rule] False, 
+            "RealTimeWindowResize" \[Rule] False, 
+            "ShortBoxForm" \[Rule] True, 
+            "NumericalMemoryMonitor" \[Rule] False}\), 
+        ",", \(IndexCreationOptions \[Rule] {"Format" \[Rule] 
+              "PageReferences", "Ellipses" \[Rule] "...", 
+            "MultiPageContinuation" \[Rule] "-", 
+            "PageSeparator" \[Rule] ", ", "SectionSeparator" \[Rule] ".", 
+            "MainEntry" \[Rule] ";Main", "MainPage" \[Rule] ";Bold"}\), 
+        ",", \(CellFrame \[Rule] False\), ",", \(CellDingbat \[Rule] None\), 
+        ",", \(ShowCellBracket \[Rule] True\), 
+        ",", \(ShowSelection \[Rule] True\), 
+        ",", \(ShowGroupOpenCloseIcon \[Rule] False\), 
+        ",", \(ShowClosedCellArea \[Rule] False\), 
+        ",", \(ShowShortBoxForm \[Rule] False\), 
+        ",", \(CellMargins \[Rule] {{7.`, 3.`}, {4.`, 4.`}}\), 
+        ",", \(CellBracketOptions \[Rule] {"Thickness" \[Rule] 0.25`, 
+            "Color" \[Rule] RGBColor[0.`, 0.`, 1.`], 
+            "Margins" \[Rule] {0.`, 2.`}, "Widths" \[Rule] {0.`, 7.`}}\), 
+        ",", \(CellElementSpacings \[Rule] {"CellMinHeight" \[Rule] 12.`, 
+            "ClosedCellHeight" \[Rule] 19.`, 
+            "ClosedGroupTopMargin" \[Rule] 4.`, 
+            "GroupIconTopMargin" \[Rule] 3.`, 
+            "GroupIconBottomMargin" \[Rule] 12.`}\), 
+        ",", \(PrivateCellOptions \[Rule] {"CellDisplayCache" \[Rule] False, 
+            "DefaultCellGroupOpen" \[Rule] True}\), 
+        ",", \(Active \[Rule] False\), 
+        ",", \(CellEditDuplicate \[Rule] False\), 
+        ",", \(Evaluatable \[Rule] False\), ",", \(Copyable \[Rule] True\), 
+        ",", \(CellOpen \[Rule] True\), 
+        ",", \(CellGroupingRules \[Rule] "NormalGrouping"\), 
+        ",", \(ConversionRules \[RuleDelayed] None\), 
+        ",", \(TaggingRules \[RuleDelayed] None\), 
+        ",", \(LayoutInformation \[RuleDelayed] None\), 
+        ",", \(CellHorizontalScrolling \[Rule] False\), 
+        ",", \(PageBreakAbove \[Rule] Automatic\), 
+        ",", \(PageBreakWithin \[Rule] Automatic\), 
+        ",", \(PageBreakBelow \[Rule] Automatic\), 
+        ",", \(GroupPageBreakWithin \[Rule] Automatic\), 
+        ",", \(InitializationCell \[Rule] False\), 
+        ",", \(CellEvaluationDuplicate \[Rule] False\), 
+        ",", \(GeneratedCell \[Rule] False\), 
+        ",", \(CellAutoOverwrite \[Rule] False\), 
+        ",", \(PrivateEvaluationOptions \[Rule] {"OutputFormPageWidth" \
+\[Rule] "WindowWidth", "StoreInputForm" \[Rule] Automatic}\), 
+        ",", \(ShowCellLabel \[Rule] True\), 
+        ",", \(CellLabelPositioning \[Rule] Automatic\), 
+        ",", \(CellLabelAutoDelete \[Rule] True\), 
+        ",", \(CellLabelMargins \[Rule] {{12.`, 0.`}, {2.`, 0.`}}\), 
+        ",", \(CellFrameMargins \[Rule] 8.`\), 
+        ",", \(CellFrameColor \[Rule] GrayLevel[0.`]\), 
+        ",", \(CellFrameLabels \[Rule] {{None, None}, {None, None}}\), 
+        ",", \(CellFrameLabelMargins \[Rule] 6.`\), 
+        ",", \(ShowCellTags \[Rule] False\), 
+        ",", \(CellSize \[Rule] {Automatic, Automatic}\), 
+        ",", \(CellBaseline \[Rule] Baseline\), 
+        ",", \(DefaultNewCellStyle \[Rule] "Input"\), 
+        ",", \(DefaultNewInlineCellStyle \[Rule] "None"\), 
+        ",", \(DefaultDuplicateCellStyle \[Rule] "Input"\), 
+        ",", \(DefaultFormatType \[Rule] DefaultTextFormatType\), 
+        ",", \(DefaultInlineFormatType \[Rule] DefaultTextInlineFormatType\), 
+        ",", \(CommonDefaultFormatTypes \[Rule] {"Text" \[Rule] TextForm, 
+            "Input" \[Rule] StandardForm, "Output" \[Rule] StandardForm, 
+            "TextInline" \[Rule] TraditionalForm, 
+            "InputInline" \[Rule] StandardForm, 
+            "OutputInline" \[Rule] StandardForm}\), 
+        ",", \(AutoIndent \[Rule] Automatic\), 
+        ",", \(InputAliases \[Rule] {}\), 
+        ",", \(InputAutoReplacements \[Rule] {}\), 
+        ",", \(DelimiterFlashTime \[Rule] 0.30000001192092896`\), 
+        ",", \(ShowCursorTracker \[Rule] True\), 
+        ",", \(ShowAutoStyles \[Rule] True\), 
+        ",", \(StructuredSelection \[Rule] False\), 
+        ",", \(StyleBoxAutoDelete \[Rule] False\), 
+        ",", \(DragAndDrop \[Rule] False\), 
+        ",", \(DragAndDropEvaluator \[Rule] Automatic\), 
+        ",", \(DragAndDropFunction \[RuleDelayed] None\), 
+        ",", \(ShowSpecialCharacters \[Rule] True\), 
+        ",", \(AllowInlineCells \[Rule] True\), 
+        ",", \(PasteBoxFormInlineCells \[Rule] Automatic\), 
+        ",", \(Placeholder \[Rule] False\), 
+        ",", \(MousePointerNote \[Rule] None\), 
+        ",", \("TwoByteSyntaxCharacterAutoReplacement" \[Rule] False\), 
+        ",", \("CursorTrackerParameters" \[Rule] {9.`, 0.10000000149011612`, 
+            7.`, 0.019999999552965164`, 4.`, 0.019999999552965164`, 2.`, 
+            0.019999999552965164`}\), 
+        ",", \(AutoStyleOptions \[Rule] {"UnmatchedBracketStyle" \[Rule] 
+              "UnmatchedBracket"}\), ",", \(TextAlignment \[Rule] Left\), 
+        ",", \(TextJustification \[Rule] 0.`\), 
+        ",", \(Hyphenation \[Rule] False\), 
+        ",", \(HyphenationOptions \[Rule] {"HyphenationFreeZone" \[Rule] 
+              36.`, "HyphenationCharacter" \[Rule] "\[Hyphen]", 
+            "HyphenationMinLengths" \[Rule] {3.`, 3.`}}\), 
+        ",", \(TabFilling \[Rule] None\), 
+        ",", \(LineSpacing \[Rule] {1.`, 1.`}\), 
+        ",", \(ParagraphSpacing \[Rule] {0.`, 0.`}\), 
+        ",", \(ParagraphIndent \[Rule] 0.`\), 
+        ",", \(TabSpacings \[Rule] 4.`\), 
+        ",", \(AutoItalicWords \[Rule] {"Mathematica", "MathLink", 
+            "MathSource", "MathReader", "MathScript"}\), 
+        ",", \(LanguageCategory \[Rule] "NaturalLanguage"\), 
+        ",", \(DefaultNaturalLanguage \[Rule] Language\), 
+        ",", \(SpellingOptions \[Rule] {"AlwaysStop" \[Rule] \
+{"UncapitalizedStartOfSentence", "RepeatedWords"}, 
+            "AlwaysSkip" \[Rule] {"SingleCharacterWords", "Numbers", 
+                "WordsWithNumbers", "WordsInAllCaps"}, 
+            "WordSplitting" \[Rule] {"Hyphen", "Underscore", 
+                "InternalCapitals"}}\), 
+        ",", \(SpellingDictionaries \[Rule] {"CorrectWords" \[Rule] {}, 
+            "IncorrectWords" \[Rule] {}, "Suggestions" \[Rule] {}}\), 
+        ",", \(FormatType \[Rule] TextForm\), 
+        ",", \(AutoSpacing \[Rule] True\), ",", \(ShowContents \[Rule] True\),
+         ",", \(ScriptSizeMultipliers \[Rule] 0.7099999785423279`\), 
+        ",", \(ScriptMinSize \[Rule] 9.`\), ",", \(ScriptLevel \[Rule] 0.`\), 
+        ",", \(ScriptBaselineShifts \[Rule] {\(-999.`\), \(-999.`\)}\), 
+        ",", \(ShowStringCharacters \[Rule] False\), 
+        ",", \(NumberMarks \[Rule] False\), ",", \(PrintPrecision \[Rule] 6\),
+         ",", \(NumberMultiplier \[Rule] "\[Times]"\), 
+        ",", \(LimitsPositioningTokens \[Rule] {"\[Sum]", "\[Product]", 
+            "\[Intersection]", "\[Union]", "\[UnionPlus]", "\[Wedge]", 
+            "\[Vee]", "lim", "max", "min", "\[CirclePlus]", "\[CircleMinus]", 
+            "\[CircleTimes]", "\[CircleDot]"}\), 
+        ",", \(SingleLetterItalics \[Rule] False\), 
+        ",", \(TraditionalFunctionNotation \[Rule] False\), 
+        ",", \(DelimiterMatching \[Rule] All\), 
+        ",", \(ZeroWidthTimes \[Rule] False\), 
+        ",", \(SpanMinSize \[Rule] Automatic\), 
+        ",", \(SpanMaxSize \[Rule] Automatic\), 
+        ",", \(SpanSymmetric \[Rule] True\), 
+        ",", \(SpanLineThickness \[Rule] Automatic\), 
+        ",", \(SpanCharacterRounding \[Rule] Automatic\), 
+        ",", \(SpanAdjustments \[Rule] {{\(-999.`\), \(-999.`\)}, \
+{\(-999.`\), \(-999.`\)}}\), ",", \(LineBreakWithin \[Rule] Automatic\), 
+        ",", \(LineIndent \[Rule] 1.`\), 
+        ",", \(IndentingNewlineSpacings \[Rule] 4.`\), 
+        ",", \(AutoIndentSpacings \[Rule] 1.`\), 
+        ",", \(IndentMaxFraction \[Rule] 0.5`\), 
+        ",", \(LinebreakAdjustments \[Rule] {0.8500000238418579`, 2.`, 12.`, 
+            1.`, 1.`}\), ",", \(CounterIncrements \[Rule] {}\), 
+        ",", \(CounterAssignments \[Rule] {}\), 
+        ",", \(InlineCounterIncrements \[Rule] {}\), 
+        ",", \(InlineCounterAssignments \[Rule] {}\), 
+        ",", \(CoordinateDisplayFunction \[RuleDelayed] Identity\), 
+        ",", \(AspectRatioFixed \[Rule] True\), 
+        ",", \(ImageSize \[Rule] {288.`, 288.`}\), 
+        ",", \(ImageMargins \[Rule] {{0.`, 0.`}, {0.`, 0.`}}\), 
+        ",", \(ImageRegion \[Rule] {{0.`, 1.`}, {0.`, 1.`}}\), 
+        ",", \(AnimationDisplayTime \[Rule] 0.10000000149011612`\), 
+        ",", \(AnimationCycleOffset \[Rule] 0.`\), ",", 
+        RowBox[{"AnimationCycleRepetitions", "\[Rule]", 
+          InterpretationBox["\[Infinity]",
+            DirectedInfinity[ 1]]}], 
+        ",", \(RenderingOptions \[Rule] {"DrawDummyGraphics" \[Rule] False, 
+            "RenderIncrementally" \[Rule] True, 
+            "RenderFilledAreas" \[Rule] True, "RenderLines" \[Rule] True, 
+            "RenderThickness" \[Rule] True, "ObjectDithering" \[Rule] True, 
+            "RasterDithering" \[Rule] False, 
+            "ImageHalftoneDensity" \[Rule] Automatic, 
+            "ImageHalftoneAngle" \[Rule] Automatic, 
+            "ScreenRasterPostScriptOperator" \[Rule] "image", 
+            "PrinterRasterPostScriptOperator" \[Rule] "CustomMImage", 
+            "ImageCacheDepth" \[Rule] "DeepestScreen"}\), 
+        ",", \(CellPasswords \[Rule] {}\), 
+        ",", \(InputAutoFormat \[Rule] False\), 
+        ",", \(SendFontInformationToKernel \[Rule] False\), 
+        ",", \(ImageCacheValid \[Rule] True\), 
+        ",", \(KeyboardAliases \[Rule] {}\), 
+        ",", \(StyleMenuListing \[Rule] None\), 
+        ",", \(ButtonStyleMenuListing \[Rule] None\), 
+        ",", \(CounterStyleMenuListing \[Rule] Automatic\), 
+        ",", \(FormatTypeAutoConvert \[Rule] True\), 
+        ",", \(DrawHighlighted \[Rule] False\), 
+        ",", \(MacintoshSystemParameters \[Rule] 600.`\), 
+        ",", \(FontFamily \[Rule] "Times"\), ",", \(FontSize \[Rule] 12.`\), 
+        ",", \(FontWeight \[Rule] "Plain"\), 
+        ",", \(FontSlant \[Rule] "Plain"\), 
+        ",", \(FontTracking \[Rule] "Plain"\), 
+        ",", \(FontColor \[Rule] GrayLevel[0.`]\), 
+        ",", \(Background \[Rule] None\), 
+        ",", \(FontVariations \[Rule] {"Underline" \[Rule] False, 
+            "Outline" \[Rule] False, "Shadow" \[Rule] False, 
+            "StrikeThrough" \[Rule] False, "Masked" \[Rule] False, 
+            "CompatibilityType" \[Rule] "Normal", 
+            "RotationAngle" \[Rule] 0.`}\), 
+        ",", \(FontProperties \[Rule] {"FontSerifed" \[Rule] Automatic, 
+            "FontMonospaced" \[Rule] Automatic}\), 
+        ",", \(PrivateFontOptions \[Rule] {"FontPostScriptName" \[Rule] 
+              Automatic, "FontType" \[Rule] "Bitmap", 
+            "OperatorSubstitution" \[Rule] True, 
+            "WindowsUseTrueTypeNames" \[Rule] True}\), 
+        ",", \(CharacterEncoding \[Rule] Automatic\), 
+        ",", \(Magnification \[Rule] 1.2000000476837158`\), 
+        ",", \(ErrorBoxOptions \[Rule] {AutoDelete \[Rule] True}\), 
+        ",", \(AdjustmentBoxOptions \[Rule] {BoxMargins \[Rule] {{0.`, 
+                  0.`}, {0.`, 0.`}}, BoxBaselineShift \[Rule] 0.`}\), 
+        ",", \(BoxDataFormatType \[Rule] StandardForm\), 
+        ",", \(TagBoxOptions \[Rule] {TagStyle \[Rule] None, 
+            Editable \[Rule] Automatic, Selectable \[Rule] True, 
+            AutoDelete \[Rule] False, StripWrapperBoxes \[Rule] False, 
+            DeletionWarning \[Rule] False, SyntaxForm \[Rule] Automatic}\), 
+        ",", \(InterpretationBoxOptions \[Rule] {TagStyle \[Rule] None, 
+            Editable \[Rule] Automatic, Selectable \[Rule] True, 
+            AutoDelete \[Rule] False, DeletionWarning \[Rule] False, 
+            SyntaxForm \[Rule] Automatic}\), 
+        ",", \(CounterBoxOptions \[Rule] {CounterStyle \[Rule] Automatic, 
+            CounterFunction \[RuleDelayed] Identity, 
+            CounterData \[RuleDelayed] Identity, 
+            CounterEvaluator \[Rule] None}\), 
+        ",", \(ButtonBoxOptions \[Rule] {ButtonFunction \[RuleDelayed] \
+\((FrontEndExecute[{FrontEnd`NotebookApply[FrontEnd`InputNotebook[], #1, 
+                        Placeholder]}] &)\), ButtonEvaluator \[Rule] None, 
+            ButtonData \[RuleDelayed] Automatic, Active \[Rule] False, 
+            ButtonMinHeight \[Rule] 1.`, ButtonExpandable \[Rule] True, 
+            ButtonStyle \[Rule] None, ButtonSource \[Rule] Automatic, 
+            ButtonMargins \[Rule] 3.`, ButtonFrame \[Rule] "Palette", 
+            Background \[Rule] GrayLevel[0.8392462043183032`], 
+            ButtonNote \[Rule] None}\), 
+        ",", \(Experimental`PopupBoxOptions \[Rule] {ButtonFunction \
+\[RuleDelayed] \((FrontEndExecute[{FrontEnd`NotebookApply[
+                        FrontEnd`InputNotebook[], #1, Placeholder]}] &)\), 
+            ButtonEvaluator \[Rule] None, 
+            ButtonData \[RuleDelayed] Automatic, Active \[Rule] False, 
+            ButtonMinHeight \[Rule] 1.`, ButtonExpandable \[Rule] True, 
+            ButtonStyle \[Rule] None, ButtonSource \[Rule] Automatic, 
+            ButtonMargins \[Rule] 3.`, ButtonFrame \[Rule] "Palette", 
+            Background \[Rule] GrayLevel[0.8392462043183032`], 
+            ButtonNote \[Rule] None, 
+            Experimental`PopDirection \[Rule] Right}\), 
+        ",", \(Experimental`SliderBoxOptions \[Rule] {ButtonFunction \
+\[RuleDelayed] Null, Experimental`TrackingFunction \[RuleDelayed] Null, 
+            ButtonEvaluator \[Rule] None, 
+            ButtonData \[RuleDelayed] Automatic, Active \[Rule] False, 
+            ButtonMinHeight \[Rule] 1.`, ButtonExpandable \[Rule] True, 
+            ButtonStyle \[Rule] None, ButtonSource \[Rule] Automatic, 
+            ButtonMargins \[Rule] 3.`, ButtonFrame \[Rule] "Palette", 
+            Background \[Rule] GrayLevel[0.8392462043183032`], 
+            ButtonNote \[Rule] None, Experimental`Orientation \[Rule] Null, 
+            Experimental`Range \[Rule] {0.`, 1.`}, 
+            Experimental`IntegerValued \[Rule] False, 
+            Experimental`DefaultValue \[Rule] 0.`}\), 
+        ",", \(FrameBoxOptions \[Rule] {BoxFrame \[Rule] True, 
+            BoxMargins \[Rule] {{0.4000000059604645`, 
+                  0.4000000059604645`}, {0.5`, 0.5`}}}\), 
+        ",", \(SubsuperscriptBoxOptions \[Rule] {MultilineFunction \[Rule] 
+              Automatic}\), 
+        ",", \(SubscriptBoxOptions \[Rule] {MultilineFunction \[Rule] 
+              Automatic}\), 
+        ",", \(SuperscriptBoxOptions \[Rule] {MultilineFunction \[Rule] 
+              Automatic}\), 
+        ",", \(UnderoverscriptBoxOptions \[Rule] {LimitsPositioning \[Rule] 
+              Automatic, DiacriticalPositioning \[Rule] Automatic, 
+            MultilineFunction \[Rule] Automatic}\), 
+        ",", \(UnderscriptBoxOptions \[Rule] {LimitsPositioning \[Rule] 
+              Automatic, DiacriticalPositioning \[Rule] Automatic, 
+            MultilineFunction \[Rule] Automatic}\), 
+        ",", \(OverscriptBoxOptions \[Rule] {LimitsPositioning \[Rule] 
+              Automatic, DiacriticalPositioning \[Rule] Automatic, 
+            MultilineFunction \[Rule] Automatic}\), 
+        ",", \(RadicalBoxOptions \[Rule] {ExponentPosition \[Rule] \
+{0.20000000298023224`, 0.10000000149011612`}, 
+            MultilineFunction \[Rule] Automatic}\), 
+        ",", \(SqrtBoxOptions \[Rule] {MultilineFunction \[Rule] Automatic}\),
+         ",", \(FractionBoxOptions \[Rule] {FractionLine \[Rule] Automatic, 
+            MultilineFunction \[Rule] Automatic}\), 
+        ",", \(GridBoxOptions \[Rule] {GridBaseline \[Rule] Axis, 
+            RowSpacings \[Rule] 1.`, 
+            ColumnSpacings \[Rule] 0.800000011920929`, 
+            ColumnWidths \[Rule] Automatic, RowAlignments \[Rule] Baseline, 
+            ColumnAlignments \[Rule] {Center}, GridFrame \[Rule] False, 
+            GridFrameMargins \[Rule] {{0.4000000059604645`, 
+                  0.4000000059604645`}, {0.5`, 0.5`}}, 
+            RowLines \[Rule] False, ColumnLines \[Rule] False, 
+            RowMinHeight \[Rule] 1.`, RowsEqual \[Rule] False, 
+            ColumnsEqual \[Rule] False, AutoDelete \[Rule] True, 
+            AllowScriptLevelChange \[Rule] True, 
+            MultilineFunction \[Rule] None, 
+            GridDefaultElement \[RuleDelayed] \[Placeholder]}\)}], 
+      "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Options[nb]\)], "Input"],
+
+Cell[BoxData[
+    \({FrontEndVersion \[Rule] "4.1 for X", 
+      ScreenRectangle \[Rule] {{0.`, 1280.`}, {0.`, 1024.`}}, 
+      WindowSize \[Rule] {568.`, 649.`}, 
+      WindowMargins \[Rule] {{70.`, Automatic}, {18.`, Automatic}}, 
+      Magnification \[Rule] 1.2000000476837158`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Options[nb, \ Background]\)], "Input"],
+
+Cell[BoxData[
+    \({Background \[Rule] None}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(SetOptions[nb, \ Background\  \[Rule] \ RGBColor[1, 0, 0]]\)], "Input"]
+},
+FrontEndVersion->"4.1 for X",
+ScreenRectangle->{{0, 1280}, {0, 1024}},
+WindowSize->{568, 649},
+WindowMargins->{{70, Automatic}, {18, Automatic}},
+Background->RGBColor[1, 0, 0],
+Magnification->1.2
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "Info3258710718-5064202"->{
+    Cell[8335, 279, 69, 1, 25, "Print",
+      CellTags->"Info3258710718-5064202"]},
+  "Info3258711023-6090534"->{
+    Cell[9574, 328, 64, 1, 25, "Print",
+      CellTags->"Info3258711023-6090534"],
+    Cell[9641, 331, 726, 20, 26, "Print",
+      CellTags->"Info3258711023-6090534"]},
+  "Info3258711035-7970262"->{
+    Cell[10445, 359, 64, 1, 25, "Print",
+      CellTags->"Info3258711035-7970262"],
+    Cell[10512, 362, 726, 20, 26, "Print",
+      CellTags->"Info3258711035-7970262"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"Info3258710718-5064202", 61866, 1270},
+  {"Info3258711023-6090534", 61980, 1273},
+  {"Info3258711035-7970262", 62179, 1278}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1727, 52, 39, 1, 32, "Input"],
+Cell[1769, 55, 35, 1, 31, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[1841, 61, 53, 1, 32, "Input"],
+Cell[1897, 64, 52, 1, 31, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[1986, 70, 45, 1, 32, "Input"],
+Cell[2034, 73, 35, 0, 47, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2106, 78, 56, 1, 32, "Input"],
+Cell[2165, 81, 152, 2, 67, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2354, 88, 45, 1, 32, "Input"],
+Cell[2402, 91, 145, 3, 95, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2584, 99, 43, 1, 32, "Input"],
+Cell[2630, 102, 44, 1, 31, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2711, 108, 46, 1, 32, "Input"],
+Cell[2760, 111, 2586, 63, 89, "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5383, 179, 51, 1, 32, "Input"],
+Cell[5437, 182, 192, 3, 65, "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5666, 190, 39, 1, 32, "Input"],
+Cell[5708, 193, 99, 3, 31, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5844, 201, 42, 1, 32, "Input"],
+Cell[5889, 204, 43, 1, 31, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5969, 210, 46, 1, 32, "Input"],
+Cell[6018, 213, 2136, 52, 89, "Print"]
+}, Open  ]],
+Cell[8169, 268, 42, 1, 32, "Input"],
+Cell[8214, 271, 47, 1, 32, "Input"],
+
+Cell[CellGroupData[{
+Cell[8286, 276, 46, 1, 32, "Input"],
+Cell[8335, 279, 69, 1, 25, "Print",
+  CellTags->"Info3258710718-5064202"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8441, 285, 56, 1, 32, "Input"],
+Cell[8500, 288, 211, 5, 31, "Output"]
+}, Open  ]],
+Cell[8726, 296, 80, 1, 32, "Input"],
+
+Cell[CellGroupData[{
+Cell[8831, 301, 88, 1, 32, "Input"],
+Cell[8922, 304, 193, 3, 65, "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9152, 312, 44, 1, 32, "Input"],
+Cell[9199, 315, 295, 5, 103, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9531, 325, 40, 1, 32, "Input"],
+Cell[9574, 328, 64, 1, 25, "Print",
+  CellTags->"Info3258711023-6090534"],
+Cell[9641, 331, 726, 20, 26, "Print",
+  CellTags->"Info3258711023-6090534"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10404, 356, 38, 1, 32, "Input"],
+Cell[10445, 359, 64, 1, 25, "Print",
+  CellTags->"Info3258711035-7970262"],
+Cell[10512, 362, 726, 20, 26, "Print",
+  CellTags->"Info3258711035-7970262"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11275, 387, 44, 1, 32, "Input"],
+Cell[11322, 390, 295, 5, 103, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11654, 400, 52, 1, 32, "Input"],
+Cell[11709, 403, 48867, 822, 13982, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[60613, 1230, 44, 1, 32, "Input"],
+Cell[60660, 1233, 295, 5, 103, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[60992, 1243, 58, 1, 32, "Input"],
+Cell[61053, 1246, 59, 1, 31, "Output"]
+}, Open  ]],
+Cell[61127, 1250, 91, 1, 32, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

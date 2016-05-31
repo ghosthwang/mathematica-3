@@ -1,0 +1,157 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      4042,        110]*)
+(*NotebookOutlinePosition[      4674,        132]*)
+(*  CellTagsIndexPosition[      4630,        128]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(Clear["\<Global`*\>"]\)], "Input"],
+
+Cell[BoxData[{
+    \(\(eq\  = \ 
+        m\ \(x''\)[t]\  + \ c\ \(x'\)[t]\  + \ k\ x[t]\  \[Equal] \ 
+          0;\)\), "\[IndentingNewLine]", 
+    \(\(b\  = \ x[0]\  \[Equal] \ 1;\)\)}], "Input"],
+
+Cell[BoxData[
+    \(g[t_] := DSolve[{eq, \ b}, \ x, t]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(g[t] /. {c \[Rule] 1, m \[Rule] 1, x \[Rule] 1, k \[Rule] 1, 
+        f0 \[Rule] 1}\)], "Input"],
+
+Cell[BoxData[
+    \({{1 \[Rule] 
+          Function[{t}, \[ExponentialE]\^\(1\/2\ \((\(-1\) - \@\(1\^2 - 4\ 1\ \
+1\))\)\ t\)\ C[
+                  1] + \[ExponentialE]\^\(1\/2\ \((\(-1\) + \@\(1\^2 - 4\ 1\ \
+1\))\)\ t\)\ C[
+                  2] - \(\((\[ExponentialE]\^\(1\/2\ \((\(-1\) - \@\(1\^2 - 4\
+\ 1\ 1\))\)\ t\) - \[ExponentialE]\^\(1\/2\ \((\(-1\) + \@\(1\^2 - 4\ 1\ 1\))\
+\)\ t\))\)\ UnitStep[t]\)\/\@\(1\^2 - 4\ 1\ 1\)]}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(\(\(g[t]\)[\([1]\)]\)[\([1]\)]\)[\([2]\)]\)[\([3]\)] // 
+      FullSimplify\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(Part::"partw"\), \(\(:\)\(\ \)\), "\<\"Part \\!\\(3\\) of \
+\\!\\(Function[\\(\\(\\(\\({t}\\)\\), \
+\\(\\(\[ExponentialE]\\^\\(\\(\\(\\((\\(\\(-c\\)\\) - \\@\\(Plus[\\(\\(\
+\[LeftSkeleton] 2 \[RightSkeleton]\\)\\)]\\))\\)\\)\\\\ t\\)\\/\\(2\\\\ \
+m\\)\\) - \\(\\(\[ExponentialE]\\^\\(\\(\\(\\((\\(\\(-c\\)\\) - \\(\\(\
+\[LeftSkeleton] 1 \[RightSkeleton]\\)\\))\\)\\)\\\\ t\\)\\/\\(2\\\\ m\\)\\)\\\
+\\ \\(\\(C[2]\\)\\)\\)\\) + \
+\\(\\(\[ExponentialE]\\^\\(\\(\\(\\((\\(\\(-c\\)\\) + \\@\\(Plus[\\(\\(\
+\[LeftSkeleton] 1 \[RightSkeleton]\\)\\)]\\))\\)\\)\\\\ t\\)\\/\\(2\\\\ \
+m\\)\\)\\\\ \\(\\(C[2]\\)\\)\\)\\)\\)\\)\\)\\)]\\) does not exist. \
+\\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\
+\\\", ButtonFrame->None, ButtonData:>\\\"General::partw\\\"]\\)\"\>"}]], \
+"Message"],
+
+Cell[BoxData[
+    \(\(Function[{t}, \[ExponentialE]\^\(\(\((\(-c\) - \@\(c\^2 - 4\ k\ \
+m\))\)\ t\)\/\(2\ m\)\) - \[ExponentialE]\^\(\(\((\(-c\) - \@\(c\^2 - 4\ k\ m\
+\))\)\ t\)\/\(2\ m\)\)\ C[
+              2] + \[ExponentialE]\^\(\(\((\(-c\) + \@\(c\^2 - 4\ k\ m\))\)\ \
+t\)\/\(2\ m\)\)\ C[
+              2]]\)\[LeftDoubleBracket]3\[RightDoubleBracket]\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for X",
+ScreenRectangle->{{0, 1600}, {0, 1198}},
+WindowSize->{778, 600},
+WindowMargins->{{Automatic, 196}, {Automatic, 235}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 54, 1, 27, "Input"],
+Cell[1811, 54, 196, 4, 43, "Input"],
+Cell[2010, 60, 67, 1, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[2102, 65, 116, 2, 27, "Input"],
+Cell[2221, 69, 446, 8, 169, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2704, 82, 112, 2, 27, "Input"],
+Cell[2819, 86, 836, 13, 65, "Message"],
+Cell[3658, 101, 368, 6, 70, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

@@ -1,0 +1,300 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      8179,        234]*)
+(*NotebookOutlinePosition[      8829,        257]*)
+(*  CellTagsIndexPosition[      8785,        253]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(Clear["\<Global`*\>"]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ saturation\ currents\ of\ p - \ and\ nmost\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(\(ip[
+            Vin_]\  := \ \(\[Beta]p\/2\) \(Wp\/Lp\) \((Vdd\  - \ Vin\  - \ \
+Vtp)\)\^2;\)\[IndentingNewLine]
+      \(in[
+            Vin_]\  := \ \(\[Beta]n\/2\) \(Wn\/Ln\) \((\ Vin\  - \ Vtn)\)\^2;\
+\)\)}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ setup\ equations\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(eq0\  = \ {\[IndentingNewLine]ip[Vin] \[Equal] 
+              in[Vin], \[IndentingNewLine]\[Alpha]\^2 == \(\(\[Beta]p\/2\) Wp\
+\/Lp\)\/\(\(\[Beta]n\/2\) Wn\/Ln\)\[IndentingNewLine]};\)}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ assumptions\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(ass\  = \[IndentingNewLine]Vin\  \
+\[GreaterEqual] 0\  && \[IndentingNewLine]Vdd > 
+              0\  && \[IndentingNewLine]Vtn\  > 
+              0\  && \[IndentingNewLine]Vtp\  > \ 
+              0\  && \[IndentingNewLine]\[Alpha]\  > \ 
+              0\  && \[IndentingNewLine]Vin\  \[GreaterEqual] \ 
+              Vtn\  && \[IndentingNewLine]Vdd\  - \ Vin\  \[GreaterEqual] \ 
+              Vtp\  && \[IndentingNewLine]Vdd\  > \ 
+              Vtn\  + \ Vtp;\)}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ eliminate\ transistor - parameters\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(eq1\  = \ 
+        Simplify[
+          Eliminate[
+            eq0, \ {\[Beta]p, \ Wp, \ Lp, \ \[Beta]n, \ Wn, \ 
+              Ln}]]\)}]], "Input"],
+
+Cell[BoxData[
+    \(\((\(-Vdd\) + Vin + Vtp)\)\^2\ \[Alpha]\^2 \[Equal] \((Vin - \
+Vtn)\)\^2\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ reduce, \ 
+          delivers\ solutions\ and\ accompanying\ conditions\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(eq2 = 
+          FullSimplify[Reduce[eq1, \ Vin]];\)}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ apply\ the\ assupmtions\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(eq3 = 
+        Refine[Reduce[eq2, Vin], ass]\)}]], "Input"],
+
+Cell[BoxData[
+    \(\(-1\) + \[Alpha] \[NotEqual] 0 && 
+        Vin \[Equal] \(\(-Vtn\) + Vdd\ \[Alpha] - Vtp\ \[Alpha]\)\/\(\(-1\) + \
+\[Alpha]\) || 
+      Vin \[Equal] \(Vtn + Vdd\ \[Alpha] - Vtp\ \[Alpha]\)\/\(1 + \
+\[Alpha]\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"\[IndentingNewLine]", 
+        RowBox[{"eq4", " ", "=", " ", 
+          RowBox[{"{", "\[IndentingNewLine]", " ", 
+            RowBox[{\(Refine[eq3, \ \[Alpha] == 1\  && \ ass]\), " ", 
+              
+              StyleBox[\( (*\(\(\ \)\(a\)\()\)\)\ p - \ 
+                    and\ nmost\ have\ same\ strength, \ \[Alpha] \[Equal] 
+                    1\ *) \),
+                FontColor->RGBColor[0, 0, 1]], 
+              StyleBox[",",
+                FontColor->RGBColor[0, 0, 1]], 
+              StyleBox["\[IndentingNewLine]",
+                FontColor->RGBColor[0, 0, 1]], 
+              StyleBox[" ",
+                FontColor->RGBColor[0, 0, 1]], \(Refine[
+                eq3, \ \[Alpha] > 1\  && \ ass]\), "   ", 
+              RowBox[{
+                StyleBox["(*",
+                  FontColor->RGBColor[0, 0, 1]], 
+                
+                StyleBox[\(\(\(\ \)\(b\)\()\)\)\ pmost\ stronger\ than\ \
+nmost, \ \[Alpha]\  > \ 1\),
+                  FontColor->RGBColor[0, 0, 1]], 
+                StyleBox[" ",
+                  FontColor->RGBColor[0, 0, 1]], 
+                StyleBox["*)",
+                  FontColor->RGBColor[0, 0, 1]]}], 
+              StyleBox[",",
+                FontColor->RGBColor[0, 0, 1]], 
+              StyleBox["\[IndentingNewLine]",
+                FontColor->RGBColor[0, 0, 1]], 
+              RowBox[{"eq4c", " ", "=", " ", 
+                RowBox[{\(Refine[eq3, \ \[Alpha] < 1\  && \ ass]\), 
+                  RowBox[{
+                    StyleBox["(*",
+                      FontColor->RGBColor[0, 0, 1]], 
+                    
+                    StyleBox[\(\(\(\ \)\(c\)\()\)\)\ nmost\ stronger\ than\ \
+pmost, \ \[Alpha]\  < \ 1\),
+                      FontColor->RGBColor[0, 0, 1]], 
+                    StyleBox[" ",
+                      FontColor->RGBColor[0, 0, 1]], 
+                    StyleBox["*)",
+                      FontColor->RGBColor[0, 0, 1]]}], 
+                  StyleBox["\[IndentingNewLine]",
+                    FontColor->RGBColor[0, 0, 1]], "q"}]}]}], "}"}]}], 
+        StyleBox["}",
+          FontColor->RGBColor[0, 0, 1]]}], 
+      StyleBox[";",
+        FontColor->RGBColor[0, 0, 1]]}]], "Input"],
+
+Cell[BoxData[
+    \({Vin \[Equal] 1\/2\ \((Vdd + Vtn - Vtp)\), 
+      Vin \[Equal] \(\(-Vtn\) + Vdd\ \[Alpha] - Vtp\ \[Alpha]\)\/\(\(-1\) + \
+\[Alpha]\) || 
+        Vin \[Equal] \(Vtn + Vdd\ \[Alpha] - Vtp\ \[Alpha]\)\/\(1 + \
+\[Alpha]\), 
+      Vin \[Equal] \(\(-Vtn\) + Vdd\ \[Alpha] - Vtp\ \[Alpha]\)\/\(\(-1\) + \
+\[Alpha]\) || 
+        Vin \[Equal] \(Vtn + Vdd\ \[Alpha] - Vtp\ \[Alpha]\)\/\(1 + \
+\[Alpha]\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\(\(\ \)\(b\)\()\)\)\ pmost\ stronger\ than\ nmost, \ \
+\[Alpha]\  > \ 1\ *) \),
+        FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]"}]], "Input"],
+
+Cell[BoxData[
+    \(Vin \[Equal] \(\(-Vtn\) + Vdd\ \[Alpha] - Vtp\ \[Alpha]\)\/\(\(-1\) + \
+\[Alpha]\) || 
+      Vin \[Equal] \(Vtn + Vdd\ \[Alpha] - Vtp\ \[Alpha]\)\/\(1 + \
+\[Alpha]\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox["\[IndentingNewLine]",
+        FontColor->RGBColor[0, 0, 1]], \(eq4c\  = \ 
+        Refine[eq3, \ \[Alpha] < 1\  && \ ass]\)}]], "Input"],
+
+Cell[BoxData[
+    \(Vin \[Equal] \(\(-Vtn\) + Vdd\ \[Alpha] - Vtp\ \[Alpha]\)\/\(\(-1\) + \
+\[Alpha]\) || 
+      Vin \[Equal] \(Vtn + Vdd\ \[Alpha] - Vtp\ \[Alpha]\)\/\(1 + \
+\[Alpha]\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    StyleBox[\( (*\ treshold\ *) \),
+      FontColor->RGBColor[0, 0, 1]]], "Input"],
+
+Cell[BoxData[
+    \(\(\(\ \)\(\(\(=\)\(\ \)\(Vtp\  \[Equal] \ \[Zeta]\ Vtn\  && \ 
+          Vt\  \[Equal] \ Vtn\)\);\)\)\)], "Input"]
+},
+FrontEndVersion->"5.0 for X",
+ScreenRectangle->{{0, 1280}, {0, 1022}},
+WindowSize->{850, 980},
+WindowMargins->{{Automatic, 15}, {Automatic, 1}},
+ShowSelection->True
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 54, 1, 27, "Input"],
+Cell[1811, 54, 394, 9, 100, "Input"],
+Cell[2208, 65, 342, 6, 145, "Input"],
+Cell[2553, 73, 618, 12, 171, "Input"],
+
+Cell[CellGroupData[{
+Cell[3196, 89, 310, 8, 43, "Input"],
+Cell[3509, 99, 106, 2, 30, "Output"]
+}, Open  ]],
+Cell[3630, 104, 265, 6, 43, "Input"],
+
+Cell[CellGroupData[{
+Cell[3920, 114, 211, 5, 43, "Input"],
+Cell[4134, 121, 243, 5, 45, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4414, 131, 2223, 51, 107, "Input"],
+Cell[6640, 184, 428, 9, 83, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7105, 198, 201, 4, 43, "Input"],
+Cell[7309, 204, 199, 4, 45, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7545, 213, 179, 4, 43, "Input"],
+Cell[7727, 219, 199, 4, 45, "Output"]
+}, Open  ]],
+Cell[7941, 226, 97, 2, 27, "Input"],
+Cell[8041, 230, 134, 2, 27, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

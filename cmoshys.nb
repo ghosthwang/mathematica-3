@@ -1,0 +1,193 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      5129,        141]*)
+(*NotebookOutlinePosition[      5759,        163]*)
+(*  CellTagsIndexPosition[      5715,        159]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    StyleBox[\(\(\(General::spell = "\<Off\>"\) \)\(;\)\(\ \
+\)\(\(Information::nomatch = "\<Off\>"\) \)\(;\)\(\ \)\),
+      "MR",
+      FontFamily->"Arial"]], "Input"],
+
+Cell[BoxData[
+    StyleBox[\(Sep\ 30\ 2004\  - \ martin . pos@philips . com\),
+      FontSlant->"Italic"]], "Input",
+  TextAlignment->Right],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["CMOS inverter with hysteresis",
+  FontVariations->{"Underline"->True}]], "Title",
+  TextAlignment->Center],
+
+Cell[BoxData[
+    \(\(\( (*\ Kirchhoff\ current\ *) \)\(\[IndentingNewLine]\)\(eqK\  = 
+      Reduce[{\ \[IndentingNewLine]ip1\  - \ ip2\  - ip3\  \[Equal] 
+            0, \[IndentingNewLine]in1 - in2 - in3 \[Equal] 
+            0, \[IndentingNewLine]in3 - ip3\  \[Equal] 
+            0, \[IndentingNewLine]ip1 + in2 - ip2 - in1 \[Equal] 
+            0\[IndentingNewLine]}]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(\( (*\ MOST\ currents\ *) \)\(\[IndentingNewLine]\)\(eqM\  = 
+      Simplify[\ {\[IndentingNewLine]ip1 -> 
+            kp1 \((\((vdd - vin - vtp1)\)\^2 - \((vin - v2 - vtp1)\)\^2)\), \
+\[IndentingNewLine]ip2 -> 
+            kp2 \((v1 - vout - vtp2)\)\^2, \[IndentingNewLine]ip3 -> 
+            kp3 \((v1 - vin - vtp3)\)\^2, \[IndentingNewLine]in1 -> 
+            kn1 \((\((vin - vtn1)\)\^2 - \((vin - v1 - vtn1)\)\^2)\), \
+\[IndentingNewLine]in2 -> 
+            kn2 \((vout - v2 - vtn2)\)\^2, \[IndentingNewLine]in3 -> 
+            kn3 \((vin - v2 - vtn3)\)\^2\[IndentingNewLine]}]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(\( (*\ Substitution, \ 
+      parameter\ selection\ *) \)\(\[IndentingNewLine]\)\(eqT\  = \((\ 
+          eqK /. eqM\ )\) /. {\[IndentingNewLine]vout \[Rule] 
+            vdd\/2, \[IndentingNewLine]vtp1 \[Rule] 
+            vtp1, \[IndentingNewLine]vtp2 \[Rule] 
+            vtp1, \[IndentingNewLine]vtp3 \[Rule] 
+            vtp1, \[IndentingNewLine]vtn1 \[Rule] 
+            vtn1, \[IndentingNewLine]vtn2 \[Rule] 
+            vtn1, \[IndentingNewLine]vtn3 \[Rule] 
+            vtn1, \[IndentingNewLine]kp1 \[Rule] 
+            kp1, \[IndentingNewLine]kp2 \[Rule] 
+            0, \[IndentingNewLine]kp3 \[Rule] 
+            kp1, \[IndentingNewLine]kn1 \[Rule] 
+            kn1, \[IndentingNewLine]kn2 \[Rule] \[Beta]\ kn1, \
+\[IndentingNewLine]kn3 \[Rule] kn1\[IndentingNewLine]}\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(Simplify\ eqT\)], "Input"],
+
+Cell[BoxData[
+    \(\(\( (*\ 
+      Boundary\ conditions\ *) \)\(\[IndentingNewLine]\)\(\(bound = \ {\
+\[IndentingNewLine]kp1\  \[GreaterEqual] \ 0\  && \ 
+          kp2\  \[GreaterEqual] \ 0\  && \ kp3\  \[GreaterEqual] 0\  && \ 
+          kn1\  \[GreaterEqual] \ 0\  && \ kn2\  \[GreaterEqual] \ 0\  && \ 
+          kn3\  \[GreaterEqual] 0\  && \ ip1\  \[GreaterEqual] \ 0\  && \ 
+          ip2\  \[GreaterEqual] \ 0\  && \ ip3\  \[GreaterEqual] 0\  && 
+          in1\  \[GreaterEqual] \ 0\  && \ in2\  \[GreaterEqual] \ 0\  && \ 
+          in3\  \[GreaterEqual] 
+            0\[IndentingNewLine]}\)\(\[IndentingNewLine]\)
+    \)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\ Solve\ for\ vin\ *) \)\(\[IndentingNewLine]\)\(Solve[
+      eqT, {vin, v1, v2}]\)\)\)], "Input"],
+
+Cell[BoxData[
+    \($Aborted\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(eqT\)], "Input"],
+
+Cell[BoxData[
+    \(kn2\)], "Input"],
+
+Cell[BoxData[
+    \(Remove["\<Global`*\>"]\)], "Input"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for X",
+ScreenRectangle->{{0, 1280}, {0, 1022}},
+WindowSize->{1047, 977},
+WindowMargins->{{Automatic, 68}, {0, Automatic}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 182, 4, 29, "Input"],
+Cell[1939, 57, 140, 3, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[2104, 64, 130, 2, 94, "Title"],
+Cell[2237, 68, 390, 6, 123, "Input"],
+Cell[2630, 76, 620, 10, 177, "Input"],
+Cell[3253, 88, 819, 15, 294, "Input"],
+Cell[4075, 105, 46, 1, 27, "Input"],
+Cell[4124, 108, 646, 11, 91, "Input"],
+
+Cell[CellGroupData[{
+Cell[4795, 123, 125, 2, 43, "Input"],
+Cell[4923, 127, 42, 1, 27, "Output"]
+}, Open  ]],
+Cell[4980, 131, 36, 1, 27, "Input"],
+Cell[5019, 134, 36, 1, 27, "Input"],
+Cell[5058, 137, 55, 1, 27, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

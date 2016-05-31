@@ -1,0 +1,251 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      7298,        183]*)
+(*NotebookOutlinePosition[      7970,        207]*)
+(*  CellTagsIndexPosition[      7926,        203]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(Remove["\<Global`*\>"]; General::spell1 = "\<Off\>";\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(Remove::"rmnsm"\), \(\(:\)\(\ \)\), "\<\"There are no symbols \
+matching \\\"\\!\\(\\\"Global`*\\\"\\)\\\". \\!\\(\\*ButtonBox[\\\"More\
+\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"Remove::rmnsm\\\"]\\)\"\>"}]], "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Nov 2 2004", "Text",
+  TextAlignment->Right],
+
+Cell["Vstab", "Title",
+  TextAlignment->Center]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(ztot\  = \ \((\ 
+            1\/\(cpi5\ s\  + \ gm5\) + 1\/\(cpi6\ s\  + gm6\) + \ r1\  + \ 
+              r2\ )\) \[Beta]5;\)\), "\[IndentingNewLine]", 
+    \(\(q = 
+        1\/\(cpi5\ s\  + \ gm5\) + 1\/\(cpi6\ s\  + gm6\) + \ 
+          r1;\)\), "\[IndentingNewLine]", 
+    \(\(vb = 
+        vi \((\((1\/\(cpi1\ s\  + \ gm\) + 
+                    1\/\(cs\  + \ gm\))\) \((gm\/\(\((cpi3 + cpi4)\) s + \
+1\/gm\) - 1)\) + 1\/cs)\) 1\/\(cs + 1\/ztot\);\)\), "\[IndentingNewLine]", 
+    \(\(vout = vb\/\(1 - q\/r2\);\)\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(vout\/vi\)], "Input"],
+
+Cell[BoxData[
+    \(\(1\/cs + \((1\/\(cs + gm\) + 1\/\(gm + cpi1\ s\))\)\ \((\(-1\) + \
+gm\/\(1\/gm + \((cpi3 + cpi4)\)\ s\))\)\)\/\(\((1 - \(r1 + 1\/\(gm5 + cpi5\ s\
+\) + 1\/\(gm6 + cpi6\ s\)\)\/r2)\)\ \((cs + 1\/\(\((r1 + r2 + 1\/\(gm5 + cpi5\
+\ s\) + 1\/\(gm6 + cpi6\ s\))\)\ \[Beta]5\))\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(h[s_] := \(1\/cs + \((1\/\(cs + gm\) + 1\/\(gm + cpi1\ s\))\)\ \
+\((\(-1\) + gm\/\(1\/gm + \((cpi3 + cpi4)\)\ s\))\)\)\/\(\((1 - \(r1 + \
+1\/\(gm5 + cpi5\ s\) + 1\/\(gm6 + cpi6\ s\)\)\/r2)\)\ \((cs + 1\/\(\((r1 + r2 \
++ 1\/\(gm5 + cpi5\ s\) + 1\/\(gm6 + cpi6\ s\))\)\ \[Beta]5\))\)\)\)], "Input"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(n[s_] := 
+        1\/cs + \((1\/\(cs + gm\) + 1\/\(gm + cpi1\ s\))\)\ \((\(-1\) + 
+                gm\/\(1\/gm + \((cpi3 + cpi4)\)\ s\))\);\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(d[
+          s_] := \((1 - \(r1 + 1\/\(gm5 + cpi5\ s\) + 1\/\(gm6 + cpi6\ \
+s\)\)\/r2)\)\ \((cs + 
+              1\/\(\((r1 + r2 + 1\/\(gm5 + cpi5\ s\) + 1\/\(gm6 + cpi6\ \
+s\))\)\ \[Beta]5\))\);\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(rule = \ {cpi1 \[Rule] cpi, cpi2 \[Rule] cpi, cpi3 \[Rule] cpi, 
+          cpi4 \[Rule] cpi};\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Solve[n[s] \[Equal] 0 /. rule, s]\)], "Input"],
+
+Cell[BoxData[
+    \({{s \[Rule] \(\(1\/\(4\ cpi\^2\ gm\^2\)\)\((\(-cpi\)\ gm + 
+              2\ cpi\ cs\^2\ gm + cpi\ cs\ gm\^2 - 2\ cpi\ gm\^3 - 
+              cpi\ gm\ \@\(1 + 4\ cs\^2 + 4\ cs\^4 + 6\ cs\ gm + 4\ cs\^3\ gm \
+- 4\ gm\^2 - 15\ cs\^2\ gm\^2 - 20\ cs\ gm\^3 + 4\ gm\^4\))\)\)}, {s \[Rule] \
+\(\(1\/\(4\ cpi\^2\ gm\^2\)\)\((\(-cpi\)\ gm + 2\ cpi\ cs\^2\ gm + 
+              cpi\ cs\ gm\^2 - 2\ cpi\ gm\^3 + 
+              cpi\ gm\ \@\(1 + 4\ cs\^2 + 4\ cs\^4 + 6\ cs\ gm + 4\ cs\^3\ gm \
+- 4\ gm\^2 - 15\ cs\^2\ gm\^2 - 20\ cs\ gm\^3 + 4\ gm\^4\))\)\)}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TraditionalForm[
+      FullSimplify[Solve[d[s] \[Equal] 0 /. rule, s]]]\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{{s \[Rule] \(-\(\(1\/\(2\ cpi5\ cpi6\ \((r1 - 
+                      r2)\)\)\)\((gm6\ r1\ cpi5 - gm6\ r2\ cpi5 + cpi5 + 
+                cpi6 + cpi6\ gm5\ r1 - 
+                cpi6\ gm5\ r2 - \@\(\((gm6\ r1\ cpi5 + cpi5 + cpi6 + cpi6\ \
+gm5\ r1 - \((cpi6\ gm5 + cpi5\ gm6)\)\ r2)\)\^2 - 4\ cpi5\ cpi6\ \((r1 - \
+r2)\)\ \((gm6\ r1\ gm5 - gm6\ r2\ gm5 + gm5 + gm6)\)\))\)\)\)}, {s \[Rule] \
+\(-\(\(1\/\(2\ cpi5\ cpi6\ \((r1 - r2)\)\)\)\((gm6\ r1\ cpi5 - 
+                gm6\ r2\ cpi5 + cpi5 + cpi6 + cpi6\ gm5\ r1 - 
+                cpi6\ gm5\ r2 + \@\(\((gm6\ r1\ cpi5 + cpi5 + cpi6 + cpi6\ \
+gm5\ r1 - \((cpi6\ gm5 + cpi5\ gm6)\)\ r2)\)\^2 - 4\ cpi5\ cpi6\ \((r1 - \
+r2)\)\ \((gm6\ r1\ gm5 - gm6\ r2\ gm5 + gm5 + gm6)\)\))\)\)\)}, {s \[Rule] \
+\(-\(\(1\/\(2\ cpi5\ cpi6\ \((cs\ \((r1 + r2)\)\ \[Beta]5 + 
+                      1)\)\)\)\((cpi6\ \((cs\ \((r1 + r2)\)\ \[Beta]5\ gm5 + 
+                      gm5 + cs\ \[Beta]5)\) + 
+                cpi5\ \((cs\ \((r1 + r2)\)\ \[Beta]5\ gm6 + gm6 + 
+                      cs\ \[Beta]5)\) + \[Sqrt]\((\((cpi6\ \((cs\ \((r1 + r2)\
+\)\ \[Beta]5\ gm5 + gm5 + cs\ \[Beta]5)\) + cpi5\ \((cs\ \((r1 + r2)\)\ \
+\[Beta]5\ gm6 + gm6 + cs\ \[Beta]5)\))\)\^2 - 
+                      4\ cpi5\ cpi6\ \((cs\ \((r1 + r2)\)\ \[Beta]5 + 
+                            1)\)\ \((gm5\ gm6 + 
+                            cs\ \((gm6 + 
+                                  gm5\ \((gm6\ \((r1 + r2)\) + 
+                                        1)\))\)\ \[Beta]5)\))\))\)\)\)}, {s \
+\[Rule] \(\(1\/\(2\ cpi5\ cpi6\ \((cs\ \((r1 + r2)\)\ \[Beta]5 + 
+                    1)\)\)\)\((\(-cpi6\)\ \((cs\ \((r1 + 
+                          r2)\)\ \[Beta]5\ gm5 + gm5 + cs\ \[Beta]5)\) - 
+              cpi5\ \((cs\ \((r1 + r2)\)\ \[Beta]5\ gm6 + gm6 + 
+                    cs\ \[Beta]5)\) + \[Sqrt]\((\((cpi6\ \((cs\ \((r1 + r2)\)\
+\ \[Beta]5\ gm5 + gm5 + cs\ \[Beta]5)\) + cpi5\ \((cs\ \((r1 + r2)\)\ \
+\[Beta]5\ gm6 + gm6 + cs\ \[Beta]5)\))\)\^2 - 
+                    4\ cpi5\ cpi6\ \((cs\ \((r1 + r2)\)\ \[Beta]5 + 
+                          1)\)\ \((gm5\ gm6 + 
+                          cs\ \((gm6 + 
+                                gm5\ \((gm6\ \((r1 + r2)\) + 
+                                      1)\))\)\ \[Beta]5)\))\))\)\)}}\)], \
+"Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for X",
+ScreenRectangle->{{0, 1280}, {0, 1022}},
+CellGrouping->Manual,
+WindowSize->{1268, 954},
+WindowMargins->{{0, Automatic}, {8, Automatic}},
+Magnification->1.25
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 85, 1, 34, "Input"],
+Cell[1864, 56, 299, 4, 27, "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2200, 65, 50, 1, 37, "Text"],
+Cell[2253, 68, 47, 1, 113, "Title"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2337, 74, 554, 11, 267, "Input"],
+
+Cell[CellGroupData[{
+Cell[2916, 89, 41, 1, 60, "Input"],
+Cell[2960, 92, 308, 4, 128, "Output"],
+Cell[3271, 98, 316, 4, 126, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[3614, 106, 176, 3, 83, "Input"],
+Cell[3793, 111, 232, 5, 87, "Input"],
+Cell[4028, 118, 130, 2, 34, "Input"],
+
+Cell[CellGroupData[{
+Cell[4183, 124, 66, 1, 34, "Input"],
+Cell[4252, 127, 582, 8, 185, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4871, 140, 104, 2, 34, "Input"],
+Cell[4978, 144, 2304, 36, 388, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

@@ -1,0 +1,312 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      9820,        303]
+NotebookOptionsPosition[      8870,        266]
+NotebookOutlinePosition[      9236,        282]
+CellTagsIndexPosition[      9193,        279]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["equations", "Subsubtitle"]], "Title",
+ CellChangeTimes->{{3.655733102521577*^9, 3.655733104217148*^9}}],
+
+Cell["\<\
+Nov 5 2015
+martin.pos@nxp.com\
+\>", "ItemizedText",
+ CellChangeTimes->{{3.655733146626622*^9, 3.65573317713091*^9}},
+ TextAlignment->Right,
+ FontSize->9],
+
+Cell[BoxData[
+ RowBox[{"equations", " ", ":=", " ", 
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pdis1", " ", "Rth"}], " ", "+", " ", 
+      RowBox[{"Pdis1", " ", "TIM", " ", "1"}], "  ", "+", " ", "Tcase1"}], 
+     " ", "\[Equal]", " ", "Tj"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pdis1", " ", "Rth"}], " ", "+", " ", 
+      RowBox[{"Pdis1", " ", "TIM", " ", "2"}], "  ", "+", " ", "Tcase2"}], 
+     " ", "\[Equal]", " ", "Tj"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pdis2", " ", "Rth"}], " ", "+", " ", 
+      RowBox[{"Pdis2", " ", "TIM"}], "   ", "+", " ", "Tcase3"}], " ", 
+     "\[Equal]", " ", "Tj"}]}], "\[IndentingNewLine]", "}"}]}]], "Input",
+ CellChangeTimes->{{3.655731831619573*^9, 3.655731839429984*^9}, {
+   3.655731897439106*^9, 3.655732019421542*^9}, 3.6557321005344973`*^9, {
+   3.655732540393676*^9, 3.65573255753916*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Solve", " ", "actually", " ", "returns", " ", "a", " ", 
+    RowBox[{"(", "nested", ")"}], " ", "list", " ", "of", " ", "rules"}], " ",
+    "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Solve", "[", 
+   RowBox[{"equations", ",", 
+    RowBox[{"{", 
+     RowBox[{"Rth", ",", " ", "TIM", ",", " ", "Tj"}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6557320252493362`*^9, 3.6557320718522177`*^9}, {
+  3.655732564488098*^9, 3.6557325809523478`*^9}, {3.6557327020189037`*^9, 
+  3.655732725147378*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Rth", "\[Rule]", 
+     RowBox[{"-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", " ", "Pdis1", " ", "Tcase1"}], "-", 
+         RowBox[{"Pdis2", " ", "Tcase1"}], "-", 
+         RowBox[{"Pdis1", " ", "Tcase2"}], "+", 
+         RowBox[{"Pdis2", " ", "Tcase2"}], "-", 
+         RowBox[{"Pdis1", " ", "Tcase3"}]}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"Pdis1", " ", 
+         RowBox[{"(", 
+          RowBox[{"Pdis1", "-", "Pdis2"}], ")"}]}], ")"}]}]}]}], ",", 
+    RowBox[{"TIM", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"-", "Tcase1"}], "+", "Tcase2"}], "Pdis1"]}]}], ",", 
+    RowBox[{"Tj", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"Pdis2", " ", "Tcase1"}], "-", 
+        RowBox[{"Pdis1", " ", "Tcase3"}]}], 
+       RowBox[{"Pdis1", "-", "Pdis2"}]]}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.655732091356682*^9, 3.655732102394394*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"take", " ", "only", " ", "the", " ", "inner", " ", "list"}], ",",
+     " ", 
+    RowBox[{"TraditionalForm", " ", "for", " ", "format", " ", "only"}]}], 
+   " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"mysol", " ", ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Solve", "[", 
+      RowBox[{"equations", ",", 
+       RowBox[{"{", 
+        RowBox[{"Rth", ",", " ", "TIM", ",", " ", "Tj"}], "}"}]}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}], "//", "TraditionalForm"}]}]}]], "Input",
+ CellChangeTimes->{{3.655732135005147*^9, 3.655732138204921*^9}, {
+  3.655732293570616*^9, 3.655732314642302*^9}, {3.655732720034403*^9, 
+  3.655732824699223*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["mysol"], "Input",
+ CellChangeTimes->{{3.655732317849642*^9, 3.655732319097232*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Rth", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"2", " ", "Pdis1", " ", "Tcase1"}], "-", 
+        RowBox[{"Pdis1", " ", "Tcase2"}], "-", 
+        RowBox[{"Pdis1", " ", "Tcase3"}], "-", 
+        RowBox[{"Pdis2", " ", "Tcase1"}], "+", 
+        RowBox[{"Pdis2", " ", "Tcase2"}]}], 
+       RowBox[{"Pdis1", " ", 
+        RowBox[{"(", 
+         RowBox[{"Pdis1", "-", "Pdis2"}], ")"}]}]]}]}], ",", 
+    RowBox[{"TIM", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"Tcase2", "-", "Tcase1"}], "Pdis1"]}]}], ",", 
+    RowBox[{"Tj", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"Pdis2", " ", "Tcase1"}], "-", 
+        RowBox[{"Pdis1", " ", "Tcase3"}]}], 
+       RowBox[{"Pdis1", "-", "Pdis2"}]]}]}]}], "}"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.6557323208256407`*^9, 3.655732829222331*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "taking", " ", "only", " ", "the", " ", "solution", " ", "rule", " ", 
+    "for", " ", "Rth"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"mysol", "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", "1"}], "]"}], "]"}], "//", 
+   "TraditionalForm"}]}]], "Input",
+ CellChangeTimes->{{3.655732323183889*^9, 3.6557323731151867`*^9}, {
+  3.655732846606295*^9, 3.655732884563281*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Rth", "\[Rule]", 
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"2", " ", "Pdis1", " ", "Tcase1"}], "-", 
+      RowBox[{"Pdis1", " ", "Tcase2"}], "-", 
+      RowBox[{"Pdis1", " ", "Tcase3"}], "-", 
+      RowBox[{"Pdis2", " ", "Tcase1"}], "+", 
+      RowBox[{"Pdis2", " ", "Tcase2"}]}], 
+     RowBox[{"Pdis1", " ", 
+      RowBox[{"(", 
+       RowBox[{"Pdis1", "-", "Pdis2"}], ")"}]}]]}]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.655732871030946*^9, 3.655732885182477*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "make", " ", "some", " ", "rules", " ", "with", " ", "with", " ", 
+    "parameter", " ", "values"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"r1", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Tcase1", "\[Rule]", "100"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Tcase2", " ", "\[Rule]", " ", "96"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Tcase3", " ", "\[Rule]", " ", "101"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Pdis1", " ", "\[Rule]", " ", "11"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Pdis2", " ", "\[Rule]", " ", "9.3"}]}], "\[IndentingNewLine]",
+       "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"r2", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Tcase1", "\[Rule]", "89"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Tcase2", " ", "\[Rule]", " ", "86"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Tcase3", " ", "\[Rule]", " ", "91"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Pdis1", " ", "\[Rule]", " ", "11"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Pdis2", " ", "\[Rule]", " ", "9.28"}]}], 
+      "\[IndentingNewLine]", "}"}]}], ";"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.655732422165523*^9, 3.655732470541958*^9}, {
+  3.6557325014482927`*^9, 3.65573252994503*^9}, {3.655732672363552*^9, 
+  3.655732677440246*^9}, {3.655732902775405*^9, 3.655733006884211*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "then", " ", "apply", " ", "the", " ", "parameter", " ", "rules", " ", 
+    "to", " ", "the", " ", "solution", " ", "for", " ", "Rth"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"mysol", "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", "1"}], "]"}], "]"}], " ", "/.", " ", 
+   RowBox[{"{", 
+    RowBox[{"r1", ",", "r2"}], "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.655732475919805*^9, 3.655732486613402*^9}, {
+  3.6557330099063177`*^9, 3.6557330536278143`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Rth", "\[Rule]", "0.22459893048127988`"}], ",", 
+   RowBox[{"Rth", "\[Rule]", "0.8900634249471533`"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.655732487148892*^9, {3.6557330458660316`*^9, 3.655733054034018*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.655732161978736*^9, 3.6557321783501883`*^9}, 
+   3.6557322279338493`*^9}]
+}, Open  ]]
+},
+WindowSize->{1186, 916},
+WindowMargins->{{Automatic, 358}, {Automatic, 38}},
+CellLabelAutoDelete->True,
+FrontEndVersion->"7.0 for Linux x86 (64-bit) (November 11, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 127, 1, 62, "Title"],
+Cell[697, 25, 163, 6, 35, "ItemizedText"],
+Cell[863, 33, 958, 21, 121, "Input"],
+Cell[CellGroupData[{
+Cell[1846, 58, 561, 13, 55, "Input"],
+Cell[2410, 73, 1039, 30, 78, "Output"]
+}, Open  ]],
+Cell[3464, 106, 723, 18, 55, "Input"],
+Cell[CellGroupData[{
+Cell[4212, 128, 97, 1, 32, "Input"],
+Cell[4312, 131, 957, 28, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5306, 164, 452, 12, 55, "Input"],
+Cell[5761, 178, 537, 15, 70, "Output"]
+}, Open  ]],
+Cell[6313, 196, 1568, 36, 363, "Input"],
+Cell[CellGroupData[{
+Cell[7906, 236, 541, 14, 55, "Input"],
+Cell[8450, 252, 267, 6, 31, "Output"]
+}, Open  ]],
+Cell[8732, 261, 122, 2, 32, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

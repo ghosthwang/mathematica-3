@@ -1,0 +1,257 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.1'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      5977,        184]*)
+(*NotebookOutlinePosition[      6648,        208]*)
+(*  CellTagsIndexPosition[      6604,        204]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(\(Clear["\<Global'*\>"];\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+  Cell[BoxData[
+      StyleBox[\(Sep\ 27\ 2005, martin . pos@philips . com\),
+        "SmallText"]], "Input"],
+  "\nInverterII"
+}], "Title"],
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ pmost\ and\ nmost\ in\ series, \ both\ saturated, \ 
+          current\ is\ equal\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(\(eq\  = \ {\ 
+            Kp\/2\ \(Wp\/Lp\) \((Vddd\  - \ VhL - VTP)\)\^2 == \ 
+              Kn\/2\ \(Wn\/Ln\) \((VhL - VTN)\)\^2};\)\(\[IndentingNewLine]\)
+      \)}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ 
+          solving\ for\ VhL\ does\ not\ directly\ lead\ to\ a\ readable\ \
+formula\ \((take\ 1  st\ solution)\)\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(\(\(Solve[eq, \ {VhL}]\)[\([1]\)]\)[\([1]\)] // 
+        FullSimplify\)}]], "Input"],
+
+Cell[BoxData[
+    \(VhL \[Rule] \(Kn\ Lp\ VTN\ Wn + Kp\ Ln\ \((\(-Vddd\) + VTP)\)\ Wp - \
+\@\(Kn\ Kp\ Ln\ Lp\ \((\(-Vddd\) + VTN + VTP)\)\^2\ Wn\ Wp\)\)\/\(Kn\ Lp\ Wn \
+- Kp\ Ln\ Wp\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ introduction\ of\ a\ nice\ variable, \ alpha\ *) \),
+        FontColor->RGBColor[0, 0, 1]], "\[IndentingNewLine]", 
+      RowBox[{\(var\  = {alpha\  == \ \@\(\(Kn\ Wn\ Lp\)\/\(Kp\ Wp\ \
+Ln\)\)};\), "\[IndentingNewLine]", 
+        StyleBox[\( (*\ 
+            equation\ can\ be\ written\ without\ transistor\ dimensions\ and\ \
+Kp\ and\ Kn\ *) \),
+          FontColor->RGBColor[0, 0, 1]]}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(eqn\  = \ \(List[
+          Eliminate[
+            Join[eq, \ var], {Wn, Ln, \ Wp, \ Lp, Kn, 
+              Kp}]]\)[\([1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \(Vddd\^2 - 2\ Vddd\ VhL + VhL\^2 - 2\ Vddd\ VTP + 2\ VhL\ VTP + 
+        VTP\^2 \[Equal] 
+      alpha\^2\ \((VhL\^2 - 2\ VhL\ VTN + VTN\^2)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ solution\ now\ seems\ more\ readable\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(\(\(Solve[
+            eqn, \ {VhL}]\)[\([1]\)]\)[\([1]\)]\)}]], "Input"],
+
+Cell[BoxData[
+    \(VhL \[Rule] \(Vddd + alpha\ VTN - VTP\)\/\(1 + alpha\)\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ get\ rid\ of\ alpha\ by\ substituting\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      StyleBox["\[IndentingNewLine]",
+        FontColor->RGBColor[0, 0, 
+        1]], \(\(\(Solve[
+              eqn, \ {VhL}]\)[\([1]\)]\)[\([1]\)] /. \((var /. {Equal \[Rule] \
+\ Rule})\)\)}]], "Input"],
+
+Cell[BoxData[
+    \(VhL \[Rule] \(Vddd - VTP + VTN\ \@\(\(Kn\ Lp\ Wn\)\/\(Kp\ Ln\ \
+Wp\)\)\)\/\(1 + \@\(\(Kn\ Lp\ Wn\)\/\(Kp\ Ln\ Wp\)\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ add\ pmost\ current\ source\ mh\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(eqh\  = \ {\ 
+            Kp\/2\ \((\(Wp\/Lp\) \((Vddd\  - \ VhH - VTP)\)\^2 + \(Wh\/Lh\) \
+\((Vddd\  - VTP)\)\^2)\) == \ 
+              Kn\/2\ \(Wn\/Ln\) \((VhH - VTN)\)\^2};\)}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Eliminate[Join[eqh, var], Vddd]\)], "Input"],
+
+Cell[BoxData[
+    \(alpha - \@\(\(Kn\ Lp\ Wn\)\/\(Kp\ Ln\ Wp\)\) \[Equal] 0 && 
+      Lh \[NotEqual] 0 && Ln \[NotEqual] 0 && Lp \[NotEqual] 0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      StyleBox[\( (*\ so\ far, \ 
+          yet\ not\ a\ nice\ formatted\ formula\ for\ VhH\ *) \),
+        FontColor->RGBColor[0, 0, 1]], 
+      "\[IndentingNewLine]", \(\(Solve[eqh, VhH]\)[\([1]\)] // 
+        FullSimplify\)}]], "Input"],
+
+Cell[BoxData[
+    \({VhH \[Rule] \(\(1\/\(Lh\ \((Kn\ Lp\ Wn - 
+                  Kp\ Ln\ Wp)\)\)\)\((Kn\ Lh\ Lp\ VTN\ Wn + 
+            Kp\ Lh\ Ln\ \((\(-Vddd\) + 
+                  VTP)\)\ Wp + \@\(Kp\ Lh\ Ln\ Lp\ \((\(-Kp\)\ Ln\ \((Vddd - \
+VTP)\)\^2\ Wh\ Wp + Kn\ Wn\ \((Lp\ \((Vddd - VTP)\)\^2\ Wh + Lh\ \((\(-Vddd\) \
++ VTN + VTP)\)\^2\ Wp)\))\)\))\)\)}\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.1 for X",
+ScreenRectangle->{{0, 1280}, {0, 1022}},
+CellGrouping->Manual,
+WindowSize->{977, 992},
+WindowMargins->{{Automatic, 2}, {Automatic, -1}},
+Magnification->1.2
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 59, 1, 32, "Input"],
+
+Cell[CellGroupData[{
+Cell[1838, 56, 156, 5, 121, "Title"],
+Cell[1997, 63, 390, 8, 93, "Input"],
+
+Cell[CellGroupData[{
+Cell[2412, 75, 325, 7, 51, "Input"],
+Cell[2740, 84, 197, 3, 65, "Output"]
+}, Open  ]],
+Cell[2952, 90, 450, 9, 102, "Input"],
+
+Cell[CellGroupData[{
+Cell[3427, 103, 157, 4, 32, "Input"],
+Cell[3587, 109, 174, 3, 38, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3798, 117, 238, 5, 51, "Input"],
+Cell[4039, 124, 88, 1, 56, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4176, 131, 339, 8, 51, "Input"],
+Cell[4518, 141, 152, 2, 104, "Output"]
+}, Open  ]],
+Cell[4685, 146, 350, 7, 74, "Input"],
+
+Cell[CellGroupData[{
+Cell[5060, 157, 64, 1, 32, "Input"],
+Cell[5127, 160, 156, 2, 72, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5320, 167, 266, 6, 51, "Input"],
+Cell[5589, 175, 372, 6, 89, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
