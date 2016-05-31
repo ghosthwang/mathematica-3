@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "DTD/xhtml1-transitional.dtd">
+
+<!-- This HTML document was created by converting a Mathematica notebook using Export. -->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" class="Notebook">
+
+<head >
+<title>
+  switchcap.nb
+</title>
+
+<link href="HTMLFiles/Default.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<p class="CellLabel">
+ In[1]:=
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/switchcap_1.gif"  border="0"  alt=""  width="4" height="15"  align="absmiddle"  />
+</p>
+
+<p class="CellLabel">
+ In[2]:=
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/switchcap_2.gif"  border="0"  alt="Remove[&quot;Global`*&quot;] ;"  width="137" height="15"  align="absmiddle"  />
+</p>
+
+<p class="Message">
+ <img src="HTMLFiles/switchcap_3.gif"  border="0"  alt="Remove :: rmnsm : There are no symbols matching \&quot;Global`*\&quot;.  More&#8230;"  width="388" height="12"  align="absmiddle"  />
+</p>
+
+<p class='Text' style='text-align: right;'>
+ Nov 15 2004<br />Dec 2 2004<br />Dec 6 2004<br />martin.pos@philips.com
+</p>
+
+
+
+<p class="Title">
+ Switchcap
+</p>
+
+
+
+<p class="CellLabel">
+ In[3]:=
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/switchcap_4.gif"  border="0"  alt="H[z_] := -z^(-1/2)/(z^1/2 - z^(-1/2))"  width="135" height="55"  align="absmiddle"  />
+</p>
+
+<p class="CellLabel">
+ In[4]:=
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/switchcap_5.gif"  border="0"  alt="FullSimplify[Abs[H[&#63309;^(&#63311; &#952;)]], &#952;&#8712;Reals]//TraditionalForm"  width="377" height="20"  align="absmiddle"  />
+</p>
+
+<p class="CellLabel">
+ Out[4]//TraditionalForm=
+</p>
+
+
+
+<p class="Output">
+ <img src="HTMLFiles/switchcap_6.gif"  border="0"  alt="1/(2 &#62979;sin(&#952;/2) &#62980;)"  width="59" height="42"  align="absmiddle"  />
+</p>
+
+<p class="CellLabel">
+ In[5]:=
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/switchcap_7.gif"  border="0"  alt="RowBox[{Plot, [, &#62371;, RowBox[{{20 * Log[10, Abs[H[&#63309;^(&#63311; &#952;)]]], -3, -6}, ... , &quot;H(z) [dB]&quot;}, ,, &#62371;, Axes&#62754;True, ,,  , &#62371;, Frame&#62754;False}], ]}]"  width="490" height="233"  align="absmiddle"  />
+</p>
+
+<p class="Graphics">
+ <img src="HTMLFiles/switchcap_8.gif"  border="0"  alt="[Graphics:HTMLFiles/switchcap_8.gif]"  width="388" height="240"  align="absmiddle"  />
+</p>
+
+<p class="CellLabel">
+ Out[5]=
+</p>
+
+
+
+<p class="Output">
+ <img src="HTMLFiles/switchcap_9.gif"  border="0"  alt="&#8259;Graphics&#8259;"  width="80" height="15"  align="absmiddle"  />
+</p>
+
+<p class="CellLabel">
+ In[6]:=
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/switchcap_10.gif"  border="0"  alt="Plot[&#62371;Arg[H[&#63309;^(&#63311; &#952;)]], {&#952;, -&#960;, &#960;}, PlotRange&#62754;  ... &#969;T&quot;, &quot;Arg[H(z)] [rad]&quot;}, &#62371;Axes&#62754;True, &#62371;Frame&#62754;False]"  width="702" height="158"  align="absmiddle"  />
+</p>
+
+<p class="Graphics">
+ <img src="HTMLFiles/switchcap_11.gif"  border="0"  alt="[Graphics:HTMLFiles/switchcap_11.gif]"  width="385" height="238"  align="absmiddle"  />
+</p>
+
+<p class="CellLabel">
+ Out[6]=
+</p>
+
+
+
+<p class="Output">
+ <img src="HTMLFiles/switchcap_12.gif"  border="0"  alt="&#8259;Graphics&#8259;"  width="80" height="15"  align="absmiddle"  />
+</p>
+
+<p class='Input' style='font-size: 14px;'>
+ <img src="HTMLFiles/switchcap_13.gif"  border="0"  alt="&#62371; &#981;1 : &#62371; (n - 1/2) T&lt;t&#8804;n T&#62371;&#62371;Co1 VA(t) = Co1 VA((n -  ...  (Vo (z))/(VA (z)) (VA (z))/(Vi (z)) = -CA/Co2Ci2/Co1 (( Ci1/Ci2 - z^(-1) ) z^(-1))/(1 - z^(-1))^2"  width="446" height="735"  align="absmiddle"  />
+</p>
+
+<p class="CellLabel">
+ In[7]:=
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/switchcap_14.gif"  border="0"  alt="RowBox[{RowBox[{&#981;1[t_],  , :=,  , RowBox[{Module, [,  , RowBox[{RowBox[{{, RowBox[{ts = 1 ... #62371;If[&#981;2[t] &gt;1/2, -1 + Vo[t - ts/2], Vo[t - ts/10]] &#62371;]}], &#62371;, ]}]}], ;}] "  width="517" height="373"  align="absmiddle"  />
+</p>
+
+<p class="CellLabel">
+ In[11]:=
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/switchcap_15.gif"  border="0"  alt="p1 = Plot[&#981;1[t 10^(-6)], {t, 0, 5 }, &#62371;PlotRange&#62754; {0, 1}, &#62371;Ticks&#627 ... {{0, 1, 2, 3, 4, 5}, {-5, -4, -3, -2, -1, 0}}, &#62371;DisplayFunction&#62754;Identity&#62371;] ; "  width="417" height="645"  align="absmiddle"  />
+</p>
+
+<p class="CellLabel">
+ In[15]:=
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/switchcap_16.gif"  border="0"  alt="Show[GraphicsArray[{{p1}, {p2}, {p3}, {p4}}, ImageSize&#62754; {800, 1200}]] ;"  width="487" height="15"  align="absmiddle"  />
+</p>
+
+<p class="Graphics">
+ <img src="HTMLFiles/switchcap_17.gif"  border="0"  alt="[Graphics:HTMLFiles/switchcap_17.gif]"  width="800" height="1200"  align="absmiddle"  />
+</p>
+
+<p class='Input' style='font-size: 14px;border: 1px;border-style: solid;border-color: #000000;'>
+ <img src="HTMLFiles/switchcap_18.gif"  border="0"  alt="a . &#62371;Derivation of HA (z) based on superpositioning standard topologies &nbsp;&nbsp;&nb ... (z)) (VA (z))/(Vi (z)) = -CA/Co2Ci2/Co1 (( Ci1/Ci2 - z^(-1) ) z^(-1))/(1 - z^(-1))^2&#62371; Null "  width="700" height="1525"  align="absmiddle"  />
+</p>
+
+<p class="CellLabel">
+ In[16]:=
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/switchcap_19.gif"  border="0"  alt="RowBox[{Plot, [,  , RowBox[{{ 21 + &#981;1[t 10^(-6)], 19 + &#981;2[t 10^(-6)], 17 + 8 * VA[t  ... 005]}, ,, &#62371;, GridLines&#62754; {{0, 1, 2, 3, 4, 5}, {1, 3, 5, 7, 9, 11, 13, 15, 17}}}], ]}]"  width="768" height="110"  align="absmiddle"  />
+</p>
+
+<p class="Graphics">
+ <img src="HTMLFiles/switchcap_20.gif"  border="0"  alt="[Graphics:HTMLFiles/switchcap_20.gif]"  width="672" height="415"  align="absmiddle"  />
+</p>
+
+<p class="CellLabel">
+ Out[16]=
+</p>
+
+
+
+<p class="Output">
+ <img src="HTMLFiles/switchcap_21.gif"  border="0"  alt="&#8259;Graphics&#8259;"  width="80" height="15"  align="absmiddle"  />
+</p>
+
+
+<hr />
+<p style='font-family: Helvetica; font-size: 8pt'>Created by
+<a href="http://www.wolfram.com"><span style='font-style: italic'>Mathematica</span></a>
+&nbsp;(May 10, 2005) </p>
+
+</body>
+
+</html>

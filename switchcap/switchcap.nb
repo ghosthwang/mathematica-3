@@ -1,0 +1,639 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     22307,        572]*)
+(*NotebookOutlinePosition[     23263,        602]*)
+(*  CellTagsIndexPosition[     23219,        598]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    \(\(Remove["\<Global`*\>"];\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Nov 15 2004
+Dec 2 2004
+Dec 6 2004
+martin.pos@philips.com\
+\>", "Text",
+  TextAlignment->Right],
+
+Cell["Switchcap", "Title"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(H[z_] := \(-\(z\^\(-\(1\/2\)\)\/\(z\^\(1\/2\) - 
+              z\^\(-\(1\/2\)\)\)\)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FullSimplify[
+        Abs[H[\[ExponentialE]\^\(\[ImaginaryJ]\ \[Theta]\)]], \ \[Theta] \
+\[Element] Reals] // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`1\/\(2\ \[LeftBracketingBar]sin(\[Theta]\/2)\
+\[RightBracketingBar]\)\)], "Output",
+  FontSize->16]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Plot[\[IndentingNewLine]{20*
+          Log[10, Abs[
+              H[\[ExponentialE]\^\(\[ImaginaryJ]\ \[Theta]\)]]], \(-3\), \(-6\
+\)}, {\[Theta], \(-\[Pi]\), \[Pi]}, \ PlotRange \[Rule] {\(-10\), 30}, \ 
+      Ticks \[Rule] {{\(-\[Pi]\), \(-\[Pi]\)\/2, 
+            0, \[Pi]\/2, \[Pi]}, {\(-10\), \(-6\), \(-3\), 0, 10, 20, 30, 
+            40}}, \ \[IndentingNewLine]PlotStyle \[Rule] \
+{\[IndentingNewLine]{Thickness[ .005], 
+            RGBColor[1, 0, 0]}, \[IndentingNewLine]{Thickness[ .001], 
+            RGBColor[0, 0, 1], 
+            Dashing[{0.01, 0.01}]}, \[IndentingNewLine]{Thickness[ .001], 
+            RGBColor[0, 0, 1], 
+            Dashing[{0.01, 
+                0.01}]}\[IndentingNewLine]}, \[IndentingNewLine]GridLines \
+\[Rule] {{\(-\[Pi]\), \(-\[Pi]\)\/2, 0, \[Pi]\/2, \[Pi]}, {\(-10\), 0, 10, 
+            20, 30, 40}}, \ \[IndentingNewLine]AxesLabel \[Rule] \
+{"\<\[Omega]T\>", "\<H(z) [dB]\>"}, \[IndentingNewLine]Axes \[Rule] 
+        True, \ \[IndentingNewLine]Frame \[Rule] False]\)], "Input"],
+
+Cell[BoxData[
+    \(Plot[\[IndentingNewLine]Arg[
+        H[\[ExponentialE]\^\(\[ImaginaryJ]\ \[Theta]\)]], {\[Theta], \(-\[Pi]\
+\), \[Pi]}, \ PlotRange \[Rule] {\(-\[Pi]\), \[Pi]}, \ 
+      Ticks \[Rule] {{\(-\[Pi]\), \(-\[Pi]\)\/2, 
+            0, \[Pi]\/2, \[Pi]}, {\(-\[Pi]\), \(-\(1\/2\)\) \[Pi], 
+            0, \(1\/2\) \[Pi], \[Pi]}}, \ \[IndentingNewLine]PlotStyle \
+\[Rule] {Thickness[ .005], 
+          RGBColor[1, 0, 
+            0]}, \[IndentingNewLine]GridLines \[Rule] {{\(-\[Pi]\), \
+\(-\[Pi]\)\/2, 0, \[Pi]\/2, \[Pi]}, {\(-\[Pi]\), \(-\(1\/2\)\) \[Pi], 
+            0, \(1\/2\) \[Pi], \[Pi]}}, \ \[IndentingNewLine]AxesLabel \
+\[Rule] {"\<\[Omega]T\>", "\<Arg[H(z)] [rad]\>"}, \[IndentingNewLine]Axes \
+\[Rule] True, \[IndentingNewLine]Frame \[Rule] False]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{"\[IndentingNewLine]", 
+      RowBox[{
+        RowBox[{
+          StyleBox[
+            FormBox[
+              RowBox[{
+                RowBox[{
+                  StyleBox["\[Phi]1",
+                    FontSize->18,
+                    FontVariations->{"Underline"->True}], 
+                  StyleBox[":",
+                    FontSize->18,
+                    FontVariations->{"Underline"->True}], 
+                  "\[IndentingNewLine]", \(\((n - 1\/2)\)\ T < t \[LessEqual] 
+                    n\ T\)}], "\[IndentingNewLine]", 
+                "\[IndentingNewLine]", \(Co1\ \(VA(t)\) = 
+                  Co1\ \(VA(\((n - 1\/2)\)\ T)\) - Ci1\ \(Vi(t)\)\), 
+                "\[IndentingNewLine]", 
+                "\[IndentingNewLine]", \(Co2\ \(Vo(t)\) = 
+                  Co2\ \(Vo(\((n - 1\/2)\)\ T)\)\), "\[IndentingNewLine]", 
+                "\n", 
+                RowBox[{
+                  StyleBox["\[Phi]2",
+                    FontSize->18,
+                    FontVariations->{"Underline"->True}], 
+                  StyleBox[":",
+                    FontSize->18,
+                    FontVariations->{"Underline"->True}], 
+                  "\[IndentingNewLine]", \(\((n - 1)\)\ T < 
+                    t \[LessEqual] \((n\  - 1\/2)\) T\)}], 
+                "\[IndentingNewLine]", 
+                "\[IndentingNewLine]", \(Co1\ \(VA(t)\) = 
+                  Co1\ \(VA(\((n - 1)\)\ T)\) + Ci2\ \(Vi(\((n - 1)\)\ T)\)\),
+                 "\n", "\[IndentingNewLine]", \(Co2\ \(Vo(t)\) = 
+                  Co2\ \(Vo(\((n - 1)\)\ T)\) + 
+                    CA\ \(VA(\((n - 1)\)\ T)\)\)}],
+              "TraditionalForm"],
+            "Text"], "\[IndentingNewLine]", 
+          StyleBox["\[IndentingNewLine]",
+            "Text"], 
+          StyleBox["\[IndentingNewLine]",
+            "Text"], 
+          StyleBox[\(And\ so\ for\ discrete\ time\),
+            FontVariations->{"Underline"->True}], 
+          StyleBox["\[IndentingNewLine]",
+            "Text"], 
+          StyleBox["\[IndentingNewLine]",
+            "Text"], \(Co1\ VA \((n)\) = 
+            Co1\ VA \((n - 1)\)\  + \ Ci2\ Vi \((n - 1)\)\  - \ 
+              Ci1\ Vi \((n)\)\), 
+          "\[IndentingNewLine]", \(Co2\ Vo\ \((n)\)\  = \ 
+            Co2\ Vo \((n - 1)\)\  + \ CA\ VA \((n - 1)\)\), 
+          "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", \(VA \((n)\)\  - \ 
+              VA \((n - 1)\) = \ \(Ci2\/Co1\) Vi \((n - 1)\) - \(Ci1\/Co1\) 
+                Vi \((n)\)\), 
+          "\[IndentingNewLine]", \(Vo \((n)\)\  - \ Vo \((n - 1)\)\  = \ 
+            CA\/Co2\ VA \((n - 1)\)\), "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", \(\(VA \((z)\)\)\/\(Vi \((z)\)\) = \
+\(-\(Ci2\/Co1\)\) \((\ Ci1\/Ci2 - z\^\(-1\)\ )\)\/\(1 - z\^\(-1\)\)\), 
+          "\[IndentingNewLine]", \(\(Vo \((z)\)\)\/\(VA \((z)\)\) = \(CA\/Co2\
+\) z\^\(-1\)\/\(1 - z\^\(-1\)\)\), 
+          "\[IndentingNewLine]", \(\(Vo \((z)\)\)\/\(Vi \((z)\)\)\)}], 
+        "=", \(\(\(Vo \((z)\)\)\/\(VA \((z)\)\)\) \(VA \((z)\)\)\/\(Vi \
+\((z)\)\) = \(-\(CA\/Co2\)\) \(Ci2\/Co1\) \(\((\ Ci1\/Ci2 - z\^\(-1\)\ )\) \
+z\^\(-1\)\)\/\((1 - z\^\(-1\))\)\^2\)}]}]], "Input",
+  Evaluatable->False,
+  FontSize->14,
+  Magnification->1],
+
+Cell[BoxData[{
+    \(\(\[Phi]1[t_]\  := \ 
+        Module[\ {ts = 10\^\(-6\), \ width = 0.6, \ 
+            tr}, \[IndentingNewLine]tr = 
+            FractionalPart[
+              t\/ts]\ ; \[IndentingNewLine]If\ [\((tr\ \  > \ \(1\/2\) \(1\/2\
+\) \((1 - width)\)\ )\)\  && \ \((tr\ \  < \ \(1\/2\) \((1 - \(1\/2\) \((1 - 
+                              width)\))\))\), \ 1, \ 
+            0]\[IndentingNewLine]];\)\), "\[IndentingNewLine]", 
+    \(\(\[Phi]2[t_]\  := \ 
+        Module[\ {ts = 10\^\(-6\), \ width = 0.6, \ 
+            tr}, \[IndentingNewLine]tr = 
+            FractionalPart[
+              t\/ts]\ ; \[IndentingNewLine]If\ [\((tr\ \  > 
+                  1\/2 + \ \(1\/2\) \(1\/2\) \((1 - 
+                          width)\)\ )\)\  && \ \((tr\ \  < \ 
+                  1\/2 + \(1\/2\) \((1 - \(1\/2\) \((1 - width)\))\))\), \ 
+            1, \ 0]\[IndentingNewLine]];\)\), "\[IndentingNewLine]", 
+    \(\(VA[t_] := 
+        If[\[Phi]1[t] > 1\/2, \(-\(1\/2\)\), 0];\)\), "\[IndentingNewLine]", 
+    \(\(Vo[t_] := 
+        Module[\ {ts = 10\^\(-6\), \[Epsilon]\  = \ 
+              0.1\ 10\^\(-6\)}, \[IndentingNewLine]If\ [t < \[Epsilon], 
+            0, \[IndentingNewLine]If[\[Phi]2[t] > 1\/2, \(-1\) + 
+                Vo[t - ts\/2], 
+              Vo[t - ts\/10]]\[IndentingNewLine]]\[IndentingNewLine]];\)\), "\
+\[IndentingNewLine]", 
+    \(\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(p1 = \ 
+        Plot[\[Phi]1[t\ 10\^\(-6\)], {t, 0, 
+            5\ }, \ \[IndentingNewLine]PlotRange \[Rule] {0, 
+              1}, \[IndentingNewLine]Ticks \[Rule] {Automatic, {0, 1\/2, 
+                1}}, \[IndentingNewLine]PlotStyle \[Rule] {Thickness[ .01]}, \
+\[IndentingNewLine]GridLines \[Rule] {{0, 1, 2, 3, 4, 5}, {0, 1\/4, 1\/2, 
+                3\/4, 1}}, \[IndentingNewLine]DisplayFunction \[Rule] 
+            Identity\[IndentingNewLine]];\)\), "\[IndentingNewLine]", 
+    \(\(p2 = \ 
+        Plot[\[Phi]2[t\ 10\^\(-6\)], {t, 0, 
+            5\ }, \ \[IndentingNewLine]PlotRange \[Rule] {0, 
+              1}, \[IndentingNewLine]Ticks \[Rule] {Automatic, {0, 1\/2, 
+                1}}, \[IndentingNewLine]PlotStyle \[Rule] {Thickness[ .01]}, \
+\[IndentingNewLine]GridLines \[Rule] {{0, 1, 2, 3, 4, 5}, {0, 1\/4, 1\/2, 
+                3\/4, 1}}, \[IndentingNewLine]DisplayFunction \[Rule] 
+            Identity\[IndentingNewLine]];\)\), "\[IndentingNewLine]", 
+    \(\(p3 = \ 
+        Plot[VA[t\ 10\^\(-6\)], {t, 0, 
+            5\ }, \ \[IndentingNewLine]PlotRange \[Rule] {\(-\(3\/4\)\), 
+              1\/4}, \[IndentingNewLine]Ticks \[Rule] {Automatic, \
+{\(-\(3\/4\)\), \(-\(1\/2\)\), \(-\(1\/4\)\), 0, 
+                1\/4}}, \[IndentingNewLine]PlotStyle \[Rule] {Thickness[ \
+.01]}, \[IndentingNewLine]GridLines \[Rule] {{0, 1, 2, 3, 4, 
+                5}, {\(-1\), \(-\(3\/4\)\), \(-\(1\/2\)\), \(-\(1\/4\)\), 0, 
+                1\/4}}, \[IndentingNewLine]DisplayFunction \[Rule] 
+            Identity\[IndentingNewLine]];\)\), "\[IndentingNewLine]", 
+    \(\(p4 = \ 
+        Plot[Vo[t\ 10\^\(-6\)], {t, 0, 
+            5\ }, \ \[IndentingNewLine]PlotRange \[Rule] {\(-6\), 
+              1\/4}, \[IndentingNewLine]Ticks \[Rule] {Automatic, {\(-5\), \
+\(-4\), \(-3\), \(-2\), \(-1\), 
+                0}}, \[IndentingNewLine]PlotStyle \[Rule] {Thickness[ .01]}, \
+\[IndentingNewLine]GridLines \[Rule] {{0, 1, 2, 3, 4, 
+                5}, {\(-5\), \(-4\), \(-3\), \(-2\), \(-1\), 
+                0}}, \[IndentingNewLine]DisplayFunction \[Rule] 
+            Identity\[IndentingNewLine]];\)\)}], "Input"],
+
+Cell[BoxData[
+    \(\(Show[
+        GraphicsArray[{{p1}, {p2}, {p3}, {p4}}, \ 
+          ImageSize \[Rule] {800, 1200}]];\)\)], "Input"]
+}, Open  ]],
+
+Cell[BoxData[{
+    RowBox[{
+      RowBox[{
+        StyleBox["a",
+          FontSize->18,
+          FontVariations->{"Underline"->True}], 
+        StyleBox[".",
+          FontSize->18,
+          FontVariations->{"Underline"->True}], 
+        StyleBox["\[IndentingNewLine]",
+          FontSize->18], 
+        StyleBox["Derivation",
+          FontSize->18]}], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["of",
+        FontSize->18], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["HA",
+        FontSize->18], 
+      StyleBox[\((z)\),
+        FontSize->18], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["based",
+        FontSize->18], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["on",
+        FontSize->18], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["superpositioning",
+        FontSize->18], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["standard",
+        FontSize->18], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["topologies",
+        FontSize->18]}], "\[IndentingNewLine]", 
+    RowBox[{"\t", 
+      StyleBox[\(H1A \((z)\) = \(-\(1\/2\)\) 1\/\(\(\ \)\(1 - z\^\(-1\)\)\)\),
+        
+        FontSize->16], 
+      StyleBox["\n",
+        FontSize->16]}], "\[IndentingNewLine]", 
+    RowBox[{"\t", 
+      StyleBox[\(H2A \((z)\) = \(1\/2\) 
+            z\^\(-1\)\/\(\(\ \)\(1 - z\^\(-1\)\)\)\),
+        FontSize->16], 
+      StyleBox["\n",
+        FontSize->16]}], "\[IndentingNewLine]", 
+    RowBox[{"\t", 
+      StyleBox[\(HA \((z)\) := \(\(VA \((z)\)\)\/\(Vi \((z)\)\) = \(H1A \((z)\
+\) + H2A \((z)\) = \(\(-\(1\/2\)\) \(1 - z\^\(-1\)\)\/\(1 - z\^\(-1\)\) = \(-\
+\(1\/2\)\)\)\)\)\),
+        FontSize->16], 
+      StyleBox["\[IndentingNewLine]",
+        FontSize->16]}], "\[IndentingNewLine]", 
+    StyleBox[\(HB \((z)\)\ is\ standard\ topology\ by\ itself\),
+      FontSize->18], "\[IndentingNewLine]", 
+    RowBox[{"\t", 
+      StyleBox[\(HB \((z)\) := \ \(\(Vo \((z)\)\)\/\(VA \((z)\)\) = \(2\/1\) 
+              z\^\(-1\)\/\(1 - z\^\(-1\)\)\)\),
+        FontSize->16], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    StyleBox[\(Overall\ H \((z)\)\ cascading\ HA \((z)\)\ and\ HB \((z)\)\),
+      FontSize->18], "\[IndentingNewLine]", 
+    StyleBox[\(H \((z)\) = \(\(Vo \((z)\)\)\/\(Vi \((z)\)\) = \(HA \((z)\)\ \
+HB \((z)\) = \(\(-\(z\^\(-1\)\/\(1 - 
+                      z\^\(-1\)\)\)\) = \
+\(\(-\(z\^\(-1\)\/\(\(z\^\(-\(1\/2\)\)\) \((z\^\(1\/2\) - 
+                            z\^\(-\(1\/2\)\))\)\)\)\) = \(-\(z\^\(-\(1\/2\)\)\
+\/\(z\^\(1\/2\) - z\^\(-\(1\/2\)\)\)\)\)\)\)\)\)\),
+      FontSize->16], "\[IndentingNewLine]", 
+    RowBox[{
+      RowBox[{
+        StyleBox["b",
+          FontSize->18,
+          FontVariations->{"Underline"->True}], 
+        StyleBox[".",
+          FontSize->18,
+          FontVariations->{"Underline"->True}], 
+        StyleBox["\[IndentingNewLine]",
+          FontSize->18], 
+        StyleBox["Frequency",
+          FontSize->18]}], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["transfer",
+        FontSize->18], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["found",
+        FontSize->18], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["by",
+        FontSize->18], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["substituting",
+        FontSize->18], 
+      StyleBox[" ",
+        FontSize->18], 
+      SuperscriptBox[
+        StyleBox["e",
+          FontSize->18], "j\[Theta]"], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["for",
+        FontSize->18], 
+      StyleBox[" ",
+        FontSize->18], 
+      StyleBox["z",
+        FontSize->18]}], "\[IndentingNewLine]", 
+    RowBox[{
+      RowBox[{
+        StyleBox[\(\(|\)\(H \((e\^\(j\ \[Theta]\))\)\)\(|\)\),
+          FontSize->16], 
+        StyleBox[" ",
+          FontSize->16], 
+        StyleBox["=",
+          FontSize->16], 
+        RowBox[{
+          StyleBox[
+            RowBox[{"|", \(H \((z)\)\), 
+              SubscriptBox[
+                StyleBox["|",
+                  FontSize->16], \(z = e\^j\[Theta]\)]}],
+            FontSize->18], 
+          StyleBox["=",
+            FontSize->16], 
+          
+          StyleBox[\(\(\(|\)\(-\(e\^\(\(-j\) \[Theta]\/2\)\/\(e\^\(j  \
+\[Theta]\/2\) - e\^\(\(-j\) \[Theta]\/2\)\)\)\)\(|\)\) = \ 
+              1\/\(2 | sin \((\[Theta]\/2)\) | \)\),
+            FontSize->16]}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]",
+   
+    RowBox[{
+      RowBox[{
+        StyleBox[\(Arg \((H \((e\^\(j\ \[Theta]\))\))\)\),
+          FontSize->16], 
+        StyleBox[" ",
+          FontSize->16], 
+        StyleBox["=",
+          FontSize->16], 
+        RowBox[{
+          RowBox[{
+            StyleBox[\(Arg \((\(-1\))\)\),
+              FontSize->16], 
+            StyleBox["+",
+              FontSize->16], 
+            RowBox[{
+              StyleBox["Arg",
+                FontSize->16], 
+              RowBox[{
+                StyleBox["(",
+                  FontSize->16], 
+                SuperscriptBox[
+                  StyleBox["e",
+                    FontSize->16], \(\(-j\) \[Theta]\/2\)], ")"}]}], "-", 
+            StyleBox[\(Arg \((j)\)\),
+              FontSize->16], 
+            StyleBox["-",
+              FontSize->16], 
+            RowBox[{
+              StyleBox["Arg",
+                FontSize->16], 
+              RowBox[{
+                StyleBox["(",
+                  FontSize->16], 
+                RowBox[{
+                  StyleBox["sin",
+                    FontSize->16], 
+                  RowBox[{
+                    StyleBox["(",
+                      FontSize->16], 
+                    FractionBox[
+                      StyleBox["\[Theta]",
+                        FontSize->16], "2"], ")"}]}], ")"}]}]}], 
+          StyleBox["=",
+            FontSize->16], 
+          StyleBox["\[IndentingNewLine]",
+            FontSize->16], "\t", GridBox[{
+              {
+                RowBox[{
+                  RowBox[{
+                    FractionBox[
+                      StyleBox["\[Pi]",
+                        FontSize->16], "2"], "-", \(\[Theta]\/2\)}], ",", 
+                  " ", \(\[Theta] > 0\)}]},
+              {
+                RowBox[{
+                  RowBox[{
+                    FractionBox[
+                      StyleBox["\[Pi]",
+                        FontSize->16], "2"], "-", \(\[Theta]\/2\)}], ",", 
+                  " ", \(\[Theta] < 0\)}]}
+              }]}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{
+      RowBox[{
+        RowBox[{
+          StyleBox["c",
+            FontSize->18,
+            FontVariations->{"Underline"->True}], 
+          StyleBox[".",
+            FontSize->18,
+            FontVariations->{"Underline"->True}], 
+          StyleBox["\[IndentingNewLine]",
+            FontSize->18], 
+          StyleBox["Time",
+            FontSize->18]}], 
+        StyleBox[" ",
+          FontSize->18], 
+        StyleBox["domain",
+          FontSize->18], 
+        StyleBox[" ",
+          FontSize->18], 
+        RowBox[{
+          StyleBox["analysis",
+            FontSize->18], 
+          StyleBox[":",
+            FontSize->18], 
+          StyleBox["\[IndentingNewLine]",
+            FontSize->18], 
+          StyleBox[
+            FormBox[
+              RowBox[{"\[IndentingNewLine]", 
+                RowBox[{
+                  RowBox[{
+                    StyleBox["\[Phi]1",
+                      FontSize->18,
+                      FontVariations->{"Underline"->True}], 
+                    StyleBox[":",
+                      FontSize->18,
+                      FontVariations->{"Underline"->True}], 
+                    "\[IndentingNewLine]", \(\((n - 1\/2)\)\ T < 
+                      t \[LessEqual] n\ T\)}], "\[IndentingNewLine]", 
+                  "\[IndentingNewLine]", \(Co1\ \(VA(t)\) = 
+                    Co1\ \(VA(\((n - 1\/2)\)\ T)\) - Ci1\ \(Vi(t)\)\), 
+                  "\[IndentingNewLine]", 
+                  "\[IndentingNewLine]", \(Co2\ \(Vo(t)\) = 
+                    Co2\ \(Vo(\((n - 1\/2)\)\ T)\)\), "\n", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{
+                    StyleBox["\[Phi]2",
+                      FontSize->18,
+                      FontVariations->{"Underline"->True}], 
+                    StyleBox[":",
+                      FontSize->18,
+                      FontVariations->{"Underline"->True}], 
+                    "\[IndentingNewLine]", \(\((n - 1)\)\ T < 
+                      t \[LessEqual] \((n\  - 1\/2)\) T\)}], 
+                  "\[IndentingNewLine]", 
+                  "\[IndentingNewLine]", \(Co1\ \(VA(t)\) = 
+                    Co1\ \(VA(\((n - 1)\)\ T)\) + 
+                      Ci2\ \(Vi(\((n - 1)\)\ T)\)\), "\[IndentingNewLine]", 
+                  "\n", \(Co2\ \(Vo(t)\) = 
+                    Co2\ \(Vo(\((n - 1)\)\ T)\) + 
+                      CA\ \(VA(\((n - 1)\)\ T)\)\)}]}],
+              "TraditionalForm"],
+            "Text"]}]}], "\[IndentingNewLine]", 
+      StyleBox["\[IndentingNewLine]",
+        "Text"]}], "\[IndentingNewLine]", 
+    RowBox[{
+      StyleBox[\(And\ so\ for\ discrete\ time\),
+        FontVariations->{"Underline"->True}], 
+      StyleBox["\[IndentingNewLine]",
+        "Text"]}], "\[IndentingNewLine]", \(Co1\ VA \((n)\) = 
+      Co1\ VA \((n - 1)\)\  + \ Ci2\ Vi \((n - 1)\)\  - \ 
+        Ci1\ Vi \((n)\)\), "\[IndentingNewLine]", 
+    RowBox[{\(Co2\ Vo\ \((n)\)\  = \ 
+        Co2\ Vo \((n - 1)\)\  + \ CA\ VA \((n - 1)\)\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", \(VA \((n)\)\  - \ 
+        VA \((n - 1)\) = \ \(Ci2\/Co1\) Vi \((n - 1)\) - \(Ci1\/Co1\) 
+          Vi \((n)\)\), "\[IndentingNewLine]", 
+    RowBox[{\(Vo \((n)\)\  - \ Vo \((n - 1)\)\  = \ CA\/Co2\ VA \((n - 1)\)\),
+       "\[IndentingNewLine]"}], "\[IndentingNewLine]", \(\(VA \((z)\)\)\/\(Vi \
+\((z)\)\) = \(-\(Ci2\/Co1\)\) \((\ Ci1\/Ci2 - z\^\(-1\)\ )\)\/\(1 - z\^\(-1\)\
+\)\), "\[IndentingNewLine]", \(\(Vo \((z)\)\)\/\(VA \((z)\)\) = \(CA\/Co2\) 
+        z\^\(-1\)\/\(1 - z\^\(-1\)\)\), "\[IndentingNewLine]", 
+    RowBox[{\(\(Vo \((z)\)\)\/\(Vi \((z)\)\) = \(\(\(Vo \((z)\)\)\/\(VA \((z)\
+\)\)\) \(VA \((z)\)\)\/\(Vi \((z)\)\) = \(-\(CA\/Co2\)\) \(Ci2\/Co1\) \(\((\ \
+Ci1\/Ci2 - z\^\(-1\)\ )\) z\^\(-1\)\)\/\((1 - z\^\(-1\))\)\^2\)\), 
+      StyleBox["\[IndentingNewLine]",
+        FontSize->18]}], "\[IndentingNewLine]", }], "Input",
+  CellFrame->True,
+  Evaluatable->False,
+  FontSize->14,
+  Magnification->1],
+
+Cell[BoxData[
+    \(Plot[\ {\ 21 + \[Phi]1[t\ 10\^\(-6\)], \ 19 + \[Phi]2[t\ 10\^\(-6\)], \ 
+        17 + 8*VA[t\ 10\^\(-6\)], \ 11 + 2\ Vo[t\ 10\^\(-6\)]}, \ {t, 0, 
+        5}, \[IndentingNewLine]Ticks \[Rule] {Automatic, {{1, \(-5\)}, {3, \
+\(-4\)}, {5, \(-3\)}, {7, \(-2\)}, {9, \(-1\)}, {11, 0}, {11.5, 
+              Vo}, {13, \(-\(1\/2\)\)}, {15, VA}, {17, 
+              0}, {19, \[Phi]2}, {21, \[Phi]1}}}, \
+\[IndentingNewLine]PlotStyle \[Rule] {Thickness[ .005]}, \
+\[IndentingNewLine]GridLines \[Rule] {{0, 1, 2, 3, 4, 5}, {1, 3, 5, 7, 9, 11, 
+            13, 15, 17}}]\)], "Input"]
+},
+FrontEndVersion->"5.0 for X",
+ScreenRectangle->{{0, 1280}, {0, 1022}},
+CellGrouping->Manual,
+WindowSize->{973, 980},
+WindowMargins->{{Automatic, 53}, {0, Automatic}},
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperSize"->{597.562, 842.375},
+"PaperOrientation"->"Portrait",
+"PostScriptOutputFile":>FrontEnd`FileName[{"user", "pos", "Documents", \
+"mathematica", "switchcap"}, "switchcap.nb.ps", CharacterEncoding -> \
+"iso8859-1"],
+"Magnification"->1}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 26, 0, 27, "Input"],
+Cell[1783, 53, 60, 1, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[1868, 58, 104, 6, 86, "Text"],
+Cell[1975, 66, 26, 0, 94, "Title"]
+}, Open  ]],
+Cell[2016, 69, 118, 2, 67, "Input"],
+
+Cell[CellGroupData[{
+Cell[2159, 75, 158, 3, 32, "Input"],
+Cell[2320, 80, 136, 3, 59, "Output"]
+}, Open  ]],
+Cell[2471, 86, 1043, 18, 245, "Input"],
+Cell[3517, 106, 785, 13, 170, "Input"],
+Cell[4305, 121, 3233, 69, 747, "Input",
+  Evaluatable->False],
+Cell[7541, 192, 1377, 27, 402, "Input"],
+
+Cell[CellGroupData[{
+Cell[8943, 223, 2154, 36, 657, "Input"],
+Cell[11100, 261, 136, 3, 27, "Input"]
+}, Open  ]],
+Cell[11251, 267, 10456, 292, 1553, "Input",
+  Evaluatable->False],
+Cell[21710, 561, 593, 9, 122, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
