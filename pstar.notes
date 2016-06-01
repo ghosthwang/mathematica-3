@@ -1,0 +1,616 @@
+Pstar
+Release Notes
+for Pstar version 4.8
+First Edition
+
+Philips
+ED&T/Analogue Simulation
+Eindhoven, October 2004
+
+
+This document is provided without warranty of any kind, either expressed or 
+implied, including, but not limited to, the particular purpose. The information
+in this document is subject to change without notice. Whilst every care has been
+taken in the preparation of this document, some errors may remain. If you find 
+an error or omission, or if you have any comments to make, please feel free to 
+contact:
+
+Philips ED&T/Analogue Simulation
+
+Telephone:		+31 40 27 44888
+Fax:			+31 40 27 44700
+E-mail:			edtas.natlab@philips.com
+Seri:			edtas@nlwayhp
+Intranet:		http://pww.research.philips.com/edt
+
+Internal Mail:		WAY 31, EINDHOVEN
+
+External Mail:		WAY 31
+			Prof. Holstlaan 4
+			5656 AA   EINDHOVEN
+			The Netherlands
+
+Pstar is a trademark of Philips Electronics N.V.
+
+
+
+c Philips Electronics N.V. 1992-2004
+All rights reserved. Reproduction in whole or in part is prohibited without the
+written consent of the copyright owner.
+
+
+
+
+
+    
+Table of Contents
+=================
+
+  Table of Contents 					
+ 					
+  ED&T/Analogue Simulation 			
+	Release notes 					
+	Other reading 					
+	ED&T homepage 					
+	On-line documentation 				
+	Reporting problems 
+	
+1. New Functionality
+1.1 DC algorithms
+1.2 Logical operator exclusive-or (XOR)
+
+2. Bug fixes and improvements
+2.1 Correct behavior of DCprinc in combination with resetdc
+2.2 Operation Point information is accessible
+2.3 Output with PROCEED_DC
+	2.3.1 Updated number of trials after PROCEED_DC
+	2.3.2 Correct output with PROCEED_DC
+2.4 Two-port noise does not depends on source resistor
+2.5 Table statement
+
+3. Change block parameters
+3.1 BOOST_SETTING
+3.2 DC_ATTEMPS
+3.3 PRINT_INDEPENDENT_PARAMETERS
+3.4 Overview of change block parameters
+4. Relation SiMKit and Pstar
+Relation SiMKit and Pstar
+
+5. Known Restrictions
+Limitations
+
+Preface
+=======
+
+These are the release notes for Pstar version 4.8.
+
+This is a minor maintenance release containing some 
+new functionality, a few bug fixes and some improvements.
+
+
+ED&T/Analogue Simulation
+========================
+
+ED&T/Analogue Simulation provides EDA (Electronic Design Automation) 
+simulation products. These products comprise tools for IC-design as 
+well as PCB-design for analog and mixed applications.
+
+Philips ED&T/Analogue Simulation's products are intensively used on 
+a daily basis by hundreds of designers working at Philips sites spread 
+across three continents. This constitutes a large base of advanced and 
+critical users.
+
+Staffed by a highly motivated team of professionals, ED&T/Analogue 
+Simulation develops EDA tools and provides user support. 
+Multi-disciplined teams are formed from these two functions, to 
+focus closely on items of current interest. Applicable knowledge 
+from Philips Research Laboratories or other ED&T groups is 
+incorporated in the products, enabling a flexible and targeted 
+response to the customer's requirements.
+
+ED&T/Analogue Simulation is part of ED&T, which provides services 
+and software products for electronic design and testing within 
+Philips, bridging the gap between the EDA required by Philips 
+and what is available from external suppliers. ED&T operates on 
+a commercial basis in open competition with the free market.
+
+As part of Philips, with close links to Philips Research Laboratories, 
+ED&T is uniquely placed to benefit from new developments and close 
+to the customers, thus ensuring "state-of-the-art" products with 
+optimal service which provide a competitive edge for our customers.
+
+
+Release notes
+=============
+
+These release notes describe the program changes since the last 
+release. The release notes can be obtained in the following three ways:
+
+* By using the news option, e.g. pstar -news, the release notes are 
+written to the pstar.notes file in the current directory.
+
+* By instructing Pstar to process an input file containing a single 
+line which contains the word news. The release notes are written 
+to the listing file created by processing the input file.
+
+* By using the Pstar online documentation. More information on 
+online documentation is given in On-line documentation on page xi.
+
+
+Other reading
+=============
+
+For more information on Pstar and its related tools, see the 
+following manuals. Copies of these manuals, or information on user 
+documentation may be obtained from the Support Centre of ED&T/Analogue 
+Simulation.
+
+Pstar User Manual
+Intended for occasional users or users who are not yet very familiar 
+with Pstar. Experienced users may also find it useful when dealing 
+with infrequently-used aspects of Pstar.
+
+Pstar Reference Manual
+Contains alphabetically ordered subjects, each of which provides 
+detailed information. An overview of the Pstar input language is 
+given in a separate chapter.
+
+PstarParts Manual	
+Contains, amongst other things, examples of how to use devices 
+from PstarParts and a complete overview of all available devices 
+in this library.
+
+PSDrafts Manual	
+Contains an extensive number of analog building block examples 
+and a complete overview of all available building blocks in this 
+library.
+
+PstarVerilog User Manual	
+Intended for electronic design engineers who are occasional users, 
+or are not very familiar with PstarVerilog. It is also a useful 
+guide for more experienced users on aspects of PstarVerilog, 
+which are used relatively infrequently.
+
+Pia User Manual	
+Describes the usage of the Pstar Interface for Artist, which 
+integrates Pstar into Analog ArtistTM from Cadence.
+
+Tolerance Analysis with Pstar	
+Booklet providing background reference work on tolerance analysis 
+using Pstar, for both discrete and integrated circuits.
+
+Pstar Performance in Practice	
+Booklet illustrating Pstar''s capabilities in 9 real life designs 
+of integrated circuits.
+
+Bipolar Modelbook	
+Contains the full description of the built-in bipolar transistor 
+models of the circuit-simulation program Pstar, and on their 
+implementation.
+
+MOST Modelbook	
+Contains the full description of the built-in MOST models of 
+the Pstar circuit-simulation program and also describes their 
+implementation. Furthermore, it contains information on the 
+physical background of integrated MOS transistors.
+
+Pstar Installation Notes	
+Describes how to install the Pstar software.
+
+A variety of other publications are also available, ranging 
+from complete manuals to single information sheets. Please 
+contact the Support Centre of ED&T/Analogue Simulation for 
+more information about any of the above publications. The 
+address is given on page ii.
+
+
+ED&T homepage
+=============
+
+Information concerning ED&T is available on the PHILIPS 
+intranet. The general URL for ED&T is as follows:
+
+http://pww.research.philips.com/edt
+
+It is possible to order any of the documentation mentioned in 
+other readings on page viii from the Analogue Simulation Help-desk 
+within this site.
+
+On the ED&T/Analogue Simulation homepage, it is also possible 
+to obtain an overview of the status and contents of reported 
+events of all our products. You may select the following:
+
+* Sorted by product.
+* Sorted by submitter.
+* Event reports implemented in the newest release.
+
+In this way, it is possible for our users to obtain better 
+insight into solving particular problems.
+
+
+On-line documentation
+=====================
+
+PDF (Portable Document Format) is commonly used to display 
+online documentation and has been adopted as the standard 
+format used by ED&T/AS. This format means that users no longer 
+require FrameMaker software to view the product documentation 
+on-screen.
+
+The Pstar User Manual and Release Notes are available as PDF 
+documents which require PDF viewer software, such as Adobe 
+Acrobat Reader, to view the manual on-screen. This software, 
+developed by Adobe Systems Inc., is available as a free 
+download from their website which can be found at:
+
+http://www.adobe.com/products/acrobat/readstep.html
+
+The PDF version of this manual contains exactly the same 
+information as the printed paper version and retains both 
+content and page numbering.
+
+To invoke the PDF documentation type the following command:
+
+pstar -online
+
+For more information, see the Pstar Reference Manual.
+
+
+Reporting problems
+==================
+
+If a problem occurs, first check with your system management 
+that the computer system is functioning as it should.
+
+If that is the case, please contact the ED&T/Analogue Simulation 
+help desk. You can reach the help desk by telephone, Seri address, 
+Internet address or FAX; communication information is shown on 
+page ii of this document.
+
+The helpdesk will respond to your problems as quickly as possible. 
+To do this, they need to fully understand your problem. You can help 
+us provide quick solutions to your problems by 
+supplying the following details:
+
+* Your name, organization, telephone number, e-mail and Seri 
+address (if available).
+
+* Are you running the latest version of Pstar? The version 
+number is specified in the header of the list file. If not, 
+check with your system management to see if the latest version 
+is available at your site, and, if so, install it. If the latest 
+version is not available at your site, please contact ED&T/Analogue 
+Simulation to obtain it.
+
+* The type of hardware in use.
+
+* A full description of the problem, including the commands used 
+and the resulting error message. Create a complete input file by 
+using a change block with the list_full option.
+
+* What supporting data files (e.g. input/output files, process 
+block, command procedures) are being used?
+
+Any comments regarding the content, use, or general observations 
+about this manual, are welcomed by ED&T/Analogue Simulation. Our 
+address is given on page ii.
+
+
+
+1.New Functionality
+
+1.1 DC algorithms
+=================
+The default value of the change block parameter DC_ATTEMPTS has been set to 
+"all". This implies that by default all the available Pstar algorithms 
+to find the implicit DC solution for a circuit will be tried. Note that the 
+setting of the change block parameters DCATR_ACTIVE and GMIN_ACTIVE are 
+ignored when DC_ATTEMPTS is set to "all".
+
+1.2 Logical operator exclusive-or (XOR)
+=======================================
+A new logical operator has been added. This operator allows the performance 
+of an exclusive-or function. Either ".xor." or "^^" can be used. 
+
+
+
+2.Bug fixes and improvements
+
+2.1 Correct behavior of DCprinc in combination with resetdc
+===========================================================
+
+In Pstar 4.8 DCprinc, in combination with the resetdc statement, now works 
+as expected. With the combination of these two statements we should have a 
+DC or implicit DC analysis, in which the results of the previous run are 
+not used at the beginning of a new sweep. In previous releases for AC and 
+transient analysis, the DCprinc effect was ignored but now this is solved.
+
+2.2 Operation Point information is accessible
+=============================================
+
+The previous Pstar release had problems with the operating point information 
+that Pstar produces for the MOS11XX family transistor model. Some parameters 
+were not accessible without using the explicit OP construction, 
+e.g. op(vto.mne_1). In Pstar 4.8 this bug is solved.
+
+2.3 Output with PROCEED_DC 
+==========================
+
+2.3.1 Updated number of trials after PROCEED_DC
+-----------------------------------------------
+
+The change block parameter PROCEED_DC allows you to continue with the 
+simulation in case non-convergency has been met in a DC analysis. If 
+this parameter is set for a statistical analysis and not all the trials 
+converge, then the simulator goes on and the number of trials showed at 
+the end reflects the converging trials.
+
+2.3.2 Corrected output with PROCEED_DC
+--------------------------------------
+
+When a trial does not converge during a simulation and the PROCEED_DC 
+parameter is TRUE, the corresponding output is set to UNDEFINED. Note that 
+this fact has a consequence on the graphical output since only the values 
+related to the cases that have actually converged are shown. 
+
+2.4 Two-port noise does not depends on source resistor
+======================================================
+
+By definition, the noise of the source resistor of a two-port is temperature 
+independent and fixed to a value of 290 degrees Kelvin. In previous releases 
+of Pstar, the calculation of the noise items depending on the input noise did 
+not correctly take temperature dependencies into account. As a result, these 
+quantities were dependent on the temperature of the source resistor while they 
+should not be. In Pstar 4.8 this bug is fixed.
+
+2.5 Table statement
+===================
+
+Previous releases had problems with the evaluation of tables when the list of 
+values for the independent parameter was decreasing. In Pstar 4.8 this problem 
+is solved.
+
+
+
+3. Change block parameters
+
+
+3.1 BOOST_SETTING
+=================
+
+BOOST_SETTING is considered obsolete and will be removed in a future 
+release. A new functionality is planned to improve the speed of digital 
+circuits.
+
+3.2 DC_ATTEMPS
+==============
+
+The default value of the change block parameter DC_ATTEMPTS has been set 
+to "all", see section 1.2.
+
+3.3 PRINT_INDEPENDENT_PARAMETERS
+================================
+
+The functionality of the PRINT_INDEPENDENT_PARAMETERS change block 
+parameter has been extended. When this parameter is set to FALSE, no 
+convergence attempt messages are created. When it is set to TRUE, attempt 
+messages are created.
+
+3.4 Overview of change block parameters
+=======================================
+
+PROGRAM PARAMETER NAME              TYPE          ACTUAL VALUE   DEFAULT VALUE
+
+ALLOW_ELEMENT_VALUE_DERIVATIVES     BOOLEAN       TRUE           TRUE
+ALLOW_EV_DEPENDENT_PARS             BOOLEAN       TRUE           TRUE
+BOOST_SETTINGS                      BOOLEAN       FALSE          FALSE
+BUFSIZE_DELAY                       INTEGER       64000          64000
+DCATR_ACTIVE                        BOOLEAN       TRUE           TRUE
+DC_ATTEMPTS                         MASK          ALL            ALL
+DC_ITERS_MAX                        INTEGER       200            200
+DC_ITERS_NEWTON_MAX                 INTEGER       150            150
+DIO_YZ_EXTENSION                    REAL          5.250000e+01   5.250000e+01
+DO_RANGE_CHECKING                   BOOLEAN       TRUE           TRUE
+DRX_METHOD                          BOOLEAN       FALSE          FALSE
+DRX_MIN_SIZE                        INTEGER       1500           1500
+ERROR_COUNT_MAX                     INTEGER       10             10
+EXP_X_EXTENSION                     REAL          5.250000e+01   5.250000e+01
+GENERATE_ELEMENT_VALUE_DERIVATIVES  BOOLEAN       TRUE           TRUE
+GMIN_ACTIVE                         BOOLEAN       TRUE           TRUE
+HB_CONTRIBUTION_N_NEWTONS           INTEGER       2              2
+HB_GJ_CONTRIBUTION_ITERS_MAX        INTEGER       1              1
+HB_GJ_CONTRIBUTION_N_NEWTONS        INTEGER       1              1
+HB_GJ_ITERS_MAX                     INTEGER       50             50
+HB_ITERS_MAX                        INTEGER       50             50
+HB_METHOD                           INTEGER       0              0
+HB_OSC_E_SW_MAG                     REAL          1.000000e+00   1.000000e+00
+HB_OSC_LIMITING_BAND                REAL          1.000000e-01   1.000000e-01
+HB_USE_FULL_MATRIX                  BOOLEAN       FALSE          FALSE
+HEAT_SETTINGS                       BOOLEAN       FALSE          FALSE
+LIST_FULL                           BOOLEAN       FALSE          FALSE
+LOOK_FOR_ESL_LOOPS                  BOOLEAN       TRUE           TRUE
+MAX_INTEGR_ORDER                    INTEGER       5              5
+MAX_N_ESL_LOOPS                     INTEGER       10             10
+MIX_MIN_TIMESTEP                    REAL          1.000000e-13   1.000000e-13
+NL_RANGE_CHECKING                   BOOLEAN       FALSE          FALSE
+OUTPUT_FORMAT                       INTEGER       0              0
+PHASE_OFFSET                        BOOLEAN       FALSE          FALSE
+PRINT_CHANGE_PARS                   BOOLEAN       TRUE           FALSE
+PRINT_CIRCUIT_STATISTICS            MASK          NONE           NONE
+PRINT_CLIP_WARNINGS                 BOOLEAN       TRUE           TRUE
+PRINT_GLOBAL_NODES_WARNINGS         BOOLEAN       TRUE           TRUE
+PRINT_INDEPENDENT_PARAMETERS        BOOLEAN       FALSE          FALSE
+PRINT_SCALED_DEVICE_PARAMETERS      BOOLEAN       FALSE          FALSE
+PRINT_TRIAL_AND_SEED                BOOLEAN       FALSE          FALSE
+PRINT_WARNINGS                      BOOLEAN       FALSE          FALSE
+PROCEED_DC                          BOOLEAN       FALSE          FALSE
+PZ_ARNOLDI                          BOOLEAN       FALSE          FALSE
+PZ_CANCEL_DISTANCE_ABS              REAL          1.000000e-06   1.000000e-06
+PZ_CANCEL_DISTANCE_REL              REAL          5.000000e-02   5.000000e-02
+PZ_FREQUENCY_SHIFT                  REAL          0.000000e+00   0.000000e+00
+PZ_MAX_FREQUENCY                    REAL          1.000000e+10   1.000000e+10
+PZ_MAX_NUMBER_PZ                    INTEGER       30             30
+PZ_MAX_Q_FACTOR_CANCEL              REAL          1.000000e+00   1.000000e+00
+PZ_PRINT_CANCEL_PZ                  BOOLEAN       TRUE           TRUE
+REL_ACCURACY                        REAL          1.000000e-03   1.000000e-03
+REL_OUTPUT_CPTIME                   REAL          1.500000e-01   1.500000e-01
+RF_OLD_TUPLE_FORMAT                 BOOLEAN       FALSE          FALSE
+SENS_ZERO_DEFAULT                   REAL          1.000000e-03   1.000000e-03
+SUPPRESS_WARNING_INFO               BOOLEAN       FALSE          FALSE
+TOPOL_RC_RATIO                      REAL          2.000000e-02   2.000000e-02
+TRNS_RANGE                          INTEGER       10             10
+TR_ERROR_MIN_C                      REAL          1.000000e-13   1.000000e-13
+TR_ERROR_MIN_L                      REAL          1.000000e-10   1.000000e-10
+TR_INTERPOLATION                    BOOLEAN       FALSE          FALSE
+TR_INTERPOL_ERROR_ACTIVE            BOOLEAN       FALSE          FALSE
+TR_NEW_ERROR_I_CONTROL              BOOLEAN       FALSE          FALSE
+TR_USE_TABLE_BREAKPOINTS            BOOLEAN       TRUE           TRUE
+TR_USE_TRAPEZOID_RULE               BOOLEAN       FALSE          FALSE
+TR_USE_VDIFF_NORM                   BOOLEAN       TRUE           TRUE
+USE_FULL_MATRIX                     BOOLEAN       FALSE          FALSE
+
+
+
+4.	Relation SiMKit and Pstar
+
+The Pstar 4.8 release will include SiMKit 2.0. SiMKit is 
+a simulator-independent compact transistor model library and contains the 
+most recent versions of the Philips transistor models. It is the successor 
+of PMK (for Pstar) and SMK (for Spectre). 
+
+SiMKit 2.0 - the successor of SiMKit 1.3 - holds the Philips Compact Models 
+for Pstar, Spectre and ADS. Due to a change in the way that the Juncap model 
+is treated by the simulators, this release is a major release and is 
+therefore called 2.0. Please note that functionality of the Juncap model has 
+not changed.
+
+Due to a modification in the Pstar to SiMKit interface, SiMKit 2.0 is only 
+compatible with Pstar 4.8.
+
+The following two modifications related to SiMKit have been included in 
+Pstar 4.8.
+
+4.1 Parameter value assignment of built-in devices
+==================================================
+
+Traditionally, assigning a value to a parameter at the instantiation of a 
+built-in device can be done by position:
+
+	juncap_1(b,d) 1, abds, lsds,...
+
+or by name:
+
+	juncap_1(b,d) level=1, ab=abds,...
+
+Assignment by position for built-in devices is considered obsolete. As of  
+Pstar 4.8, a warning will be displayed when assignment by position is used 
+for the juncap device.
+
+4.2 Electrical variable name of juncap
+======================================
+ 
+The name of the internal controlling electrical variable Vd of the juncap 
+has been renamed to Vak. This implies that save files created with previous 
+versions of Pstar must be converted to be used by 4.8. More information about 
+how to use an internal controlling electrical variable can be found in the 
+Pstar Reference Manual in the section related to the DCAPPROX block. 
+
+
+
+5. Known Restrictions
+
+This chapter describes the known restrictions in this release of Pstar.
+
+
+Limitations
+===========
+
+	1.  In transient analyses, sensitivity does not yield valid output.
+
+	2.  Sensitivity analysis is not possible in a statistical analysis.
+	    Furthermore, it is not possible to use basic output functions
+ 	    such as sensitivity items. A sensitivity analysis cannot be
+	    combined with a noise or twoport analysis, nor can it be combined
+	    with independent types in one analysis block. A sensitivity
+	    parameter cannot depend on electrical variables.
+
+	3.  In sensitivity analyses, mutual inductances and sources defined
+	    by sw or CMPLX are not taken into account. This also applies to
+	    AC sensitivity analyses with sources defined using the DELAY
+	    function.
+
+	4.  Results of sensitivity analyses may be incorrect if an independent
+	    parameter depends directly or indirectly on a sensitivity parameter.
+	    If an independent type is used, the output shows index numbers
+	    rather than the names of the series of types. `Statistical' types
+	    and `proctypes' cannot be used as independent types.
+
+	5.  In error messages and warnings, IBR and VBR are sometimes referred 
+	    to as elements instead of devices. IBR and VBR must be handled as 
+	    devices with one argument named ibr and one named vbr, respectively.
+	
+	    Therefore, the relative referencing for vbr1 in model mod1 must be
+	    as follows:
+
+		vbr.vbr1.mod1 = ....
+
+
+	    and not as follows:
+
+		vbr1.mod1 = ....
+
+
+	6.  Changing a controlled electrical variable to a non-controlled
+	    electrical variable is not allowed since this could change the
+	    type of an element which uses this parameter from `non-linear'
+	    to `linear.'
+
+	7.  The diff function and built-in output functions cannot be used
+	    together. As a work around, use a parameter which contains the
+	    expression part with the diff function.
+    
+    
+		Example
+	
+		par=i(c1)/diff(vn(1));
+		print:i(c1), vn(1), diff(vn(1)), i(c1)/diff(vn(1)),
+	             	mean(par, .2n, 1.8n);
+             
+             
+	8.  Correlation of elements with uniform distributions is not allowed.
+	
+	9.  When a statmodel is assigned a value, Pstar expects it to be a
+	    parameter if the statmodel occurrence indicator is not separated
+	    from the statmodel name by an underscore.
+    
+    
+		Example
+
+		circuit;
+		  model: mod (a, b)c;
+		    r1(a, b)c;
+		  end;
+		  mod1(1, 0) 10;
+		  e1(1, 0) 1;
+		end;
+
+		statistics;
+		  statmodel: mod=d;
+		    c=unif(d%);
+		  end;
+		  mod1=5;
+		end;
+
+		dcstat;
+		   seed: 12345;
+		   trials: 500;
+		   histogram: r1.mod1;
+		end;
+		run;
+
+
+	To obtain the required results, the mod1=5 assignment must be replaced 
+	by mod_1=5.
+  
+
+

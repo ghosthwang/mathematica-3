@@ -1,0 +1,23 @@
+#
+# .gtignore
+#
+#  Jun 01 2016  martin.pos@nxp.com  - creation
+#
+
+# generic
+*~
+*.bak*
+
+# local junk
+/*.htm
+/*.html
+/*.ps
+d2.mx
+HTMLFiles
+/mathexample.zip
+/ocean/
+/out.dat
+/out3.dat
+/sloten/
+/staticJ.hmtl
+
